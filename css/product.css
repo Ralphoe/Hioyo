@@ -1,0 +1,803 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+/*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  letter-spacing: 1.2px;
+}
+
+a {
+  color: #116530;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+a:hover {
+  color: color-mix(in srgb, #116530, transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: "Noto Sans TC", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+/*--------------------------------------------------------------
+  # Global Header
+  --------------------------------------------------------------*/
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #000000;
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 997;
+}
+.header .header-upper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 30px;
+  background-color: #116530;
+  color: #ffffff;
+}
+.header .header-upper .login-btn,
+.header .header-upper .join-btn {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 0 10px;
+}
+.header .header-upper .search-btn,
+.header .header-upper .shopping-cart-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 16px;
+  padding: 0 10px;
+}
+.header .header-upper .search-btn img,
+.header .header-upper .shopping-cart-btn img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.header .header-lower {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+}
+.header .logo {
+  line-height: 1;
+  max-width: 180px;
+}
+.header .logo img {
+  margin-right: 8px;
+  width: 100%;
+}
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: "Noto Sans TC", sans-serif;
+}
+
+.scrolled .header {
+  -webkit-box-shadow: 0px 0 18px color-mix(in srgb, #000000, transparent 85%);
+          box-shadow: 0px 0 18px color-mix(in srgb, #000000, transparent 85%);
+}
+
+/*--------------------------------------------------------------
+    # Navigation Menu
+    --------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navmenu li {
+    position: relative;
+  }
+  .navmenu a {
+    color: #212529;
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    white-space: nowrap;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navmenu a:focus {
+    color: #212529;
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    white-space: nowrap;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navmenu a i, .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+  .navmenu li:hover > a {
+    color: #116530;
+  }
+  .navmenu .active {
+    color: #116530;
+    font-weight: 600;
+  }
+  .navmenu .active:focus {
+    color: #116530;
+  }
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    -webkit-box-shadow: 0px 0px 30px color-mix(in srgb, #000000, transparent 85%);
+            box-shadow: 0px 0px 30px color-mix(in srgb, #000000, transparent 85%);
+  }
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: #212529;
+  }
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+  .navmenu .dropdown ul a:hover {
+    color: #116530;
+  }
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover > a {
+    color: #116530;
+  }
+  .navmenu .dropdown:hover > ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+  .navmenu .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: #212529;
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+  }
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    z-index: 9998;
+    -webkit-box-shadow: 0px 0px 30px color-mix(in srgb, #000000, transparent 90%);
+            box-shadow: 0px 0px 30px color-mix(in srgb, #000000, transparent 90%);
+  }
+  .navmenu a {
+    color: #212529;
+    padding: 10px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    white-space: nowrap;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navmenu a:focus {
+    color: #212529;
+    padding: 10px 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    white-space: nowrap;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .navmenu a i, .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, #116530, transparent 90%);
+  }
+  .navmenu a i:hover, .navmenu a:focus i:hover {
+    background-color: #116530;
+    color: #ffffff;
+  }
+  .navmenu a:hover {
+    color: #116530;
+  }
+  .navmenu .active {
+    color: #116530;
+    font-weight: 700;
+  }
+  .navmenu .active:focus {
+    color: #116530;
+  }
+  .navmenu .active i, .navmenu .active:focus i {
+    background-color: #116530;
+    color: #ffffff;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid color-mix(in srgb, #000000, transparent 90%);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+  .navmenu .dropdown > .dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .mobile-nav-active .navmenu > ul {
+    display: block;
+  }
+}
+/*--------------------------------------------------------------
+    # Global Footer
+    --------------------------------------------------------------*/
+.footer {
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 14px;
+  position: relative;
+}
+.footer .footer-top {
+  background-color: color-mix(in srgb, #000000, white 5%);
+  padding-top: 50px;
+}
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+.footer .footer-about .logo span {
+  color: #ffffff;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.footer h4 {
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+.footer h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #116530;
+  bottom: 0;
+  left: 0;
+}
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+.footer .footer-links ul a {
+  color: color-mix(in srgb, #ffffff, transparent 30%);
+  display: inline-block;
+  line-height: 1;
+}
+.footer .footer-links ul a:hover {
+  color: #116530;
+}
+.footer .footer-links-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.footer .footer-links-box ul {
+  width: 50%;
+}
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+.footer .copyright {
+  padding: 30px 0;
+}
+.footer .copyright p {
+  margin-bottom: 0;
+}
+.footer .credits {
+  margin-top: 5px;
+  font-size: 13px;
+}
+.footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: color-mix(in srgb, #000000, transparent 92%);
+  color: #116530;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer .social-links a:hover {
+  color: #ffffff;
+  background: #116530;
+  text-decoration: none;
+}
+
+.banner-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 200px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 100, 0, 0.5)), to(rgba(0, 100, 0, 0.5))), url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
+  background-image: linear-gradient(rgba(0, 100, 0, 0.5), rgba(0, 100, 0, 0.5)), url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5%;
+}
+.banner-product h2 {
+  color: #ffffff;
+}
+.banner-product nav[aria-label=breadcrumb] {
+  max-width: 100%;
+  overflow: hidden;
+}
+.banner-product nav[aria-label=breadcrumb] .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+}
+.banner-product nav[aria-label=breadcrumb] .breadcrumb li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 4em;
+}
+.banner-product nav[aria-label=breadcrumb] .breadcrumb li a {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  white-space: nowrap;
+}
+
+main.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+}
+main.container .sidebar {
+  width: 25%;
+}
+main.container .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+main.container .sidebar ul li {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  border-bottom: 1px solid #EEEEEE;
+  padding: 20px;
+}
+main.container .sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+main.container .sidebar ul li a:hover {
+  color: #007b3e;
+}
+main.container .sidebar .active {
+  background-color: #EEEEEE;
+}
+main.container .sidebar .active a {
+  font-weight: bold;
+  color: #007b3e;
+}
+main.container .products {
+  width: 70%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+main.container .products h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+main.container .products .product-grid {
+  display: grid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+main.container .products .product-grid .product-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-bottom: 100px;
+}
+@media (max-width: 1400px) {
+  main.container .products .product-grid {
+    grid-template-columns: repeat(auto-fit, 250px);
+  }
+}
+@media (max-width: 430px) {
+  main.container .products .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+main.container .products .product-image {
+  width: 250px;
+  height: 200px;
+  background: #e4a94a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+main.container .products .product-image .placeholder-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+main.container .products .product-info {
+  position: relative;
+  width: 250px;
+  padding: 0 10px;
+}
+main.container .products .product-info p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #116530;
+}
+main.container .products .product-info span {
+  display: block;
+  margin-bottom: 10px;
+  color: #818080;
+}
+main.container .products .product-info .add-to-cart {
+  color: #818080;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+main.container .products .product-info .add-to-cart:hover {
+  color: #116530;
+}
+main.container .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+main.container .pagination a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  width: 44px;
+  height: 44px;
+  color: #000000;
+  padding: 10px;
+  margin: 5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+main.container .pagination a:hover {
+  color: #ffffff;
+  background-color: #116530;
+}
+main.container .pagination a.active {
+  color: #ffffff;
+  background-color: #116530;
+}
+
+@media (max-width: 768px) {
+  main.container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main.container .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  main.container .products {
+    width: 100%;
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=product.css.map */

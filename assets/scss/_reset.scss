@@ -1,0 +1,17 @@
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
