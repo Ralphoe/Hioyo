@@ -1,0 +1,762 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+/*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+
+body {
+  color: v.$default-color;
+  background-color: v.$background-color;
+  font-family: v.$default-font;
+  letter-spacing: 1.2px;
+}
+
+a {
+  color: v.$accent-color;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: color-mix(in srgb, v.$accent-color, transparent 25%);
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: v.$heading-font;
+  font-family: v.$heading-font;
+}
+
+/*--------------------------------------------------------------
+    # Global Header
+    --------------------------------------------------------------*/
+
+.header {
+  @include v.flex-center;
+  flex-direction: column;
+  color: v.$default-color;
+  background-color: v.$background-color;
+  transition: all 0.5s;
+  z-index: 997;
+
+  .header-upper {
+    @include v.flex-center;
+    width: 100%;
+    height: 30px;
+    background-color: v.$accent-color;
+    color: v.$surface-color;
+
+    .login-btn,
+    .join-btn {
+      font-family: v.$default-font;
+      padding: 0 10px;
+    }
+    .search-btn,
+    .shopping-cart-btn {
+      @include v.flex-center;
+      width: 16px;
+      padding: 0 10px;
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .header-lower {
+    @include v.flex-center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .logo {
+    line-height: 1;
+    max-width: 180px;
+
+    img {
+      margin-right: 8px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 0;
+      font-weight: 700;
+      color: v.$heading-font;
+    }
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px color-mix(in srgb, v.$default-color, transparent 85%);
+}
+
+/*--------------------------------------------------------------
+      # Navigation Menu
+      --------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    li {
+      position: relative;
+    }
+
+    a {
+      color: v.$nav-color;
+      padding: 18px 15px;
+      font-size: 16px;
+      font-family: v.$nav-font;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+
+      &:focus {
+        color: v.$nav-color;
+        padding: 18px 15px;
+        font-size: 16px;
+        font-family: v.$nav-font;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      i,
+      &:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+    }
+
+    li {
+      &:last-child a {
+        padding-right: 0;
+      }
+
+      &:hover > a {
+        color: v.$nav-hover-color;
+      }
+    }
+
+    .active {
+      color: v.$nav-hover-color;
+      font-weight: 600;
+
+      &:focus {
+        color: v.$nav-hover-color;
+      }
+    }
+
+    .dropdown {
+      ul {
+        margin: 0;
+        padding: 10px 0;
+        background: v.$nav-dropdown-background-color;
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        left: 14px;
+        top: 130%;
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 4px;
+        z-index: 99;
+        box-shadow: 0px 0px 30px
+          color-mix(in srgb, v.$default-color, transparent 85%);
+
+        li {
+          min-width: 200px;
+        }
+
+        a {
+          padding: 10px 20px;
+          font-size: 15px;
+          text-transform: none;
+          color: v.$nav-dropdown-color;
+
+          i {
+            font-size: 12px;
+          }
+
+          &:hover {
+            color: v.$nav-dropdown-hover-color;
+          }
+        }
+
+        .active:hover,
+        li:hover > a {
+          color: v.$nav-dropdown-hover-color;
+        }
+      }
+
+      &:hover > ul {
+        opacity: 1;
+        top: 100%;
+        visibility: visible;
+      }
+
+      .dropdown {
+        ul {
+          top: 0;
+          left: -90%;
+          visibility: hidden;
+        }
+
+        &:hover > ul {
+          opacity: 1;
+          top: 0;
+          left: -100%;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: v.$nav-color;
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+
+    ul {
+      display: none;
+      list-style: none;
+      position: absolute;
+      inset: 60px 20px 20px 20px;
+      padding: 10px 0;
+      margin: 0;
+      border-radius: 6px;
+      background-color: v.$nav-mobile-background-color;
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 9998;
+      box-shadow: 0px 0px 30px
+        color-mix(in srgb, v.$default-color, transparent 90%);
+    }
+
+    a {
+      color: v.$nav-dropdown-color;
+      padding: 10px 20px;
+      font-family: v.$nav-font;
+      font-size: 17px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+
+      &:focus {
+        color: v.$nav-dropdown-color;
+        padding: 10px 20px;
+        font-family: v.$nav-font;
+        font-size: 17px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        transition: 0.3s;
+      }
+
+      i,
+      &:focus i {
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: 0.3s;
+        background-color: color-mix(in srgb, v.$accent-color, transparent 90%);
+      }
+
+      i:hover,
+      &:focus i:hover {
+        background-color: v.$accent-color;
+        color: v.$contrast-color;
+      }
+
+      &:hover {
+        color: v.$nav-dropdown-hover-color;
+      }
+    }
+
+    .active {
+      color: v.$nav-dropdown-hover-color;
+      font-weight: 700;
+
+      &:focus {
+        color: v.$nav-dropdown-hover-color;
+      }
+
+      i,
+      &:focus i {
+        background-color: v.$accent-color;
+        color: v.$contrast-color;
+        transform: rotate(180deg);
+      }
+    }
+
+    .dropdown {
+      ul {
+        position: static;
+        display: none;
+        z-index: 99;
+        padding: 10px 0;
+        margin: 10px 20px;
+        background-color: v.$nav-dropdown-background-color;
+        border: 1px solid color-mix(in srgb, v.$default-color, transparent 90%);
+        box-shadow: none;
+        transition: all 0.5s ease-in-out;
+
+        ul {
+          background-color: rgba(33, 37, 41, 0.1);
+        }
+      }
+
+      > .dropdown-active {
+        display: block;
+        background-color: rgba(33, 37, 41, 0.03);
+      }
+    }
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+
+    .mobile-nav-toggle {
+      color: #fff;
+      position: absolute;
+      font-size: 32px;
+      top: 15px;
+      right: 15px;
+      margin-right: 0;
+      z-index: 9999;
+    }
+
+    .navmenu {
+      position: fixed;
+      overflow: hidden;
+      inset: 0;
+      background: rgba(33, 37, 41, 0.8);
+      transition: 0.3s;
+
+      > ul {
+        display: block;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+      # Global Footer
+      --------------------------------------------------------------*/
+
+.footer {
+  color: v.$surface-color;
+  background-color: v.$default-color;
+  font-size: 14px;
+  position: relative;
+
+  .footer-top {
+    background-color: color-mix(in srgb, v.$default-color, white 5%);
+    padding-top: 50px;
+  }
+
+  .footer-about {
+    .logo {
+      line-height: 1;
+      margin-bottom: 25px;
+
+      img {
+        max-height: 40px;
+        margin-right: 6px;
+      }
+
+      span {
+        color: v.$surface-color;
+        font-family: v.$heading-font;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-family: v.$heading-font;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: v.$accent-color;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .footer-links {
+    margin-bottom: 30px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      i {
+        padding-right: 2px;
+        font-size: 12px;
+        line-height: 0;
+      }
+
+      li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+
+      a {
+        color: color-mix(in srgb, v.$surface-color, transparent 30%);
+        display: inline-block;
+        line-height: 1;
+
+        &:hover {
+          color: v.$accent-color;
+        }
+      }
+    }
+  }
+
+  // footer首頁項目分行
+  .footer-links-box {
+    display: flex;
+    ul {
+      width: 50%;
+    }
+  }
+
+  .footer-contact p {
+    margin-bottom: 5px;
+  }
+
+  .copyright {
+    padding: 30px 0;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .credits {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: color-mix(in srgb, v.$default-color, transparent 92%);
+    color: v.$accent-color;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 4px;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+
+    &:hover {
+      color: v.$contrast-color;
+      background: v.$accent-color;
+      text-decoration: none;
+    }
+  }
+}
+
+//   banner
+
+.banner-product {
+  @include v.flex-center;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(rgba(0, 100, 0, 0.5), rgba(0, 100, 0, 0.5)),
+    url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5%;
+  h2 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: v.$surface-color;
+    width: 100%;
+    height: 65%;
+  }
+  .breadcrumb-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 35%;
+    padding: 10px 30px;
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+
+      .breadcrumb-item {
+        display: inline-block;
+        padding: 15px;
+
+        &::before {
+          color: v.$surface-color;
+        }
+
+        &:first-child {
+          max-width: 3rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        a {
+          color: v.$surface-color;
+        }
+        &.active {
+          color: #ffa500;
+        }
+
+        // 防止超過的項目換行，讓每個項目根據內容寬度調整
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// 浮動購物車視窗
+
+.shopping-cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  background: v.$surface-color;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 1000;
+  h2 {
+    color: v.$default-color;
+    font-size: 20px;
+    margin: 0;
+  }
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid v.$medium-grey;
+    .close-cart-btn {
+      color: v.$default-color;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.cart-sidebar-open {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cart-items {
+  margin-top: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  .cart-item-wrapper {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid v.$medium-grey;
+    .item-thumbnail {
+      height: 90px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid v.$medium-grey;
+    }
+    .trash-btn {
+      position: absolute;
+      right: 10px;
+      top: -5px;
+      color: v.$deep-grey;
+      font-size: 30px;
+    }
+    .item-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90px;
+      margin-left: 10px;
+      h4 {
+        margin: 0;
+        font-size: 20px;
+        color: v.$accent-color;
+      }
+      .counting-cart-item {
+        display: flex;
+      }
+    }
+  }
+}
+
+.nyt-count {
+  font-family: v.$default-font;
+  font-size: 24px;
+  color: v.$accent-color;
+  display: flex;
+  // align-items: flex-end;
+  align-items: center;
+  .nyt {
+    padding: 5px 8px;
+    color: v.$surface-color;
+    background-color: v.$accent-color;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+}
+
+.item-details .item-price {
+  color: #007b3e;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.cart-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+  .total-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: v.$accent-color;
+    padding-left: 30px;
+  }
+
+  .checkout-btn {
+    background: #007b3e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .checkout-btn:hover {
+    background: #005a29;
+  }
+}
+
+// 數量按鈕
+label {
+  font-size: 16px;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 8px 12px;
+  border: 1px solid v.$medium-grey;
+  color: v.$dark-grey;
+  border-radius: 5px;
+  margin-right: 20px;
+
+  &:focus {
+    box-shadow: 0 0 5px rgba(72, 255, 0, 0.5);
+  }
+}
+
+/* 針對 Chrome/Safari 瀏覽器，設置增減數字按鈕的樣式 */
+input[type="number"]::-webkit-inner-spin-button {
+  background-color: v.$accent-color;
+  color: v.$accent-color; /* 設定按鈕箭頭的顏色 */
+  border-radius: 20px; /* 設置按鈕的圓角 */
+}
+
+/* 設定增減按鈕在 hover 時的顏色 */
+input[type="number"]::-webkit-inner-spin-button:hover {
+  background-color: v.$accent-color; /* 改變 hover 時的背景色 */
+}
+
+/* 讓增減按鈕在非 hover 狀態下也顯示 */
+input[type="number"] {
+  -moz-appearance: textfield; /* 針對 Firefox 移除默認樣式 */
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1; /* 讓按鈕常駐顯示 */
+}

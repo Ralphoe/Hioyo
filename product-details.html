@@ -42,6 +42,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/product.css" />
+    <link rel="stylesheet" href="./css/product-detail.css" />
 
     <!-- =======================================================
   * Template Name: AgriCulture
@@ -66,9 +67,62 @@
           <button class="search-btn">
             <i class="fas fa-search"></i>
           </button>
-          <button class="shopping-cart-btn">
+          <button class="shopping-cart-btn toggle-cart-button">
             <i class="fas fa-shopping-cart"></i>
           </button>
+          <!-- Shopping Cart Sidebar -->
+          <div class="shopping-cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+              <h2>購物車(<span class="cart-current-mount">1</span>)</h2>
+              <button class="close-cart-btn" id="closeCartBtn">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="cart-items">
+              <div class="cart-item-wrapper">
+                <img
+                  src="./assets/img/sample_img.jpg"
+                  alt="商品縮圖"
+                  class="item-thumbnail"
+                />
+                <div class="item-details">
+                  <h4>商品名稱</h4>
+                  <div class="counting-cart-item">
+                    <label for="quantity"></label>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
+                  </div>
+                </div>
+                <button class="trash-btn">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+              <div class="cart-item-wrapper">
+                <img
+                  src="./assets/img/sample_img.jpg"
+                  alt="商品縮圖"
+                  class="item-thumbnail"
+                />
+                <div class="item-details">
+                  <h4>商品名稱</h4>
+                  <div class="counting-cart-item">
+                    <label for="quantity"></label>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
+                  </div>
+                </div>
+                <button class="trash-btn">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+              
+              <!-- Add more cart items here -->
+            </div>
+            <div class="cart-footer">
+              <div class="total-amount">HYT｜100</div>
+              <button class="checkout-btn">結帳</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="header-lower">
@@ -126,10 +180,11 @@
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
+            <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
             <li class="breadcrumb-item">
-              <a href="./product.html">會員專區</a>
+              <a href="./product.html">產品服務</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">產品服務</li>
+            <li class="breadcrumb-item active" aria-current="page">詳細資訊</li>
           </ol>
         </nav>
       </div>
@@ -146,17 +201,75 @@
           <li><a href="#">品牌系列4</a></li>
         </ul>
       </div>
-      <section class="products">
-        <h2>全品牌產品</h2>
-        <div class="product-grid" id="productGrid">
-          <!-- Product Cards will be dynamically inserted here -->
+      <section class="product-detail">
+        <div class="product-info-wrapper">
+          <div class="product-images">
+            <img
+              src="./assets/img/sample_img.jpg"
+              alt="商品圖片"
+              class="main-image"
+            />
+            <div class="thumbnail-wrapper">
+              <img
+                src="./assets/img/sample_img.jpg"
+                alt="商品圖片縮圖"
+                class="thumbnail"
+              />
+              <img
+                src="./assets/img/sample_img.jpg"
+                alt="商品圖片縮圖"
+                class="thumbnail"
+              />
+            </div>
+          </div>
+          <div class="product-info">
+            <h1>[植物硒系列] - 舍麗尼</h1>
+            <p class="serial">商品編號: 601</p>
+            <p>建議售價｜NT$ 2,980</p>
+            <div class="purchase">
+              <label for="quantity"></label>
+              <input type="number" id="quantity" value="1" min="1" />
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> 加入購物車
+              </button>
+            </div>
+          </div>
         </div>
-        <!-- Pagination -->
-        <div class="pagination">
-          <a href="#" class="prev">&lt;</a>
-          <a href="#" class="page-link active" data-page="1">1</a>
-          <a href="#" class="page-link" data-page="2">2</a>
-          <a href="#" class="next">&gt;</a>
+        <div class="product-tabs">
+          <ul class="tab-links">
+            <li><a href="#" data-tab="0" class="active">商品簡介</a></li>
+            <li><a href="#" data-tab="1">商品規格</a></li>
+            <li><a href="#" data-tab="2">退換貨須知</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane1">
+              <p>
+                舍麗尼是一款專為養氣養顏而設計的天然飲品，嚴選珍貴草本成分，融合現代科學萃取技術，幫助調理體質、滋養氣血。每日一杯舍麗尼，不僅有助於提亮膚色、改善氣色，更讓您由內而外散發自然光彩。無添加人工色素及防腐劑，讓您輕鬆享受純淨、安心的養生體驗，成為愛自己、愛健康的最佳選擇。
+              </p>
+            </div>
+            <div class="tab-pane2">
+              <p>
+                品名：舍麗尼養氣養顏飲 規格：50毫升/瓶，10瓶/盒 成分：
+                珍珠粉：富含胺基酸與微量元素，有助於修護肌膚、提亮膚色。
+                紅棗萃取物：提供天然維生素，有助於養血補氣，增強體質。
+                枸杞子萃取物：含有多種抗氧化物質，有助於維持健康膚質。
+                玫瑰花精華：溫和養顏，促進新陳代謝，提升皮膚光澤。
+                靈芝萃取物：調理體質，幫助提升免疫力。
+                膠原蛋白肽：補充肌膚彈性，改善細紋，使肌膚更緊緻飽滿。
+                食用方式：每日1瓶，建議早晨空腹或晚間睡前飲用，效果最佳。
+                保存期限：24個月，開瓶後請冷藏並於48小時內飲用。
+                注意事項：孕婦、哺乳期婦女及過敏體質者，食用前請諮詢專業醫師。」
+              </p>
+            </div>
+            <div class="tab-pane3">
+              <p>
+                收到商品後，若發現任何問題，請於七日內提出退換貨申請，逾期將不予受理。商品需保持未拆封、未使用且包裝完整。若商品因運送過程中出現損壞，請於24小時內聯繫客服並提供損壞照片，我們將協助處理。
+                退換貨不適用於已拆封或包裝損壞的商品，且逾過七日鑑賞期，或因個人因素（如口味偏好）而提出的申請將不予接受。退換貨流程簡便：請聯繫客服提供訂單編號與相關照片，經確認符合條件後，我們將協助您安排退回或更換事宜。退款將於收到商品後的五到七個工作日內處理。
+                運費部分，若為商品瑕疵或運送損壞，寄回運費由我們負擔；如因個人原因申請退換，來回運費須由買方承擔。
+                我們致力於提供您滿意的購物體驗，如有任何問題，請隨時聯繫客服！
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -271,5 +384,7 @@
 
     <!-- Main JS File -->
     <script src="./assets/js/product.js"></script>
+    <script src="./assets/js/product-detail.js"></script>
+    <script src="./assets/js/shopping-cart-sidebar.js"></script>
   </body>
 </html>
