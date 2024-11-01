@@ -1,0 +1,368 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+.checkout-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.checkout-container .progress-bar-shopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  margin-bottom: 5%;
+}
+.checkout-container .progress-bar-shopping .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #116530;
+  color: #ffffff;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  position: relative;
+}
+.checkout-container .progress-bar-shopping .step span {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  color: #116530;
+  position: absolute;
+  bottom: -30px;
+}
+.checkout-container .progress-bar-shopping .step.inactive span {
+  color: #CCCCCC;
+}
+.checkout-container .progress-bar-shopping .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px; /* 控制線段的間距 */
+  width: 120px; /* 線段的寬度 */
+  height: 3px; /* 線段的高度 */
+  background-color: #CCCCCC; /* 線段的顏色 */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.checkout-container .progress-bar-shopping .step.step1::after {
+  background-color: #116530;
+}
+.checkout-container .progress-bar-shopping .step.inactive {
+  background: #CCCCCC;
+}
+
+.product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding: 10px;
+}
+.product-list .product-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  padding: 15px;
+  padding-right: 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+.product-list .product-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-list .product-item .product-details {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  margin-left: 20px;
+}
+.product-list .product-item .product-details .product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007b3e;
+}
+.product-list .product-item .counting-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.product-list .product-item .counting-box .product-price {
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.product-list .product-item .counting-box .item-nyt {
+  font-size: 16px;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #116530;
+  margin-bottom: 10px;
+}
+.product-list .product-item .counting-box .item-nyt .nyt {
+  font-size: 12px;
+  padding: 3px 5px;
+  color: #ffffff;
+  background-color: #116530;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.product-list .product-item .counting-box .item-mount span {
+  margin-right: 2px;
+  color: #818080;
+}
+
+.shopping-list-footer {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.shopping-list-footer .coupon-select {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+}
+.shopping-list-footer .coupon-select::after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 68px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #116530; /* 三角形顏色 */
+  border-radius: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none; /* 確保點擊不受偽元素影響 */
+}
+.shopping-list-footer .coupon-select label {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #000000;
+  margin-bottom: 10px;
+}
+.shopping-list-footer .coupon-select select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  appearance: none; /* 移除預設的下拉箭頭*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  padding-right: 30px;
+}
+.shopping-list-footer .coupon-select select:focus {
+  outline: none;
+  border-color: transparent; /* 聚焦時的邊框顏色 */
+  -webkit-box-shadow: 0 0 5px rgb(17, 101, 48);
+          box-shadow: 0 0 5px rgb(17, 101, 48); /* 聚焦時的陰影 */
+}
+
+.total-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-top: 2px solid #ddd;
+}
+.total-section .mount-title {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: bold;
+  color: #116530;
+  font-size: 24px;
+}
+.total-section .total-counting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.total-section .total-counting .total-amount {
+  font-family: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  color: #116530;
+}
+.total-section .total-counting .total-nyt {
+  font-family: #000000;
+  font-size: 18px;
+  color: #116530;
+}
+.total-section .total-counting .total-nyt .nyt {
+  font-size: 12px;
+  padding: 3px 5px;
+  color: #ffffff;
+  background-color: #116530;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.total-section .total-counting small {
+  color: red;
+  font-weight: normal;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.shopping-list-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 10%;
+}
+.shopping-list-buttons button {
+  background: #116530;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.shopping-list-buttons button:hover {
+  background: #005a29;
+}
+.shopping-list-buttons .cancel-btn {
+  background: #818080;
+  margin-right: 20px;
+}
+.shopping-list-buttons .cancel-btn:hover {
+  background: #333333;
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    width: 95%;
+  }
+  .product-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .product-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}/*# sourceMappingURL=shopping-list.css.map */

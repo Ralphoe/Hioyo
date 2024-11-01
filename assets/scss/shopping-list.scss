@@ -1,0 +1,269 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.checkout-container {
+  @include v.flex-center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  .progress-bar-shopping {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 5%;
+    .step {
+      @include v.flex-center;
+      background: v.$accent-color;
+      color: v.$surface-color;
+      width: 60px;
+      aspect-ratio: 1/1;
+      font-family: v.$default-font;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 15px;
+      position: relative;
+
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        white-space: nowrap;
+        color: v.$accent-color;
+        position: absolute;
+        bottom: -30px;
+      }
+
+      &.inactive span {
+        color: v.$medium-grey;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -120px; /* 控制線段的間距 */
+        width: 120px; /* 線段的寬度 */
+        height: 3px; /* 線段的高度 */
+        background-color: v.$medium-grey; /* 線段的顏色 */
+        transform: translateY(-50%);
+      }
+
+      &.step1::after {
+        background-color: v.$accent-color;
+      }
+    }
+    .step.inactive {
+      background: v.$medium-grey;
+    }
+  }
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10px;
+  // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  // border-radius: 10px;
+  .product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    padding-right: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .product-details {
+      flex: 2;
+      margin-left: 20px;
+      .product-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007b3e;
+      }
+    }
+    .counting-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .product-price {
+        color: v.$default-color;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .item-nyt {
+        font-size: 16px;
+        font-family: v.$default-font;
+        color: v.$accent-color;
+        margin-bottom: 10px;
+        .nyt {
+          font-size: 12px;
+          padding: 3px 5px;
+          color: v.$surface-color;
+          background-color: v.$accent-color;
+          border-radius: 5px;
+          margin-right: 5px;
+        }
+      }
+      .item-mount {
+        span {
+          margin-right: 2px;
+          color: v.$deep-grey;
+        }
+      }
+    }
+  }
+}
+
+.shopping-list-footer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .coupon-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 25px;
+      top: 68px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid v.$accent-color; /* 三角形顏色 */
+      border-radius: 5px;
+      transform: translateY(-50%);
+      pointer-events: none; /* 確保點擊不受偽元素影響 */
+    }
+    label {
+      font-family: v.$default-font;
+      color: v.$default-color;
+      margin-bottom: 10px;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid v.$medium-grey;
+      border-radius: 5px;
+      appearance: none; /* 移除預設的下拉箭頭*/
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      padding-right: 30px;
+      &:focus {
+        outline: none;
+        border-color: transparent; /* 聚焦時的邊框顏色 */
+        box-shadow: 0 0 5px rgba(17, 101, 48, 1); /* 聚焦時的陰影 */
+      }
+    }
+  }
+}
+
+.total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-top: 2px solid #ddd;
+  .mount-title {
+    font-family: v.$default-font;
+    font-weight: bold;
+    color: v.$accent-color;
+    font-size: 24px;
+  }
+  .total-counting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .total-amount {
+      font-family: v.$default-color;
+      font-size: 24px;
+      font-weight: bold;
+      color: v.$accent-color;
+    }
+    .total-nyt {
+      font-family: v.$default-color;
+      font-size: 18px;
+      color: v.$accent-color;
+      .nyt {
+        font-size: 12px;
+        padding: 3px 5px;
+        color: v.$surface-color;
+        background-color: v.$accent-color;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+    }
+    small {
+      color: red;
+      font-weight: normal;
+      font-size: 16px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.shopping-list-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 10%;
+  button {
+    background: v.$accent-color;
+    color: v.$surface-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+      background: #005a29;
+    }
+  }
+  .cancel-btn {
+    background: v.$deep-grey;
+    margin-right: 20px;
+    &:hover {
+      background: v.$dark-grey;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    width: 95%;
+  }
+
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

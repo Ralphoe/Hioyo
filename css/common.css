@@ -751,7 +751,7 @@ h6 {
 
 .nyt-count {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 24px;
+  font-size: 16px;
   color: #116530;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -761,6 +761,7 @@ h6 {
           align-items: center;
 }
 .nyt-count .nyt {
+  font-size: 12px;
   padding: 5px 8px;
   color: #ffffff;
   background-color: #116530;

@@ -670,12 +670,12 @@ h6 {
 
 .nyt-count {
   font-family: v.$default-font;
-  font-size: 24px;
+  font-size: 16px;
   color: v.$accent-color;
   display: flex;
-  // align-items: flex-end;
   align-items: center;
   .nyt {
+    font-size: 12px;
     padding: 5px 8px;
     color: v.$surface-color;
     background-color: v.$accent-color;

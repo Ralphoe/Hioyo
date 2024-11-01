@@ -69,6 +69,59 @@
           <button class="shopping-cart-btn">
             <i class="fas fa-shopping-cart"></i>
           </button>
+          <!-- Shopping Cart Sidebar -->
+          <div class="shopping-cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+              <h2>購物車(<span class="cart-current-mount">1</span>)</h2>
+              <button class="close-cart-btn" id="closeCartBtn">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="cart-items">
+              <div class="cart-item-wrapper">
+                <img
+                  src="./assets/img/sample_img.jpg"
+                  alt="商品縮圖"
+                  class="item-thumbnail"
+                />
+                <div class="item-details">
+                  <h4>商品名稱</h4>
+                  <div class="counting-cart-item">
+                    <label for="quantity"></label>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
+                  </div>
+                </div>
+                <button class="trash-btn">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+              <div class="cart-item-wrapper">
+                <img
+                  src="./assets/img/sample_img.jpg"
+                  alt="商品縮圖"
+                  class="item-thumbnail"
+                />
+                <div class="item-details">
+                  <h4>商品名稱</h4>
+                  <div class="counting-cart-item">
+                    <label for="quantity"></label>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
+                  </div>
+                </div>
+                <button class="trash-btn">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+              
+              <!-- Add more cart items here -->
+            </div>
+            <div class="cart-footer">
+              <div class="total-amount">HYT｜100</div>
+              <button class="checkout-btn">結帳</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="header-lower">
@@ -1180,6 +1233,7 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
     <!-- Main JS File -->
+     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
