@@ -1,0 +1,183 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.order-confirm-container {
+  @include v.flex-center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  .progress-bar-shopping {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    margin-bottom: 5%;
+    .step {
+      @include v.flex-center;
+      background: v.$accent-color;
+      color: v.$surface-color;
+      width: 60px;
+      aspect-ratio: 1/1;
+      font-family: v.$default-font;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 15px;
+      position: relative;
+
+      span {
+        font-weight: 500;
+        font-size: 16px;
+        white-space: nowrap;
+        color: v.$accent-color;
+        position: absolute;
+        bottom: -30px;
+      }
+
+      &.inactive span {
+        color: v.$medium-grey;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -120px; /* 控制線段的間距 */
+        width: 120px; /* 線段的寬度 */
+        height: 3px; /* 線段的高度 */
+        background-color: v.$medium-grey; /* 線段的顏色 */
+        transform: translateY(-50%);
+      }
+
+      &.step1::after {
+        background-color: v.$accent-color;
+      }
+    }
+    .step.inactive {
+      background: v.$medium-grey;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .order-confirm-container {
+    width: 95%;
+  }
+}
+
+//Order Form
+
+//   .order-confirm-container {
+//     // width: 80%;
+//     // margin: 0 auto;
+//     // margin-top: 40px;
+//     // background: #f9f9f9;
+//     // padding: 20px;
+//     // border-radius: 10px;
+//   }
+
+.form-section {
+  background: white;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  h3 {
+    font-family: v.$default-font;
+    color: v.$accent-color;
+    margin-bottom: 40px;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    label {
+      width: 150px;
+      font-family: v.$default-font;
+      font-size: 16px;
+    }
+    input {
+        font-size: 18px;
+    }
+    &:first-of-type input {
+        color: v.$secondary-color;
+    }
+    &:nth-of-type(2) input {
+        font-weight: bold;
+    }
+  }
+}
+
+// .form-group input,
+// .form-group select,
+// .form-group textarea {
+// //   padding: 10px;
+// //   border: 1px solid #ddd;
+// //   border-radius: 5px;
+// //   font-size: 16px;
+// }
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  label {
+    margin-right: 32px;
+  }
+  input {
+    margin-right: 5px;
+  }
+}
+
+ 
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.buttons button {
+  background: #007b3e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buttons button:hover {
+  background: #005a29;
+}
+
+.buttons .cancel-btn {
+  background: #888;
+}
+
+.buttons .cancel-btn:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .order-confirm-container {
+    width: 95%;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+}
