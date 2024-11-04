@@ -6,10 +6,11 @@
   @include v.flex-center;
   flex-direction: column;
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
   margin-top: 40px;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 5% 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(v.$secondary-color, 0.2);
   .progress-bar-shopping {
     display: flex;
     flex-direction: row;
@@ -80,19 +81,10 @@
 //   }
 
 .form-section {
-  background: white;
   width: 80%;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 
-  input {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-  }
   h3 {
     font-family: v.$default-font;
     color: v.$accent-color;
@@ -104,72 +96,265 @@
     align-items: center;
     margin-bottom: 25px;
     label {
-      width: 150px;
       font-family: v.$default-font;
       font-size: 16px;
     }
     input {
-        font-size: 18px;
+      font-size: 18px;
     }
     &:first-of-type input {
-        color: v.$secondary-color;
+      color: v.$secondary-color;
     }
-    &:nth-of-type(2) input {
-        font-weight: bold;
+    // &:nth-of-type(2) input {
+    //   font-weight: bold;
+    // }
+  }
+}
+
+.form-section.basic-info {
+  .form-group {
+    label {
+      width: 150px;
+    }
+    input {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
     }
   }
 }
 
-// .form-group input,
-// .form-group select,
-// .form-group textarea {
-// //   padding: 10px;
-// //   border: 1px solid #ddd;
-// //   border-radius: 5px;
-// //   font-size: 16px;
-// }
-
-.radio-group {
+.radio-group.circle-checkout {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
   label {
+    display: flex;
+    align-items: center;
     margin-right: 32px;
   }
   input {
     margin-right: 5px;
+
+    /* 去除原生樣式 */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+
+    width: 20px;
+    height: 20px;
+    background-color: v.$surface-color; /* 背景顏色（未選中時） */
+    border-radius: 50%;
+    border: 1px solid v.$deep-grey; /* 外框 */
+    cursor: pointer;
+    &:checked {
+      background-color: v.$surface-color; /* 選中時的背景顏色 */
+      border-color: v.$deep-grey; /* 選中時的外框顏色 */
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px; /* 選中點的寬度 */
+        height: 10px; /* 選中點的高度 */
+        background-color: v.$secondary-color; /* 選中點的顏色 */
+        border-radius: 50%;
+      }
+    }
   }
 }
 
- 
+// Recipient Section.
+.suggested-number {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 20px;
+  label {
+    font-family: v.$default-font;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  input {
+    background-color: v.$medium-grey;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    outline: none;
+    border: 1px solid v.$light-grey;
+  }
+}
+
+.form-section.recipient {
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    border: 1px solid v.$medium-grey;
+    font-size: 16px;
+    &:focus {
+      border-color: transparent;
+      box-shadow: 0 0 5px rgba(v.$accent-color, 0.5);
+      outline: none;
+    }
+  }
+  label {
+    width: 150px;
+  }
+  select {
+    border-radius: 5px;
+  }
+  .form-group {
+    &.country {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      label {
+        margin: 10px 0;
+      }
+      select {
+        width: 100%;
+        appearance: none; /* 移除預設的下拉箭頭*/
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        top: 68px;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid v.$secondary-color; /* 三角形顏色 */
+        border-radius: 5px;
+        transform: translateY(-50%);
+        pointer-events: none; /* 確保點擊不受偽元素影響 */
+      }
+    }
+    &.address {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      input {
+        border-radius: 5px;
+      }
+      .address-info-box {
+        width: 100%;
+        input {
+          width: 150px;
+          margin-right: 10px;
+        }
+      }
+      .address-input {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+    &.received-info {
+      input {
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+//Invoice Information
+
+.form-section.invoice-info {
+  .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 32px;
+    }
+    input {
+      margin-right: 5px;
+
+      /* 去除原生樣式 */
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+
+      width: 20px;
+      height: 20px;
+      background-color: v.$surface-color; /* 背景顏色（未選中時） */
+      border-radius: 50%;
+      border: 1px solid v.$deep-grey; /* 外框 */
+      cursor: pointer;
+      &:checked {
+        background-color: v.$surface-color; /* 選中時的背景顏色 */
+        border-color: v.$deep-grey; /* 選中時的外框顏色 */
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 10px; /* 選中點的寬度 */
+          height: 10px; /* 選中點的高度 */
+          background-color: v.$secondary-color; /* 選中點的顏色 */
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+//Other Notes
+.form-section.other-notes {
+  textarea {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid v.$medium-grey;
+    font-size: 16px;
+    &:focus {
+      border-color: transparent;
+      box-shadow: 0 0 5px rgba(v.$accent-color, 0.5);
+      outline: none;
+    }
+  }
+}
 
 .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-}
-
-.buttons button {
-  background: #007b3e;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.buttons button:hover {
-  background: #005a29;
-}
-
-.buttons .cancel-btn {
-  background: #888;
-}
-
-.buttons .cancel-btn:hover {
-  background: #555;
+  button {
+    background: #007b3e;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+      background: #005a29;
+    }
+  }
+  .cancel-btn {
+    background: v.$deep-grey;
+    &:hover {
+      background: v.$dark-grey;
+    }
+  }
 }
 
 @media (max-width: 768px) {

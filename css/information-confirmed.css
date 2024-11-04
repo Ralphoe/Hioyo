@@ -38,10 +38,12 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
   margin-top: 40px;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 5% 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
+          box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
 }
 .order-confirm-container .progress-bar-shopping {
   display: -webkit-box;
@@ -112,20 +114,9 @@ a {
   }
 }
 .form-section {
-  background: white;
   width: 80%;
   padding: 20px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-}
-.form-section input {
-  border: none;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background: transparent;
 }
 .form-section h3 {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -142,7 +133,6 @@ a {
   margin-bottom: 25px;
 }
 .form-section .form-group label {
-  width: 150px;
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
 }
@@ -152,11 +142,19 @@ a {
 .form-section .form-group:first-of-type input {
   color: #7FB93B;
 }
-.form-section .form-group:nth-of-type(2) input {
-  font-weight: bold;
+
+.form-section.basic-info .form-group label {
+  width: 150px;
+}
+.form-section.basic-info .form-group input {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
 }
 
-.radio-group {
+.radio-group.circle-checkout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,11 +164,228 @@ a {
   gap: 15px;
   margin-bottom: 15px;
 }
-.radio-group label {
+.radio-group.circle-checkout label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 32px;
 }
-.radio-group input {
+.radio-group.circle-checkout input {
   margin-right: 5px;
+  /* 去除原生樣式 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff; /* 背景顏色（未選中時） */
+  border-radius: 50%;
+  border: 1px solid #818080; /* 外框 */
+  cursor: pointer;
+}
+.radio-group.circle-checkout input:checked {
+  background-color: #ffffff; /* 選中時的背景顏色 */
+  border-color: #818080; /* 選中時的外框顏色 */
+}
+.radio-group.circle-checkout input:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px; /* 選中點的寬度 */
+  height: 10px; /* 選中點的高度 */
+  background-color: #7FB93B; /* 選中點的顏色 */
+  border-radius: 50%;
+}
+
+.suggested-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  padding: 20px;
+}
+.suggested-number label {
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.suggested-number input {
+  background-color: #CCCCCC;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  outline: none;
+  border: 1px solid #f9f9f9;
+}
+
+.form-section.recipient input,
+.form-section.recipient select,
+.form-section.recipient textarea {
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+}
+.form-section.recipient input:focus,
+.form-section.recipient select:focus,
+.form-section.recipient textarea:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 5px rgba(17, 101, 48, 0.5);
+          box-shadow: 0 0 5px rgba(17, 101, 48, 0.5);
+  outline: none;
+}
+.form-section.recipient label {
+  width: 150px;
+}
+.form-section.recipient select {
+  border-radius: 5px;
+}
+.form-section.recipient .form-group.country {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+}
+.form-section.recipient .form-group.country label {
+  margin: 10px 0;
+}
+.form-section.recipient .form-group.country select {
+  width: 100%;
+  appearance: none; /* 移除預設的下拉箭頭*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.form-section.recipient .form-group.country::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 68px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #7FB93B; /* 三角形顏色 */
+  border-radius: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  pointer-events: none; /* 確保點擊不受偽元素影響 */
+}
+.form-section.recipient .form-group.address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+.form-section.recipient .form-group.address input {
+  border-radius: 5px;
+}
+.form-section.recipient .form-group.address .address-info-box {
+  width: 100%;
+}
+.form-section.recipient .form-group.address .address-info-box input {
+  width: 150px;
+  margin-right: 10px;
+}
+.form-section.recipient .form-group.address .address-input {
+  width: 100%;
+  margin: 20px 0;
+}
+.form-section.recipient .form-group.received-info input {
+  border-radius: 5px;
+}
+
+.form-section.invoice-info .radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.form-section.invoice-info .radio-group label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 32px;
+}
+.form-section.invoice-info .radio-group input {
+  margin-right: 5px;
+  /* 去除原生樣式 */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff; /* 背景顏色（未選中時） */
+  border-radius: 50%;
+  border: 1px solid #818080; /* 外框 */
+  cursor: pointer;
+}
+.form-section.invoice-info .radio-group input:checked {
+  background-color: #ffffff; /* 選中時的背景顏色 */
+  border-color: #818080; /* 選中時的外框顏色 */
+}
+.form-section.invoice-info .radio-group input:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px; /* 選中點的寬度 */
+  height: 10px; /* 選中點的高度 */
+  background-color: #7FB93B; /* 選中點的顏色 */
+  border-radius: 50%;
+}
+
+.form-section.other-notes textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  font-size: 16px;
+}
+.form-section.other-notes textarea:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 5px rgba(17, 101, 48, 0.5);
+          box-shadow: 0 0 5px rgba(17, 101, 48, 0.5);
+  outline: none;
 }
 
 .buttons {
@@ -182,28 +397,25 @@ a {
           justify-content: space-between;
   margin-top: 30px;
 }
-
 .buttons button {
   background: #007b3e;
   color: #fff;
   border: none;
   padding: 10px 20px;
+  margin: 0 10px;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
 }
-
 .buttons button:hover {
   background: #005a29;
 }
-
 .buttons .cancel-btn {
-  background: #888;
+  background: #818080;
 }
-
 .buttons .cancel-btn:hover {
-  background: #555;
+  background: #333333;
 }
 
 @media (max-width: 768px) {

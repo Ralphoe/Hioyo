@@ -6,10 +6,11 @@
   @include v.flex-center;
   flex-direction: column;
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
   margin-top: 40px;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 5% 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(v.$secondary-color, 0.2);
   .progress-bar-shopping {
     display: flex;
     flex-direction: row;
@@ -67,8 +68,6 @@
   flex-direction: column;
   width: 80%;
   padding: 10px;
-  // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  // border-radius: 10px;
   .product-item {
     display: flex;
     justify-content: space-between;
@@ -77,7 +76,7 @@
     padding: 15px;
     padding-right: 25px;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     img {
       width: 80px;
