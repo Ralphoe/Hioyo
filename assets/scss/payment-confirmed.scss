@@ -1,0 +1,116 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.payment-confirmed-container {
+    @include v.flex-center;
+    flex-direction: column;
+    width: 80%;
+    margin: 5% auto;
+    margin-top: 40px;
+    padding: 5% 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(v.$secondary-color, 0.2);
+    .progress-bar-shopping {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 400px;
+      margin-bottom: 5%;
+      .step {
+        @include v.flex-center;
+        background: v.$accent-color;
+        color: v.$surface-color;
+        width: 60px;
+        aspect-ratio: 1/1;
+        font-family: v.$default-font;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 15px;
+        position: relative;
+  
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          white-space: nowrap;
+          color: v.$accent-color;
+          position: absolute;
+          bottom: -30px;
+        }
+  
+        &.inactive span {
+          color: v.$medium-grey;
+        }
+  
+        &:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -120px; /* 控制線段的間距 */
+          width: 120px; /* 線段的寬度 */
+          height: 3px; /* 線段的高度 */
+          background-color: v.$accent-color; /* 線段的顏色 */
+          transform: translateY(-50%);
+        }
+  
+      }
+      .step.inactive {
+        background: v.$medium-grey;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .payment-confirmed-container {
+      width: 95%;
+    }
+  }
+
+  //ok-box
+
+  .ok-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .ok-icon{
+        width: 60%;
+        margin: 5% auto;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .ok-content {
+        width: 60%;
+        margin: 5% auto;
+        p {
+            width: 100%;
+            display: inline-block;
+            font-family: v.$default-font;
+            font-size: 14px;
+            color: v.$deep-grey;
+        }
+    }
+
+  }
+
+  //buttons
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    button {
+      background: #007b3e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      &:hover {
+        background: #005a29;
+      }
+    }
+  }

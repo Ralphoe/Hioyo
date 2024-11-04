@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="./css/product.css" />
     <link rel="stylesheet" href="./css/product-detail.css" />
     <link rel="stylesheet" href="./css/shopping-list.css" />
-    <link rel="stylesheet" href="./css/information-confirmed.css" />
+    <link rel="stylesheet" href="./css/payment-confirmed.css" />
 
     <!-- =======================================================
   * Template Name: AgriCulture
@@ -185,156 +185,33 @@
             <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
             <li class="breadcrumb-item"><a href="./product.html">產品服務</a></li>
             <li class="breadcrumb-item"><a href="./shopping-list.html">購物結帳</a></li>
-            <li class="breadcrumb-item active" aria-current="page">資料確認</li>
+            <li class="breadcrumb-item"><a href="./information-confirmed.html">資料確認</a></li>
+            <li class="breadcrumb-item active" aria-current="page">結帳完成</li>
           </ol>
         </nav>
       </div>
     </section>
     <!-- Main Content -->
     <main>
-      <section class="order-confirm-container">
+      <section class="payment-confirmed-container">
         <!-- Progress bar -->
         <div class="progress-bar-shopping">
           <div class="step step1">1<span>購物結帳</span></div>
           <div class="step step2">2<span>資料確認</span></div>
-          <div class="step step3 inactive">3<span>結帳完成</span></div>
+          <div class="step step3">3<span>結帳完成</span></div>
         </div>
-
-        <!-- Order Form -->
-        <div class="form-section basic-info">
-          <h3>訂購人資料</h3>
-          <div class="form-group">
-            <label>會員編號</label>
-            <input type="text" value="1011101" readonly />
-          </div>
-          <div class="form-group">
-            <label>會員姓名</label>
-            <input type="text" value="陳天龐" readonly />
-          </div>
-          <div class="form-group">
-            <label>行動電話</label>
-            <input type="text" value="0903599826" readonly />
-          </div>
-          <div class="form-group">
-            <label>住宅電話</label>
-            <input type="text" value="" readonly />
-          </div>
-          <div class="form-group">
-            <label>公司電話</label>
-            <input type="text" value="" readonly />
-          </div>
-          <div class="form-group">
-            <label>E-MAIL</label>
-            <input type="text" value="tian@gmail.com" readonly />
-          </div>
-          <div class="form-group">
-            <label>地址</label>
-            <input type="text" value="231 新北市新莊路23號" readonly />
-          </div>
-          <div class="radio-group circle-checkout">
-            <label>提貨取貨方式</label>
-            <label
-              ><input type="radio" name="delivery" value="自取" checked />
-              自取</label
-            >
-            <label
-              ><input type="radio" name="delivery" value="寄送" /> 寄送</label
-            >
-          </div>
-        </div>
-
-        <!-- Suggested Number -->
-        <div class="suggested-number">
-          <label for="referral-code">推薦人編號</label>
-          <input
-            type="text"
-            id="referral-code"
-            class="readonly-input"
-            value="1011101"
-            readonly
-          />
-        </div>
-
-        <!-- Recipient Section -->
-        <div class="form-section recipient">
-          <h3>收件人資料</h3>
-          <div class="radio-group circle-checkout">
-            <label
-              ><input
-                type="radio"
-                name="recipient"
-                value="同訂購人資訊"
-                checked
-              />
-              同訂購人資訊</label
-            >
-            <label
-              ><input type="radio" name="recipient" value="填寫收件人資料" />
-              填寫收件人資料</label
-            >
-          </div>
-          <div class="form-group country">
-            <label>收件人地址</label>
-            <select>
-              <option value="台灣">台灣</option>
-              <option value="台灣">中華人民共和國</option>
-              <option value="台灣">美利堅合眾國</option>
-            </select>
-          </div>
-          <div class="form-group address">
-            <div class="address-info-box">
-              <input type="text" placeholder="鄉/鎮/區" />
-              <input type="text" placeholder="縣/市" />
-              <input type="text" placeholder="郵遞區號" />
+        <div class="ok-box">
+            <div class="ok-icon">
+                <img src="./assets/img/icon/checked-payment.svg" alt="">
             </div>
-            <input type="text" placeholder="地址" class="address-input" />
-          </div>
-          <div class="form-group received-info">
-            <label>收件人姓名</label>
-            <input type="text" />
-          </div>
-          <div class="form-group received-info">
-            <label>聯絡電話</label>
-            <input type="text" />
-          </div>
-          <div class="form-group received-info">
-            <label>行動電話</label>
-            <input type="text" />
-          </div>
+            <div class="ok-content">
+                <p>訂單已成立!</p>
+                <p>您的訂單編號為:9711a5e488s4</p>
+                <p>感謝您的訂購，確認訂單後我們將盡快為您出貨!</p>
+            </div>
         </div>
-
-        <!-- Invoice Information -->
-        <div class="form-section invoice-info">
-          <h3>發票資訊</h3>
-          <div class="radio-group">
-            <label
-              ><input type="radio" name="invoice" value="紙本發票" checked />
-              紙本發票</label
-            >
-            <label
-              ><input type="radio" name="invoice" value="手機條碼" />
-              手機條碼</label
-            >
-            <label
-              ><input type="radio" name="invoice" value="發票捐贈" />
-              發票捐贈</label
-            >
-          </div>
-        </div>
-
-        <!-- Other Notes -->
-        <div class="form-section other-notes">
-          <h3>其他備註事項</h3>
-          <div class="form-group">
-            <label for="notes"></label>
-            <textarea id="notes" rows="4" placeholder="輸入備註..."></textarea>
-          </div>
-        </div>
-
-        <!-- Buttons -->
         <div class="buttons">
-          <button class="cancel-btn">重新填寫</button>
-          <button>確認送出</button>
+            <button>回到列表</button>
         </div>
       </section>
     </main>
@@ -451,6 +328,5 @@
     <script src="./assets/js/product.js"></script>
     <script src="./assets/js/product-detail.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
-    <script src="./assets/js/information-confirmed.js"></script>
   </body>
 </html>

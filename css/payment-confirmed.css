@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+.payment-confirmed-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  margin: 5% auto;
+  margin-top: 40px;
+  padding: 5% 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
+          box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
+}
+.payment-confirmed-container .progress-bar-shopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  margin-bottom: 5%;
+}
+.payment-confirmed-container .progress-bar-shopping .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #116530;
+  color: #ffffff;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  position: relative;
+}
+.payment-confirmed-container .progress-bar-shopping .step span {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  color: #116530;
+  position: absolute;
+  bottom: -30px;
+}
+.payment-confirmed-container .progress-bar-shopping .step.inactive span {
+  color: #CCCCCC;
+}
+.payment-confirmed-container .progress-bar-shopping .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px; /* 控制線段的間距 */
+  width: 120px; /* 線段的寬度 */
+  height: 3px; /* 線段的高度 */
+  background-color: #116530; /* 線段的顏色 */
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.payment-confirmed-container .progress-bar-shopping .step.inactive {
+  background: #CCCCCC;
+}
+
+@media (max-width: 768px) {
+  .payment-confirmed-container {
+    width: 95%;
+  }
+}
+.ok-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ok-box .ok-icon {
+  width: 60%;
+  margin: 5% auto;
+}
+.ok-box .ok-icon img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ok-box .ok-content {
+  width: 60%;
+  margin: 5% auto;
+}
+.ok-box .ok-content p {
+  width: 100%;
+  display: inline-block;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  color: #818080;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+.buttons button {
+  background: #007b3e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.buttons button:hover {
+  background: #005a29;
+}/*# sourceMappingURL=payment-confirmed.css.map */
