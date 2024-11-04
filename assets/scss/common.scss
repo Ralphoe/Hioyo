@@ -528,16 +528,29 @@ h6 {
 
 //   banner
 
-.banner-product {
+.banner {
   @include v.flex-center;
   flex-direction: column;
   width: 100%;
   height: 200px;
-  background-image: linear-gradient(rgba(0, 100, 0, 0.5), rgba(0, 100, 0, 0.5)),
-    url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
   background-size: cover;
   background-position: center;
   margin-bottom: 5%;
+  &.banner-product {
+    background-image: linear-gradient(
+        rgba(0, 100, 0, 0.5),
+        rgba(0, 100, 0, 0.5)
+      ),
+      url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
+  }
+  &.banner-about {
+    background-image: linear-gradient(
+        rgba(0, 100, 0, 0.5),
+        rgba(0, 100, 0, 0.5)
+      ),
+      url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
+  
+  }
   h2 {
     display: flex;
     align-items: flex-end;
