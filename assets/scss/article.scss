@@ -64,9 +64,10 @@
       gap: 10px;
       margin-right: 10px;
       text-decoration: none;
-      white-space: normal;
+      white-space: nowrap;
       &:last-child {
         justify-content: flex-end;
+        align-items: center;
         text-align: right;
       }
       span {
@@ -82,12 +83,27 @@
       justify-content: center;
       align-items: center;
       flex: 1;
+      white-space: nowrap;
       .back-news-btn {
         padding: 10px 20px;
         border-radius: 5px;
         background-color: v.$accent-color;
         color: v.$surface-color;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar,
+  .article-content {
+    float: none !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  .news-navigation {
+    span {
+      display: none;
     }
   }
 }

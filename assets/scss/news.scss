@@ -113,23 +113,27 @@
 
 .pagination-news {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  width: 100%;
-  a {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 5px;
-    text-decoration: none;
-    color: #007b3e;
-    cursor: pointer;
-    &.active {
-      background: #007b3e;
-      color: #ffffff;
+    justify-content: center;
+    margin-top: 30px;
+
+    a {
+      @include v.flex-center;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      width: 44px;
+      height: 44px;
+      color: v.$default-color;
+      padding: 10px;
+      margin: 5px;
+      transition: 0.3s ease;
+      &.active {
+        color: v.$surface-color;
+        background-color: v.$accent-color;
+      }
     }
   }
-}
+
 
 @media (max-width: 768px) {
   .sidebar,
