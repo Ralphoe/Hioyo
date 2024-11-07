@@ -88,7 +88,7 @@ a {
   bottom: -30px;
 }
 .order-confirm-container .progress-bar-shopping .step.inactive span {
-  color: #CCCCCC;
+  color: #cccccc;
 }
 .order-confirm-container .progress-bar-shopping .step:not(:last-child)::after {
   content: "";
@@ -97,7 +97,7 @@ a {
   right: -120px; /* 控制線段的間距 */
   width: 120px; /* 線段的寬度 */
   height: 3px; /* 線段的高度 */
-  background-color: #CCCCCC; /* 線段的顏色 */
+  background-color: #cccccc; /* 線段的顏色 */
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -105,7 +105,7 @@ a {
   background-color: #116530;
 }
 .order-confirm-container .progress-bar-shopping .step.inactive {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 
 @media (max-width: 768px) {
@@ -140,7 +140,7 @@ a {
   font-size: 18px;
 }
 .form-section .form-group:first-of-type input {
-  color: #7FB93B;
+  color: #7fb93b;
 }
 
 .form-section.basic-info .form-group label {
@@ -200,7 +200,7 @@ a {
           transform: translate(-50%, -50%);
   width: 10px; /* 選中點的寬度 */
   height: 10px; /* 選中點的高度 */
-  background-color: #7FB93B; /* 選中點的顏色 */
+  background-color: #7fb93b; /* 選中點的顏色 */
   border-radius: 50%;
 }
 
@@ -222,7 +222,7 @@ a {
   margin-bottom: 10px;
 }
 .suggested-number input {
-  background-color: #CCCCCC;
+  background-color: #cccccc;
   border-radius: 10px;
   width: 150px;
   height: 50px;
@@ -235,7 +235,7 @@ a {
 .form-section.recipient select,
 .form-section.recipient textarea {
   padding: 10px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   font-size: 16px;
 }
 .form-section.recipient input:focus,
@@ -283,7 +283,7 @@ a {
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid #7FB93B; /* 三角形顏色 */
+  border-top: 12px solid #7fb93b; /* 三角形顏色 */
   border-radius: 5px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -370,7 +370,7 @@ a {
           transform: translate(-50%, -50%);
   width: 10px; /* 選中點的寬度 */
   height: 10px; /* 選中點的高度 */
-  background-color: #7FB93B; /* 選中點的顏色 */
+  background-color: #7fb93b; /* 選中點的顏色 */
   border-radius: 50%;
 }
 
@@ -378,7 +378,7 @@ a {
   width: 100%;
   border-radius: 5px;
   padding: 10px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   font-size: 16px;
 }
 .form-section.other-notes textarea:focus {

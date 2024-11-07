@@ -106,7 +106,7 @@ a {
 }
 .product-detail .product-info-wrapper .product-info .serial {
   margin-bottom: 20px;
-  border-bottom: 2px solid #CCCCCC;
+  border-bottom: 2px solid #cccccc;
   padding-bottom: 20px;
 }
 .product-detail .product-info-wrapper .product-info .purchase {
@@ -145,8 +145,8 @@ a {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
-  border-bottom: 1px solid #CCCCCC;
-  border-top: 1px solid #CCCCCC;
+  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #cccccc;
   padding: 0;
   gap: 10px;
 }

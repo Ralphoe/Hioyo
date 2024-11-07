@@ -24,37 +24,6 @@ a {
 }
 
 /*--------------------------------------------------------------
-  # Scroll Top Button
-  --------------------------------------------------------------*/
-.scroll-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-  background-color: #116530;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.scroll-top i {
-  font-size: 24px;
-  color: #ffffff;
-  line-height: 0;
-}
-.scroll-top:hover {
-  background-color: color-mix(in srgb, #116530, transparent 20%);
-  color: #ffffff;
-}
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
   # Disable aos animation delay on mobile devices
   --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
@@ -398,15 +367,25 @@ section,
   width: 100%;
 }
 .services .btn-box .btn-cta {
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
-  border-radius: 6px;
+  text-transform: uppercase;
   margin: 5% 0;
 }
 
@@ -599,7 +578,7 @@ section,
   border-radius: 0;
   width: 20px;
   height: 4px;
-  background-color: #CCCCCC;
+  background-color: #cccccc;
   opacity: 1;
 }
 .suggest .swiper-pagination .swiper-pagination-bullet-active {
@@ -619,21 +598,39 @@ section,
   width: 100%;
 }
 .btn-box.more .btn-cta {
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
-  border-radius: 6px;
+  text-transform: uppercase;
   margin: 5% 0;
 }
 
 /*--------------------------------------------------------------
   # partners Section
   --------------------------------------------------------------*/
+.partners {
+  background-color: #e7e3e3;
+}
+.partners .section-title p {
+  color: #116530;
+  font-size: 24px;
+  margin-top: -12px;
+}
 .partners .partner img {
   width: 100px;
   height: 100px;
@@ -649,12 +646,6 @@ section,
   text-transform: uppercase;
   font-size: 1.2rem;
   color: #116530;
-}
-
-.partners .section-title p {
-  color: #116530;
-  font-size: 24px;
-  margin-top: -12px;
 }
 
 /*--------------------------------------------------------------
@@ -809,16 +800,26 @@ section,
   margin-bottom: 30px;
 }
 .feat .btn-cta {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
-  border-radius: 6px;
+  display: inline-block;
+  text-transform: uppercase;
 }
 .feat .list-check {
   margin-bottom: 50px;

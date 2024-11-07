@@ -88,7 +88,7 @@ a {
   bottom: -30px;
 }
 .checkout-container .progress-bar-shopping .step.inactive span {
-  color: #CCCCCC;
+  color: #cccccc;
 }
 .checkout-container .progress-bar-shopping .step:not(:last-child)::after {
   content: "";
@@ -97,7 +97,7 @@ a {
   right: -120px; /* 控制線段的間距 */
   width: 120px; /* 線段的寬度 */
   height: 3px; /* 線段的高度 */
-  background-color: #CCCCCC; /* 線段的顏色 */
+  background-color: #cccccc; /* 線段的顏色 */
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -105,7 +105,7 @@ a {
   background-color: #116530;
 }
 .checkout-container .progress-bar-shopping .step.inactive {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 
 .product-list {
@@ -242,7 +242,7 @@ a {
 .shopping-list-footer .coupon-select select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   appearance: none; /* 移除預設的下拉箭頭*/
   -webkit-appearance: none;

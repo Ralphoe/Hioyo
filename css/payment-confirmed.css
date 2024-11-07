@@ -88,7 +88,7 @@ a {
   bottom: -30px;
 }
 .payment-confirmed-container .progress-bar-shopping .step.inactive span {
-  color: #CCCCCC;
+  color: #cccccc;
 }
 .payment-confirmed-container .progress-bar-shopping .step:not(:last-child)::after {
   content: "";
@@ -102,7 +102,7 @@ a {
           transform: translateY(-50%);
 }
 .payment-confirmed-container .progress-bar-shopping .step.inactive {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 
 @media (max-width: 768px) {

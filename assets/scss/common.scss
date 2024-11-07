@@ -1,6 +1,7 @@
 @use "./variables" as v;
 @use "./reset";
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
 /*--------------------------------------------------------------
   # General Styling & Shared Classes
   --------------------------------------------------------------*/
@@ -28,8 +29,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  color: v.$heading-font;
+h6,
+p,
+a,
+span {
+  color: v.$heading-color;
   font-family: v.$heading-font;
 }
 
@@ -773,3 +777,37 @@ input[type="number"] {
 input[type="number"]::-webkit-inner-spin-button {
   opacity: 1; /* 讓按鈕常駐顯示 */
 }
+
+/*--------------------------------------------------------------
+  # Scroll Top Button
+  --------------------------------------------------------------*/
+
+  .scroll-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background-color: v.$accent-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  
+    i {
+      font-size: 24px;
+      color: v.$contrast-color;
+      line-height: 0;
+    }
+  
+    &:hover {
+      background-color: color-mix(in srgb, v.$accent-color, transparent 20%);
+      color: v.$contrast-color;
+    }
+  
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
