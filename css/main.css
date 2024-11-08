@@ -385,6 +385,12 @@ section,
   border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
   text-transform: uppercase;
   margin: 5% 0;
 }
@@ -616,6 +622,12 @@ section,
   border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
   text-transform: uppercase;
   margin: 5% 0;
 }
@@ -818,6 +830,12 @@ section,
   border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
   display: inline-block;
   text-transform: uppercase;
 }

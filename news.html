@@ -41,18 +41,7 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/product.css" />
-    <link rel="stylesheet" href="./css/product-detail.css" />
-    <link rel="stylesheet" href="./css/shopping-list.css" />
     <link rel="stylesheet" href="./css/news.css" />
-
-    <!-- =======================================================
-  * Template Name: AgriCulture
-  * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   </head>
 
   <body class="index-page">
@@ -116,6 +105,74 @@
                 <button class="trash-btn">
                   <i class="fas fa-trash"></i>
                 </button>
+                <!-- Shopping Cart Sidebar -->
+                <div class="shopping-cart-sidebar" id="cartSidebar">
+                  <div class="cart-header">
+                    <h2>購物車(<span class="cart-current-mount">1</span>)</h2>
+                    <button class="close-cart-btn" id="closeCartBtn">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                  <div class="cart-items">
+                    <div class="cart-item-wrapper">
+                      <img
+                        src="./assets/img/sample_img.jpg"
+                        alt="商品縮圖"
+                        class="item-thumbnail"
+                      />
+                      <div class="item-details">
+                        <h4>商品名稱</h4>
+                        <div class="counting-cart-item">
+                          <label for="quantity"></label>
+                          <input
+                            type="number"
+                            id="quantity"
+                            value="1"
+                            min="1"
+                          />
+                          <div class="nyt-count">
+                            <span class="nyt">NYT</span>50
+                          </div>
+                        </div>
+                      </div>
+                      <button class="trash-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                    <div class="cart-item-wrapper">
+                      <img
+                        src="./assets/img/sample_img.jpg"
+                        alt="商品縮圖"
+                        class="item-thumbnail"
+                      />
+                      <div class="item-details">
+                        <h4>商品名稱</h4>
+                        <div class="counting-cart-item">
+                          <label for="quantity"></label>
+                          <input
+                            type="number"
+                            id="quantity"
+                            value="1"
+                            min="1"
+                          />
+                          <div class="nyt-count">
+                            <span class="nyt">NYT</span>50
+                          </div>
+                        </div>
+                      </div>
+                      <button class="trash-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+
+                    <!-- Add more cart items here -->
+                  </div>
+                  <div class="cart-footer">
+                    <div class="total-amount">HYT｜100</div>
+                    <button class="checkout-btn">結帳</button>
+                  </div>
+                </div>
+                <!-- /Shopping Cart Sidebar -->
               </div>
 
               <!-- Add more cart items here -->
@@ -190,7 +247,7 @@
     <!-- Main Content -->
     <main>
       <section class="news-container">
-        <div class="sidebar">
+        <div class="sidebar-news">
           <ul>
             <li class="active" data-category="activity">活動訊息</li>
             <li data-category="company">公司訊息</li>
@@ -198,11 +255,12 @@
           </ul>
         </div>
 
-
         <div class="news-content">
           <h2>活動訊息</h2>
           <div class="news-table-container">
-            <div class="table-header"><img src="./assets/img/table-header.png" alt=""></div>
+            <div class="table-header">
+              <img src="./assets/img/table-header.png" alt="" />
+            </div>
             <table>
               <thead>
                 <tr class="tr-news-title">
@@ -354,6 +412,7 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
     <!-- Main JS File -->
+    <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/news.js"></script>
   </body>
 </html>

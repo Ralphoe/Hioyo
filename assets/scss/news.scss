@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 50px 0;
   min-height: 100vh;
-  .sidebar {
+  .sidebar-news {
     float: left;
     width: 20%;
     margin-right: 5%;
@@ -16,7 +16,6 @@
       padding: 0;
       overflow: hidden;
       li {
-        font-family: v.$default-font;
         font-size: 16px;
         padding: 15px;
         border-bottom: 1px solid v.$regular-grey;
@@ -25,6 +24,7 @@
         &.active {
           background: rgba($color: v.$secondary-color, $alpha: 0.1);
           color: v.$accent-color;
+          font-weight: 600;
           border-bottom: 1px solid transparent;
         }
       }
@@ -32,20 +32,20 @@
   }
 
   .news-content {
+    font-family: v.$default-font;
     float: left;
     width: 75%;
     h2 {
-      font-family: v.$default-font;
       color: v.$accent-color;
       font-size: 24px;
       margin-bottom: 30px;
     }
 
     .news-table-container {
-      background: #ffffff;
+      background: v.$surface-color;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      padding: 100px 20px 20px;
+      padding: 100px 20px 20px; //top加上table-header的高度
       position: relative;
       .table-header {
         position: absolute;
@@ -58,21 +58,15 @@
         border-top-right-radius: 10px;
         background-color: #007b3e;
         img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+          @include v.image-cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
         }
       }
       table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
-        td,
-        a {
-          font-family: v.$default-font;
-        }
         td {
           a:hover {
             color: v.$default-color;
@@ -80,9 +74,8 @@
         }
         thead {
           background: v.$third-color;
-          color: v.$default-color;
+          color: v.$dark-grey;
           th {
-            font-family: v.$default-font;
             font-size: 18px;
             &:first-child {
               border-top-left-radius: 8px;
@@ -112,31 +105,20 @@
 }
 
 .pagination-news {
-  display: flex;
-    justify-content: center;
-    margin-top: 30px;
+  @include v.flex-center;
+  margin-top: 30px;
 
-    a {
-      @include v.flex-center;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      width: 44px;
-      height: 44px;
-      color: v.$default-color;
-      padding: 10px;
-      margin: 5px;
-      transition: 0.3s ease;
-      &.active {
-        color: v.$surface-color;
-        background-color: v.$accent-color;
-      }
+  a {
+    @include v.pagination-a;
+    &.active {
+      color: v.$surface-color;
+      background-color: v.$accent-color;
     }
   }
-
+}
 
 @media (max-width: 768px) {
-  .sidebar,
+  .sidebar-news,
   .news-content {
     float: none;
     width: 100%;

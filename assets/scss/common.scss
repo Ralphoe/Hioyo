@@ -5,6 +5,22 @@
 /*--------------------------------------------------------------
   # General Styling & Shared Classes
   --------------------------------------------------------------*/
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+/* 在較小的裝置上，例如平板或手機上 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* 1rem = 14px */
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; /* 1rem = 12px */
+  }
+}
 
 body {
   color: v.$default-color;
@@ -553,7 +569,6 @@ span {
         rgba(0, 100, 0, 0.5)
       ),
       url("https://img.freepik.com/free-photo/colorful-collage-fruits-texture-close-up_23-2149870264.jpg?t=st=1730220706~exp=1730224306~hmac=3fdf31c0506363ccdf8996841380ce2064dfcb942deceb27641e36077816a87e&w=1380");
-  
   }
   h2 {
     display: flex;
@@ -782,32 +797,32 @@ input[type="number"]::-webkit-inner-spin-button {
   # Scroll Top Button
   --------------------------------------------------------------*/
 
-  .scroll-top {
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    right: 15px;
-    bottom: 15px;
-    z-index: 99999;
-    background-color: v.$accent-color;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    transition: all 0.4s;
-  
-    i {
-      font-size: 24px;
-      color: v.$contrast-color;
-      line-height: 0;
-    }
-  
-    &:hover {
-      background-color: color-mix(in srgb, v.$accent-color, transparent 20%);
-      color: v.$contrast-color;
-    }
-  
-    &.active {
-      visibility: visible;
-      opacity: 1;
-    }
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: v.$accent-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+
+  i {
+    font-size: 24px;
+    color: v.$contrast-color;
+    line-height: 0;
   }
+
+  &:hover {
+    background-color: color-mix(in srgb, v.$accent-color, transparent 20%);
+    color: v.$contrast-color;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}

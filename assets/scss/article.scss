@@ -6,11 +6,10 @@
   float: left;
   width: 75%;
   h2 {
-    font-family: v.$default-font;
     font-size: 36px;
     padding-bottom: 20px;
     padding-left: 20px;
-    border-bottom: 1px solid v.$light-grey;
+    border-bottom: 1px solid v.$medium-grey;
     position: relative;
     &::before {
       content: "";
@@ -25,42 +24,39 @@
   }
   .news-date {
     font-size: 14px;
-    color: v.$regular-grey;
+    color: v.$medium-grey;
     margin-bottom: 20px;
   }
   .news-images {
     display: flex;
     gap: 10px;
     img {
+      @include v.image-cover;
       flex: 1;
       width: 30%;
       height: auto;
     }
   }
   .news-article {
-    font-family: v.$default-font;
     margin-top: 20px;
     padding-bottom: 40px;
     border-bottom: 1px solid v.$light-grey;
     p {
       margin-bottom: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
   }
   .news-navigation {
-    display: flex;
+    @include v.flex-center;
     justify-content: space-between;
-    align-items: center;
     margin-top: 20px;
     width: 100%;
     height: 100px;
     .prev-article,
     .next-article {
-      font-family: v.$default-font;
+      @include v.flex-center;
       color: v.$deep-grey;
       flex: 1;
-      display: flex;
-      align-items: center;
       gap: 10px;
       margin-right: 10px;
       text-decoration: none;
@@ -79,16 +75,10 @@
       }
     }
     .back-news-btn-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include v.flex-center;
       flex: 1;
-      white-space: nowrap;
       .back-news-btn {
-        padding: 10px 20px;
-        border-radius: 5px;
-        background-color: v.$accent-color;
-        color: v.$surface-color;
+        @include v.primary-button-a;
       }
     }
   }

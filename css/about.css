@@ -29,18 +29,21 @@ a {
   padding: 50px 0;
 }
 .container-about .section-about {
-  margin: 50px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 50px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .container-about .section-about:nth-child(even) {
   -webkit-box-orient: horizontal;
@@ -54,6 +57,10 @@ a {
 }
 .container-about .section-content h2 {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
   font-size: 28px;
   color: #116530;
   margin-bottom: 20px;
@@ -61,7 +68,11 @@ a {
 .container-about .section-content p {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
-  line-height: 1.6;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.7;
   color: #333333;
 }
 .container-about .section-content ul {
@@ -70,7 +81,6 @@ a {
   color: #116530;
 }
 .container-about .section-content ul li {
-  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,28 +111,42 @@ a {
   width: 100%;
 }
 .container-about .section-content .btn-box .btn-cta {
-  text-transform: uppercase;
-  font-size: 14px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 5px;
   background-color: #116530;
   color: #ffffff;
-  border-radius: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
   margin: 5% 0;
 }
 .container-about .section-image {
-  padding: 20px;
   width: 40%;
   aspect-ratio: 1/1;
 }
 .container-about .section-image img {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {

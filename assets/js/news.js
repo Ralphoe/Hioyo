@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sidebarItems = document.querySelectorAll('.sidebar ul li');
+    const sidebarItems = document.querySelectorAll('.sidebar-news ul li');
     const newsContentTitle = document.querySelector('.news-content h2');
     const newsTable = document.querySelector('.news-table-container tbody');
     const data = {
