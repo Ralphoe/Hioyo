@@ -28,7 +28,6 @@
       font-weight: 700;
       border-radius: 15px;
       position: relative;
-
       span {
         font-weight: 500;
         font-size: 16px;
@@ -46,10 +45,10 @@
         content: "";
         position: absolute;
         top: 50%;
-        right: -120px; /* 控制線段的間距 */
-        width: 120px; /* 線段的寬度 */
-        height: 3px; /* 線段的高度 */
-        background-color: v.$medium-grey; /* 線段的顏色 */
+        right: -120px; 
+        width: 120px; 
+        height: 3px; 
+        background-color: v.$medium-grey; 
         transform: translateY(-50%);
       }
 
@@ -76,7 +75,6 @@
     padding: 15px;
     padding-right: 25px;
     border-radius: 10px;
-    // box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     img {
       width: 80px;
@@ -90,7 +88,7 @@
       .product-name {
         font-size: 18px;
         font-weight: bold;
-        color: #007b3e;
+        color: v.$accent-color;
       }
     }
     .counting-box {
@@ -149,10 +147,10 @@
       height: 0;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
-      border-top: 12px solid v.$accent-color; /* 三角形顏色 */
+      border-top: 12px solid v.$accent-color; 
       border-radius: 5px;
       transform: translateY(-50%);
-      pointer-events: none; /* 確保點擊不受偽元素影響 */
+      pointer-events: none; 
     }
     label {
       font-family: v.$default-font;
@@ -164,15 +162,15 @@
       padding: 10px;
       border: 1px solid v.$medium-grey;
       border-radius: 5px;
-      appearance: none; /* 移除預設的下拉箭頭*/
+      appearance: none; 
       -webkit-appearance: none;
       -moz-appearance: none;
       position: relative;
       padding-right: 30px;
       &:focus {
         outline: none;
-        border-color: transparent; /* 聚焦時的邊框顏色 */
-        box-shadow: 0 0 5px rgba(17, 101, 48, 1); /* 聚焦時的陰影 */
+        border-color: transparent; 
+        box-shadow: 0 0 5px rgba(17, 101, 48, 1); 
       }
     }
   }
@@ -186,19 +184,17 @@
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  border-top: 2px solid #ddd;
+  border-top: 2px solid v.$light-grey;
   .mount-title {
-    font-family: v.$default-font;
     font-weight: bold;
     color: v.$accent-color;
     font-size: 24px;
   }
   .total-counting {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: flex-end;
     .total-amount {
-      font-family: v.$default-color;
       font-size: 24px;
       font-weight: bold;
       color: v.$accent-color;
@@ -239,7 +235,7 @@
     cursor: pointer;
     transition: background 0.3s;
     &:hover {
-      background: #005a29;
+      background: v.$accent-color;
     }
   }
   .cancel-btn {

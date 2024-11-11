@@ -23,7 +23,7 @@ a {
   /*a自帶有底線與點擊顏色*/
 }
 
-main.container {
+main.container-product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,49 +31,49 @@ main.container {
       flex-wrap: wrap;
   padding: 20px;
 }
-main.container .sidebar {
+main.container-product .sidebar {
   width: 25%;
 }
-main.container .sidebar ul {
+main.container-product .sidebar ul {
   list-style: none;
   padding: 0;
 }
-main.container .sidebar ul li {
+main.container-product .sidebar ul li {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   border-bottom: 1px solid #dfdddd;
   padding: 20px;
 }
-main.container .sidebar ul li a {
+main.container-product .sidebar ul li a {
   text-decoration: none;
-  color: #333;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
+  color: #000000;
+  -webkit-transition: color 0.35s ease;
+  transition: color 0.35s ease;
 }
-main.container .sidebar ul li a:hover {
-  color: #007b3e;
+main.container-product .sidebar ul li a:hover {
+  color: #116530;
 }
-main.container .sidebar .active {
+main.container-product .sidebar .active {
   background-color: #dfdddd;
 }
-main.container .sidebar .active a {
+main.container-product .sidebar .active a {
   font-weight: bold;
-  color: #007b3e;
+  color: #116530;
 }
 @media (max-width: 1400px) {
-  main.container .sidebar {
+  main.container-product .sidebar {
     width: 15%;
   }
 }
 @media (max-width: 1180px) {
-  main.container .sidebar {
+  main.container-product .sidebar {
     width: 25%;
   }
 }
 @media (max-width: 430px) {
-  main.container .sidebar {
-    width: 20%;
+  main.container-product .sidebar {
+    width: 100%;
   }
-  main.container .sidebar li {
+  main.container-product .sidebar li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -85,21 +85,21 @@ main.container .sidebar .active a {
             align-items: center;
   }
 }
-main.container .products {
+main.container-product .products {
   width: 70%;
   margin-left: 5%;
   margin-bottom: 5%;
 }
-main.container .products h2 {
+main.container-product .products h2 {
   font-size: 24px;
   margin-bottom: 50px;
 }
-main.container .products .product-grid {
+main.container-product .products .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
-main.container .products .product-grid .product-card {
+main.container-product .products .product-grid .product-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,20 +117,20 @@ main.container .products .product-grid .product-card {
   margin-bottom: 100px;
 }
 @media (max-width: 1400px) {
-  main.container .products .product-grid {
+  main.container-product .products .product-grid {
     width: 85%;
   }
 }
 @media (max-width: 1180px) {
-  main.container .products .product-grid {
+  main.container-product .products .product-grid {
     grid-template-columns: repeat(auto-fit, 250px);
   }
-  main.container .products .product-grid .product-card {
+  main.container-product .products .product-grid .product-card {
     margin-bottom: 50px;
   }
 }
 @media (max-width: 430px) {
-  main.container .products .product-grid {
+  main.container-product .products .product-grid {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -145,52 +145,52 @@ main.container .products .product-grid .product-card {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main.container .products .product-grid .product-card {
+  main.container-product .products .product-grid .product-card {
     margin-bottom: 0;
   }
 }
-main.container .products .product-image {
-  width: 250px;
-  height: 200px;
-  background: #e4a94a;
+main.container-product .products .product-image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  height: 200px;
+  background: #e4a94a;
   margin-bottom: 10px;
 }
-main.container .products .product-image img {
+main.container-product .products .product-image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-main.container .products .product-image .placeholder-image {
+main.container-product .products .product-image .placeholder-image {
   max-width: 100%;
   max-height: 100%;
 }
-main.container .products .product-info {
+main.container-product .products .product-info {
   position: relative;
   width: 250px;
   padding: 0 10px;
 }
-main.container .products .product-info p {
+main.container-product .products .product-info p {
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0;
   color: #116530;
 }
-main.container .products .product-info span {
+main.container-product .products .product-info span {
   display: block;
   margin-bottom: 10px;
   color: #818080;
 }
-main.container .products .product-info .add-to-cart {
+main.container-product .products .product-info .add-to-cart {
   color: #818080;
   position: absolute;
   right: 0;
@@ -201,10 +201,10 @@ main.container .products .product-info .add-to-cart {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-main.container .products .product-info .add-to-cart:hover {
+main.container-product .products .product-info .add-to-cart:hover {
   color: #116530;
 }
-main.container .pagination {
+main.container-product .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -213,7 +213,7 @@ main.container .pagination {
           justify-content: center;
   margin-top: 30px;
 }
-main.container .pagination a {
+main.container-product .pagination a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,23 +234,23 @@ main.container .pagination a {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-main.container .pagination a.active {
+main.container-product .pagination a.active {
   color: #ffffff;
   background-color: #116530;
 }
 
 @media (max-width: 768px) {
-  main.container {
+  main.container-product {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main.container .sidebar {
+  main.container-product .sidebar {
     width: 100%;
     margin-bottom: 20px;
   }
-  main.container .products {
+  main.container-product .products {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

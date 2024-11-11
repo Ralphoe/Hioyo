@@ -23,7 +23,6 @@
         color: v.$surface-color;
         width: 60px;
         aspect-ratio: 1/1;
-        font-family: v.$default-font;
         font-size: 18px;
         font-weight: 700;
         border-radius: 15px;
@@ -46,10 +45,10 @@
           content: "";
           position: absolute;
           top: 50%;
-          right: -120px; /* 控制線段的間距 */
-          width: 120px; /* 線段的寬度 */
-          height: 3px; /* 線段的高度 */
-          background-color: v.$accent-color; /* 線段的顏色 */
+          right: -120px; 
+          width: 120px; 
+          height: 3px; 
+          background-color: v.$accent-color; 
           transform: translateY(-50%);
         }
   
@@ -67,18 +66,14 @@
   }
 
   //ok-box
-
   .ok-box {
-    display: flex;
+    @include v.flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     .ok-icon{
         width: 60%;
         margin: 5% auto;
         img {
-            width: 100%;
-            object-fit: cover;
+          @include v.image-cover;
         }
     }
     .ok-content {
@@ -87,8 +82,6 @@
         p {
             width: 100%;
             display: inline-block;
-            font-family: v.$default-font;
-            font-size: 14px;
             color: v.$deep-grey;
         }
     }
@@ -101,16 +94,16 @@
     justify-content: space-between;
     margin-top: 30px;
     button {
-      background: #007b3e;
-      color: #fff;
+      background: v.$accent-color;
+      color: v.$surface-color;
       border: none;
       padding: 10px 20px;
       margin: 0 10px;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.35s;
       &:hover {
-        background: #005a29;
+        background: v.$accent-color;
       }
     }
   }

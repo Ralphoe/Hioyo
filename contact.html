@@ -41,10 +41,7 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/product.css" />
-    <link rel="stylesheet" href="./css/product-detail.css" />
-    <link rel="stylesheet" href="./css/shopping-list.css" />
-
+    <link rel="stylesheet" href="./css/contact.css" />
   </head>
 
   <body class="index-page">
@@ -61,7 +58,7 @@
           <button class="search-btn">
             <i class="fas fa-search"></i>
           </button>
-          <button class="shopping-cart-btn toggle-cart-button">
+          <button class="shopping-cart-btn">
             <i class="fas fa-shopping-cart"></i>
           </button>
           <!-- Shopping Cart Sidebar -->
@@ -133,9 +130,9 @@
             <ul>
               <li><a href="index.html">服務總攬</a></li>
               <li><a href="about.html">關於我們</a></li>
-              <li><a href="services.html">最新消息</a></li>
-              <li><a href="./product.html" class="active">產品服務</a></li>
-              <li><a href="contact.html">聯絡我們</a></li>
+              <li><a href="news.html">最新消息</a></li>
+              <li><a href="product.html">產品服務</a></li>
+              <li><a href="blog.html" class="active">聯絡我們</a></li>
               <li class="dropdown">
                 <a href="#"
                   ><span>會員專區</span>
@@ -168,95 +165,57 @@
         </div>
       </div>
     </header>
-    <section class="banner-short banner-product">
-      <h2 class="banner-title">產品服務</h2>
+    <section class="banner-short banner-about">
+      <h2 class="banner-title">聯絡我們</h2>
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
-            <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
-            <li class="breadcrumb-item">
-              <a href="./product.html">產品服務</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">購物結帳</li>
+            <li class="breadcrumb-item active" aria-current="page">聯絡我們</li>
           </ol>
         </nav>
       </div>
     </section>
     <!-- Main Content -->
-    <main>
-      <section class="checkout-container">
-        <!-- Progress bar -->
-        <div class="progress-bar-shopping">
-          <div class="step step1">1<span>購物結帳</span></div>
-          <div class="step step2 inactive">2<span>資料確認</span></div>
-          <div class="step step3 inactive">3<span>結帳完成</span></div>
+    <main class="container-contact">
+      <section class="contact">
+        <div class="contact__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9281493680637!2d-74.00828398459452!3d40.713054879330845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19d24c5971%3A0x7500af1a0c6ab73a!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1660201385091!5m2!1sen!2sus"
+            frameborder="0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
         </div>
-
-        <!-- Product List -->
-        <div class="product-list">
-          <div class="product-item">
-            <img src="./assets/img/sample_img.jpg" alt="商品圖片" />
-            <div class="product-details">
-              <div class="product-name">601 <br />[植物硒系列] - 舍麗尼</div>
-            </div>
-            <div class="counting-box">
-              <div class="product-price">$ 2,980</div>
-              <div class="item-nyt"><span class="nyt">NYT</span>50</div>
-              <div class="item-mount"><span>x</span>2</div>
-            </div>
-          </div>
-
-          <div class="product-item">
-            <img src="./assets/img/sample_img.jpg" alt="商品圖片" />
-            <div class="product-details">
-              <div class="product-name">606 <br />[植物硒系列] - 舍麗尼</div>
-            </div>
-            <div class="counting-box">
-              <div class="product-price">$ 799</div>
-              <div class="item-nyt"><span class="nyt">NYT</span>10</div>
-              <div class="item-mount"><span>x</span>2</div>
+        <div class="contact__info">
+          <div class="contact-info-left">
+            <h2>聯絡我們</h2>
+            <p>傳訊給我們關於網站的疑惑或任何建議。</p>
+            <div class="contact__details">
+              <div class="contact_details_content">
+                <i class="fa fa-location-dot fa-2x"></i>
+                <p>地址：<br /><span>A108 台灣，紐約 - NY 535022</span></p>
+              </div>
+              <div class="contact_details_content">
+                <i class="fa fa-envelope fa-2x"></i>
+                <p>電子郵件：<br /><span>info@example.com</span></p>
+              </div>
+              <div class="contact_details_content">
+                <i class="fa fa-phone fa-2x"></i>
+                <p>連絡電話：<br /><span>+1 5589 55488 55</span></p>
+              </div>
             </div>
           </div>
-
-          <div class="product-item">
-            <img src="./assets/img/sample_img.jpg" alt="商品圖片" />
-            <div class="product-details">
-              <div class="product-name">801 <br />[植物硒系列] - 舍麗尼</div>
+          <form action="#" method="post" class="contact__form">
+            <div class="input-container-contact">
+              <input type="text" name="name" placeholder="您的名字" />
+              <input type="email" name="email" placeholder="您的電子郵件" />
             </div>
-            <div class="counting-box">
-              <div class="product-price">$ 2,380</div>
-              <div class="item-nyt"><span class="nyt">NYT</span>35</div>
-              <div class="item-mount"><span>x</span>1</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="shopping-list-footer">
-          <!-- Coupon Section -->
-          <div class="coupon-select">
-            <label for="coupon">使用優惠券</label>
-            <select id="coupon">
-              <option value="">請選擇優惠券</option>
-              <option value="100">全系列商品折扣100元</option>
-            </select>
-          </div>
-
-          <!-- Total Section -->
-          <div class="total-section">
-            <div class="mount-title">總金額</div>
-            <div class="total-counting">
-              <div class="total-amount"><small>-100</small>$ 7,509</div>
-              <div class="total-nyt"><small>-10</small><span class="nyt">NYT</span>120</div>
-            </div>
-
-          </div>
-
-          <!-- Buttons -->
-          <div class="shopping-list-buttons">
-            <button class="cancel-btn">繼續購物</button>
-            <button>結帳</button>
-          </div>
+            <input type="text" name="subject" placeholder="主題" />
+            <textarea name="message" rows="5" placeholder="訊息"></textarea>
+            <div class="btn-container-contact"><button type="submit">發送訊息</button></div>
+          </form>
         </div>
       </section>
     </main>
@@ -370,8 +329,7 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
     <!-- Main JS File -->
-    <script src="./assets/js/product.js"></script>
-    <script src="./assets/js/product-detail.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
+    <script src="./assets/js/product.js"></script>
   </body>
 </html>

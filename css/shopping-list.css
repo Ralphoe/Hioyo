@@ -94,10 +94,10 @@ a {
   content: "";
   position: absolute;
   top: 50%;
-  right: -120px; /* 控制線段的間距 */
-  width: 120px; /* 線段的寬度 */
-  height: 3px; /* 線段的高度 */
-  background-color: #cccccc; /* 線段的顏色 */
+  right: -120px;
+  width: 120px;
+  height: 3px;
+  background-color: #cccccc;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -151,7 +151,7 @@ a {
 .product-list .product-item .product-details .product-name {
   font-size: 18px;
   font-weight: bold;
-  color: #007b3e;
+  color: #116530;
 }
 .product-list .product-item .counting-box {
   display: -webkit-box;
@@ -228,11 +228,11 @@ a {
   height: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-top: 12px solid #116530; /* 三角形顏色 */
+  border-top: 12px solid #116530;
   border-radius: 5px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  pointer-events: none; /* 確保點擊不受偽元素影響 */
+  pointer-events: none;
 }
 .shopping-list-footer .coupon-select label {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -244,7 +244,7 @@ a {
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
-  appearance: none; /* 移除預設的下拉箭頭*/
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
@@ -252,9 +252,9 @@ a {
 }
 .shopping-list-footer .coupon-select select:focus {
   outline: none;
-  border-color: transparent; /* 聚焦時的邊框顏色 */
+  border-color: transparent;
   -webkit-box-shadow: 0 0 5px rgb(17, 101, 48);
-          box-shadow: 0 0 5px rgb(17, 101, 48); /* 聚焦時的陰影 */
+          box-shadow: 0 0 5px rgb(17, 101, 48);
 }
 
 .total-section {
@@ -271,10 +271,9 @@ a {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #e7e3e3;
 }
 .total-section .mount-title {
-  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: bold;
   color: #116530;
   font-size: 24px;
@@ -292,7 +291,6 @@ a {
           align-items: flex-end;
 }
 .total-section .total-counting .total-amount {
-  font-family: #000000;
   font-size: 24px;
   font-weight: bold;
   color: #116530;
@@ -338,7 +336,7 @@ a {
   transition: background 0.3s;
 }
 .shopping-list-buttons button:hover {
-  background: #005a29;
+  background: #116530;
 }
 .shopping-list-buttons .cancel-btn {
   background: #818080;

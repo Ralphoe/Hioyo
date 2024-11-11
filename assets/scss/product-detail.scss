@@ -24,7 +24,7 @@
         width: 100%;
         height: 300px;
         margin-bottom: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid v.$medium-grey;
         object-fit: cover;
       }
 
@@ -36,11 +36,11 @@
           width: 20%;
           aspect-ratio: 1/1;
           cursor: pointer;
-          border: 1px solid #ddd;
+          border: 1px solid v.$medium-grey;
           transition: border 0.3s ease;
 
           &:hover {
-            border: 1px solid #007b3e;
+            border: 1px solid v.$accent-color;
           }
         }
       }
@@ -70,18 +70,20 @@
       .purchase {
         display: flex;
         align-items: center;
-
+        input {
+          outline-color: v.$accent-color;
+        }
         .add-to-cart {
-          background: #007b3e;
-          color: #ffffff;
+          background: v.$accent-color;
+          color: v.$surface-color;
           border: none;
           border-radius: 5px;
           padding: 10px 20px;
           cursor: pointer;
-          transition: background 0.3s ease;
+          transition: background 0.35s ease;
 
           &:hover {
-            background: #005a29;
+            background: v.$accent-color;
           }
         }
       }
@@ -104,20 +106,17 @@
       border-top: 1px solid v.$medium-grey;
       padding: 0;
       gap: 10px;
-
       li {
         list-style: none;
-
         a {
           text-decoration: none;
           font-size: 16px;
-          color: #333;
+          color: v.$default-color;
           padding: 10px;
-          transition: color 0.3s ease;
+          transition: color 0.35s ease;
           border-bottom: 5px solid transparent;
-
           &.active {
-            border-bottom: 5px solid #007b3e;
+            border-bottom: 5px solid v.$accent-color;
           }
         }
       }

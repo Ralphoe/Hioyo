@@ -23,7 +23,6 @@
       color: v.$surface-color;
       width: 60px;
       aspect-ratio: 1/1;
-      font-family: v.$default-font;
       font-size: 18px;
       font-weight: 700;
       border-radius: 15px;
@@ -46,10 +45,10 @@
         content: "";
         position: absolute;
         top: 50%;
-        right: -120px; /* 控制線段的間距 */
-        width: 120px; /* 線段的寬度 */
-        height: 3px; /* 線段的高度 */
-        background-color: v.$medium-grey; /* 線段的顏色 */
+        right: -120px;
+        width: 120px; 
+        height: 3px; 
+        background-color: v.$medium-grey; 
         transform: translateY(-50%);
       }
 
@@ -69,24 +68,12 @@
   }
 }
 
-//Order Form
-
-//   .order-confirm-container {
-//     // width: 80%;
-//     // margin: 0 auto;
-//     // margin-top: 40px;
-//     // background: #f9f9f9;
-//     // padding: 20px;
-//     // border-radius: 10px;
-//   }
-
 .form-section {
   width: 80%;
   padding: 20px;
   margin-bottom: 20px;
 
   h3 {
-    font-family: v.$default-font;
     color: v.$accent-color;
     margin-bottom: 40px;
   }
@@ -105,9 +92,6 @@
     &:first-of-type input {
       color: v.$secondary-color;
     }
-    // &:nth-of-type(2) input {
-    //   font-weight: bold;
-    // }
   }
 }
 
@@ -137,7 +121,6 @@
   }
   input {
     margin-right: 5px;
-
     /* 去除原生樣式 */
     appearance: none;
     -webkit-appearance: none;
@@ -175,7 +158,6 @@
   width: 80%;
   padding: 20px;
   label {
-    font-family: v.$default-font;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -269,7 +251,6 @@
 }
 
 //Invoice Information
-
 .form-section.invoice-info {
   .radio-group {
     display: flex;
@@ -337,8 +318,8 @@
   justify-content: space-between;
   margin-top: 30px;
   button {
-    background: #007b3e;
-    color: #fff;
+    background: v.$accent-color;
+    color: v.$surface-color;
     border: none;
     padding: 10px 20px;
     margin: 0 10px;
@@ -346,7 +327,7 @@
     cursor: pointer;
     transition: background 0.3s;
     &:hover {
-      background: #005a29;
+      background: v.$accent-color;
     }
   }
   .cancel-btn {
