@@ -45,7 +45,6 @@
     <link rel="stylesheet" href="./css/product-detail.css" />
     <link rel="stylesheet" href="./css/shopping-list.css" />
     <link rel="stylesheet" href="./css/information-confirmed.css" />
-
   </head>
 
   <body class="index-page">
@@ -174,8 +173,12 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
             <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
-            <li class="breadcrumb-item"><a href="./product.html">產品服務</a></li>
-            <li class="breadcrumb-item"><a href="./shopping-list.html">購物結帳</a></li>
+            <li class="breadcrumb-item">
+              <a href="./product.html">產品服務</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="./shopping-list.html">購物結帳</a>
+            </li>
             <li class="breadcrumb-item active" aria-current="page">資料確認</li>
           </ol>
         </nav>
@@ -183,14 +186,13 @@
     </section>
     <!-- Main Content -->
     <main>
+      <!-- Progress bar -->
+      <div class="progress-bar-shopping">
+        <div class="step step1">1<span>購物結帳</span></div>
+        <div class="step step2">2<span>資料確認</span></div>
+        <div class="step step3 inactive">3<span>結帳完成</span></div>
+      </div>
       <section class="order-confirm-container">
-        <!-- Progress bar -->
-        <div class="progress-bar-shopping">
-          <div class="step step1">1<span>購物結帳</span></div>
-          <div class="step step2">2<span>資料確認</span></div>
-          <div class="step step3 inactive">3<span>結帳完成</span></div>
-        </div>
-
         <!-- Order Form -->
         <div class="form-section basic-info">
           <h3>訂購人資料</h3>

@@ -4,8 +4,7 @@
 
 .container-about {
   width: 80%;
-  margin: 0 auto;
-  padding: 50px 0;
+  margin: 10% auto;
   .section-about {
     @include v.flex-center;
     justify-content: space-between;
@@ -69,11 +68,22 @@
 }
 
 @media (max-width: 768px) {
-  .section-about {
-    flex-direction: column;
-  }
-
-  .section-about:nth-child(even) {
-    flex-direction: column;
+  .container-about {
+    margin: 5% auto;
+    .section-about {
+      flex-direction: column;
+      width: 100%;
+      .section-content {
+        width: 100%;
+      }
+      .section-image {
+        width: 100%;
+      }
+    }
+  
+    .section-about:nth-child(even) {
+      flex-direction: column;
+      width: 100%;
+    }
   }
 }

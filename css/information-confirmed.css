@@ -23,6 +23,68 @@ a {
   /*a自帶有底線與點擊顏色*/
 }
 
+.progress-bar-shopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  margin: 5% auto;
+}
+.progress-bar-shopping .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #116530;
+  color: #ffffff;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  position: relative;
+}
+.progress-bar-shopping .step span {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  color: #116530;
+  position: absolute;
+  bottom: -30px;
+}
+.progress-bar-shopping .step.inactive span {
+  color: #cccccc;
+}
+.progress-bar-shopping .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  width: 120px;
+  height: 3px;
+  background-color: #cccccc;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.progress-bar-shopping .step.step1::after {
+  background-color: #116530;
+}
+.progress-bar-shopping .step.inactive {
+  background: #cccccc;
+}
+
 .order-confirm-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,73 +107,7 @@ a {
   -webkit-box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
           box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
 }
-.order-confirm-container .progress-bar-shopping {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 400px;
-  margin-bottom: 5%;
-}
-.order-confirm-container .progress-bar-shopping .step {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #116530;
-  color: #ffffff;
-  width: 60px;
-  aspect-ratio: 1/1;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 15px;
-  position: relative;
-}
-.order-confirm-container .progress-bar-shopping .step span {
-  font-weight: 500;
-  font-size: 16px;
-  white-space: nowrap;
-  color: #116530;
-  position: absolute;
-  bottom: -30px;
-}
-.order-confirm-container .progress-bar-shopping .step.inactive span {
-  color: #cccccc;
-}
-.order-confirm-container .progress-bar-shopping .step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -120px;
-  width: 120px;
-  height: 3px;
-  background-color: #cccccc;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.order-confirm-container .progress-bar-shopping .step.step1::after {
-  background-color: #116530;
-}
-.order-confirm-container .progress-bar-shopping .step.inactive {
-  background: #cccccc;
-}
 
-@media (max-width: 768px) {
-  .order-confirm-container {
-    width: 95%;
-  }
-}
 .form-section {
   width: 80%;
   padding: 20px;
@@ -179,7 +175,7 @@ a {
   -moz-appearance: none;
   position: relative;
   width: 20px;
-  height: 20px;
+  aspect-ratio: 1/1;
   background-color: #ffffff; /* 背景顏色（未選中時） */
   border-radius: 50%;
   border: 1px solid #818080; /* 外框 */
@@ -308,6 +304,7 @@ a {
 .form-section.recipient .form-group.address .address-info-box input {
   width: 150px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 .form-section.recipient .form-group.address .address-input {
   width: 100%;
@@ -349,6 +346,7 @@ a {
   position: relative;
   width: 20px;
   height: 20px;
+  aspect-ratio: 1/1;
   background-color: #ffffff; /* 背景顏色（未選中時） */
   border-radius: 50%;
   border: 1px solid #818080; /* 外框 */
@@ -418,11 +416,27 @@ a {
 @media (max-width: 768px) {
   .order-confirm-container {
     width: 95%;
+    margin: 10% auto;
   }
-  .form-group {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .form-section.basic-info {
+    scale: 0.9;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .form-section.basic-info .form-group {
+    width: 100%;
+  }
+  .suggested-number {
+    width: 100%;
+  }
+  .form-section.recipient {
+    width: 100%;
+  }
+  .form-section.invoice-info {
+    width: 100%;
+  }
+  .form-section.other-notes {
+    width: 100%;
   }
 }/*# sourceMappingURL=information-confirmed.css.map */

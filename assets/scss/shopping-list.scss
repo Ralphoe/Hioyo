@@ -2,6 +2,62 @@
 @use "./reset";
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
 
+.progress-bar-shopping {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  margin: 5% auto;
+  .step {
+    @include v.flex-center;
+    background: v.$accent-color;
+    color: v.$surface-color;
+    width: 60px;
+    aspect-ratio: 1/1;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 15px;
+    position: relative;
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      white-space: nowrap;
+      color: v.$accent-color;
+      position: absolute;
+      bottom: -30px;
+    }
+
+    &.inactive span {
+      color: v.$medium-grey;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -120px;
+      width: 120px;
+      height: 3px;
+      background-color: v.$medium-grey;
+      transform: translateY(-50%);
+    }
+
+    &.step1::after {
+      background-color: v.$accent-color;
+    }
+  }
+  .step.inactive {
+    background: v.$medium-grey;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-bar-shopping {
+    scale: 0.8;
+    margin: 5% auto
+  }
+}
+
 .checkout-container {
   @include v.flex-center;
   flex-direction: column;
@@ -11,55 +67,6 @@
   padding: 5% 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px 5px rgba(v.$secondary-color, 0.2);
-  .progress-bar-shopping {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 400px;
-    margin-bottom: 5%;
-    .step {
-      @include v.flex-center;
-      background: v.$accent-color;
-      color: v.$surface-color;
-      width: 60px;
-      aspect-ratio: 1/1;
-      font-family: v.$default-font;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 15px;
-      position: relative;
-      span {
-        font-weight: 500;
-        font-size: 16px;
-        white-space: nowrap;
-        color: v.$accent-color;
-        position: absolute;
-        bottom: -30px;
-      }
-
-      &.inactive span {
-        color: v.$medium-grey;
-      }
-
-      &:not(:last-child)::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: -120px; 
-        width: 120px; 
-        height: 3px; 
-        background-color: v.$medium-grey; 
-        transform: translateY(-50%);
-      }
-
-      &.step1::after {
-        background-color: v.$accent-color;
-      }
-    }
-    .step.inactive {
-      background: v.$medium-grey;
-    }
-  }
 }
 
 .product-list {
@@ -74,7 +81,7 @@
     background: white;
     padding: 15px;
     padding-right: 25px;
-    border-radius: 10px;
+    border-bottom: 1px solid v.$light-grey;
     margin-bottom: 10px;
     img {
       width: 80px;
@@ -147,10 +154,10 @@
       height: 0;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
-      border-top: 12px solid v.$accent-color; 
+      border-top: 12px solid v.$accent-color;
       border-radius: 5px;
       transform: translateY(-50%);
-      pointer-events: none; 
+      pointer-events: none;
     }
     label {
       font-family: v.$default-font;
@@ -162,15 +169,15 @@
       padding: 10px;
       border: 1px solid v.$medium-grey;
       border-radius: 5px;
-      appearance: none; 
+      appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
       position: relative;
       padding-right: 30px;
       &:focus {
         outline: none;
-        border-color: transparent; 
-        box-shadow: 0 0 5px rgba(17, 101, 48, 1); 
+        border-color: transparent;
+        box-shadow: 0 0 5px rgba(17, 101, 48, 1);
       }
     }
   }
@@ -191,7 +198,7 @@
     font-size: 24px;
   }
   .total-counting {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     .total-amount {
@@ -247,18 +254,18 @@
   }
 }
 
-@media (max-width: 768px) {
+@media(max-width:768px) {
   .checkout-container {
     width: 95%;
+    .product-list {
+      width: 100%;
+      padding: 0;
+      .product-item {
+        padding: 5% 0;
+      }
+    }
   }
-
-  .product-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-details {
-    margin-left: 0;
-    margin-top: 10px;
+  .shopping-list-buttons {
+    margin: 0 auto;
   }
 }

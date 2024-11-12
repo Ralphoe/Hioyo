@@ -23,6 +23,74 @@ a {
   /*a自帶有底線與點擊顏色*/
 }
 
+.progress-bar-shopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  margin: 5% auto;
+}
+.progress-bar-shopping .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #116530;
+  color: #ffffff;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  position: relative;
+}
+.progress-bar-shopping .step span {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  color: #116530;
+  position: absolute;
+  bottom: -30px;
+}
+.progress-bar-shopping .step.inactive span {
+  color: #cccccc;
+}
+.progress-bar-shopping .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  width: 120px;
+  height: 3px;
+  background-color: #cccccc;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.progress-bar-shopping .step.step1::after {
+  background-color: #116530;
+}
+.progress-bar-shopping .step.inactive {
+  background: #cccccc;
+}
+
+@media (max-width: 768px) {
+  .progress-bar-shopping {
+    scale: 0.8;
+    margin: 5% auto;
+  }
+}
 .checkout-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,68 +112,6 @@ a {
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
           box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
-}
-.checkout-container .progress-bar-shopping {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 400px;
-  margin-bottom: 5%;
-}
-.checkout-container .progress-bar-shopping .step {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #116530;
-  color: #ffffff;
-  width: 60px;
-  aspect-ratio: 1/1;
-  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 15px;
-  position: relative;
-}
-.checkout-container .progress-bar-shopping .step span {
-  font-weight: 500;
-  font-size: 16px;
-  white-space: nowrap;
-  color: #116530;
-  position: absolute;
-  bottom: -30px;
-}
-.checkout-container .progress-bar-shopping .step.inactive span {
-  color: #cccccc;
-}
-.checkout-container .progress-bar-shopping .step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -120px;
-  width: 120px;
-  height: 3px;
-  background-color: #cccccc;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.checkout-container .progress-bar-shopping .step.step1::after {
-  background-color: #116530;
-}
-.checkout-container .progress-bar-shopping .step.inactive {
-  background: #cccccc;
 }
 
 .product-list {
@@ -132,7 +138,7 @@ a {
   background: white;
   padding: 15px;
   padding-right: 25px;
-  border-radius: 10px;
+  border-bottom: 1px solid #e7e3e3;
   margin-bottom: 10px;
 }
 .product-list .product-item img {
@@ -350,17 +356,14 @@ a {
   .checkout-container {
     width: 95%;
   }
-  .product-item {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  .checkout-container .product-list {
+    width: 100%;
+    padding: 0;
   }
-  .product-details {
-    margin-left: 0;
-    margin-top: 10px;
+  .checkout-container .product-list .product-item {
+    padding: 5% 0;
+  }
+  .shopping-list-buttons {
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=shopping-list.css.map */

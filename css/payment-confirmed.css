@@ -23,6 +23,65 @@ a {
   /*a自帶有底線與點擊顏色*/
 }
 
+.progress-bar-shopping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 400px;
+  margin: 5% auto;
+}
+.progress-bar-shopping .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #116530;
+  color: #ffffff;
+  width: 60px;
+  aspect-ratio: 1/1;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 15px;
+  position: relative;
+}
+.progress-bar-shopping .step span {
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  color: #116530;
+  position: absolute;
+  bottom: -30px;
+}
+.progress-bar-shopping .step.inactive span {
+  color: #cccccc;
+}
+.progress-bar-shopping .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -120px;
+  width: 120px;
+  height: 3px;
+  background-color: #116530;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.progress-bar-shopping .step.inactive {
+  background: #cccccc;
+}
+
 .payment-confirmed-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,64 +103,6 @@ a {
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
           box-shadow: 0 0 10px 5px rgba(127, 185, 59, 0.2);
-}
-.payment-confirmed-container .progress-bar-shopping {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 400px;
-  margin-bottom: 5%;
-}
-.payment-confirmed-container .progress-bar-shopping .step {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #116530;
-  color: #ffffff;
-  width: 60px;
-  aspect-ratio: 1/1;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 15px;
-  position: relative;
-}
-.payment-confirmed-container .progress-bar-shopping .step span {
-  font-weight: 500;
-  font-size: 16px;
-  white-space: nowrap;
-  color: #116530;
-  position: absolute;
-  bottom: -30px;
-}
-.payment-confirmed-container .progress-bar-shopping .step.inactive span {
-  color: #cccccc;
-}
-.payment-confirmed-container .progress-bar-shopping .step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -120px;
-  width: 120px;
-  height: 3px;
-  background-color: #116530;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.payment-confirmed-container .progress-bar-shopping .step.inactive {
-  background: #cccccc;
 }
 
 @media (max-width: 768px) {

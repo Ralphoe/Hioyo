@@ -113,4 +113,19 @@
       }
     }
   }
+  @media(max-width:768px) {
+    .contact__info {
+      flex-direction: column;
+      .contact-info-left {
+        width: 100%;
+        margin: 5% auto;
+      }
+      .contact__form {
+        width: 100%;
+        margin: 5% auto;
+      }
+    }
+  }
 }
+
+

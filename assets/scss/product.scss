@@ -8,7 +8,9 @@
 main.container-product {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   padding: 20px;
+  width: 80%;
 
   .sidebar {
     width: 25%;
@@ -30,7 +32,7 @@ main.container-product {
       }
     }
     .active {
-      background-color: v.$regular-grey;
+      background-color: v.$light-grey;
       a {
         font-weight: bold;
         color: v.$accent-color;
@@ -38,19 +40,13 @@ main.container-product {
     }
   }
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1440px) {
     .sidebar {
-      width: 15%;
+      margin: 0 auto;
     }
   }
 
-  @media (max-width: 1180px) {
-    .sidebar {
-      width: 25%;
-    }
-  }
-
-  @media (max-width: 430px) {
+  @media (max-width: 768px) {
     .sidebar {
       width: 100%;
       li {
@@ -61,7 +57,7 @@ main.container-product {
 
   .products {
     width: 70%;
-    margin-left: 5%;
+    margin: 0 auto;
     margin-bottom: 5%;
     h2 {
       font-size: 24px;
@@ -71,6 +67,8 @@ main.container-product {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
+      justify-content: center;
+      margin: 0 auto;
       .product-card {
         @include v.flex-center;
         flex-direction: column;
@@ -81,7 +79,7 @@ main.container-product {
 
     @media (max-width: 1400px) {
       .product-grid {
-        width: 85%;
+        width: 100%;
       }
     }
     @media (max-width: 1180px) {
@@ -93,11 +91,19 @@ main.container-product {
       }
     }
 
+    @media (max-width: 768px) {
+      .product-grid {
+        flex-direction: column;
+        .product-card {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     @media (max-width: 430px) {
       .product-grid {
         @include v.flex-center;
         flex-direction: column;
-        // grid-template-columns: 1fr;
         .product-card {
           margin-bottom: 0;
         }
@@ -179,18 +185,20 @@ main.container-product {
   }
 }
 
+@media (max-width: 1440px) {
+  main.container-product {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   main.container-product {
     flex-direction: column;
 
-    .sidebar {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
     .products {
       display: flex;
       align-items: center;
+      flex-direction: column;
       width: 100%;
     }
   }

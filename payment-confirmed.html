@@ -45,7 +45,6 @@
     <link rel="stylesheet" href="./css/product-detail.css" />
     <link rel="stylesheet" href="./css/shopping-list.css" />
     <link rel="stylesheet" href="./css/payment-confirmed.css" />
-
   </head>
 
   <body class="index-page">
@@ -134,8 +133,8 @@
             <ul>
               <li><a href="index.html">服務總攬</a></li>
               <li><a href="about.html">關於我們</a></li>
-              <li><a href="services.html">最新消息</a></li>
-              <li><a href="./product.html" class="active">產品服務</a></li>
+              <li><a href="news.html">最新消息</a></li>
+              <li><a href="product.html" class="active">產品服務</a></li>
               <li><a href="contact.html">聯絡我們</a></li>
               <li class="dropdown">
                 <a href="#"
@@ -176,9 +175,15 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
             <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
-            <li class="breadcrumb-item"><a href="./product.html">產品服務</a></li>
-            <li class="breadcrumb-item"><a href="./shopping-list.html">購物結帳</a></li>
-            <li class="breadcrumb-item"><a href="./information-confirmed.html">資料確認</a></li>
+            <li class="breadcrumb-item">
+              <a href="./product.html">產品服務</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="./shopping-list.html">購物結帳</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="./information-confirmed.html">資料確認</a>
+            </li>
             <li class="breadcrumb-item active" aria-current="page">結帳完成</li>
           </ol>
         </nav>
@@ -186,25 +191,25 @@
     </section>
     <!-- Main Content -->
     <main>
+      <!-- Progress bar -->
+      <div class="progress-bar-shopping">
+        <div class="step step1">1<span>購物結帳</span></div>
+        <div class="step step2">2<span>資料確認</span></div>
+        <div class="step step3">3<span>結帳完成</span></div>
+      </div>
       <section class="payment-confirmed-container">
-        <!-- Progress bar -->
-        <div class="progress-bar-shopping">
-          <div class="step step1">1<span>購物結帳</span></div>
-          <div class="step step2">2<span>資料確認</span></div>
-          <div class="step step3">3<span>結帳完成</span></div>
-        </div>
         <div class="ok-box">
-            <div class="ok-icon">
-                <img src="./assets/img/icon/checked-payment.svg" alt="">
-            </div>
-            <div class="ok-content">
-                <p>訂單已成立!</p>
-                <p>您的訂單編號為:9711a5e488s4</p>
-                <p>感謝您的訂購，確認訂單後我們將盡快為您出貨!</p>
-            </div>
+          <div class="ok-icon">
+            <img src="./assets/img/icon/checked-payment.svg" alt="" />
+          </div>
+          <div class="ok-content">
+            <p>訂單已成立!</p>
+            <p>您的訂單編號為:9711a5e488s4</p>
+            <p>感謝您的訂購，確認訂單後我們將盡快為您出貨!</p>
+          </div>
         </div>
         <div class="buttons">
-            <button>回到列表</button>
+          <button>回到列表</button>
         </div>
       </section>
     </main>

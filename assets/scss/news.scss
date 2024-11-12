@@ -31,6 +31,21 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .sidebar-news,
+    .news-content {
+      float: none;
+      width: 100%;
+      h2 {
+        text-align: center;
+      }
+      li {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+
   .news-content {
     font-family: v.$default-font;
     float: left;
@@ -102,6 +117,16 @@
       }
     }
   }
+  @media (max-width: 768px) {
+    .news-content {
+      width: 100%;
+      margin: 5% auto;
+      .news-table-container {
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 .pagination-news {
@@ -118,10 +143,7 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar-news,
-  .news-content {
-    float: none;
-    width: 100%;
-    margin-bottom: 20px;
+  .news-container {
+    width: 95%;
   }
 }

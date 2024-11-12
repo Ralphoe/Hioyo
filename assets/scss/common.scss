@@ -826,3 +826,30 @@ input[type="number"]::-webkit-inner-spin-button {
     opacity: 1;
   }
 }
+
+
+// checkout-container RWD
+
+@media (max-width: 768px) {
+  .checkout-container {
+    width: 100%;
+    scale: 0.9;
+    margin: 1% auto;
+  }
+
+  .product-list {
+    width: 100%;
+    .product-item {
+      width: 100%;
+      align-items: flex-start;
+      .product-name {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .product-details {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

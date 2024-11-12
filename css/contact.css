@@ -186,4 +186,20 @@ a {
 }
 .contact .contact__info .contact__form .btn-container-contact button:hover {
   background: #116530;
+}
+@media (max-width: 768px) {
+  .contact .contact__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .contact__info .contact-info-left {
+    width: 100%;
+    margin: 5% auto;
+  }
+  .contact .contact__info .contact__form {
+    width: 100%;
+    margin: 5% auto;
+  }
 }/*# sourceMappingURL=contact.css.map */

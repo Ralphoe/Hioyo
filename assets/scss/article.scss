@@ -55,6 +55,7 @@
     .prev-article,
     .next-article {
       @include v.flex-center;
+      justify-content: flex-start;
       color: v.$deep-grey;
       flex: 1;
       gap: 10px;
@@ -63,8 +64,6 @@
       white-space: nowrap;
       &:last-child {
         justify-content: flex-end;
-        align-items: center;
-        text-align: right;
       }
       span {
         color: v.$accent-color;

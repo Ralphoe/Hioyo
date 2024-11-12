@@ -53,6 +53,22 @@ a {
   font-weight: 600;
   border-bottom: 1px solid transparent;
 }
+@media (max-width: 768px) {
+  .news-container .sidebar-news,
+  .news-container .news-content {
+    float: none;
+    width: 100%;
+  }
+  .news-container .sidebar-news h2,
+  .news-container .news-content h2 {
+    text-align: center;
+  }
+  .news-container .sidebar-news li,
+  .news-container .news-content li {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 .news-container .news-content {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   float: left;
@@ -125,6 +141,16 @@ a {
   text-align: left;
   width: 85%;
 }
+@media (max-width: 768px) {
+  .news-container .news-content {
+    width: 100%;
+    margin: 5% auto;
+  }
+  .news-container .news-content .news-table-container {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
 
 .pagination-news {
   display: -webkit-box;
@@ -169,10 +195,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .sidebar-news,
-  .news-content {
-    float: none;
-    width: 100%;
-    margin-bottom: 20px;
+  .news-container {
+    width: 95%;
   }
 }/*# sourceMappingURL=news.css.map */

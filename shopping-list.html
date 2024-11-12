@@ -44,7 +44,6 @@
     <link rel="stylesheet" href="./css/product.css" />
     <link rel="stylesheet" href="./css/product-detail.css" />
     <link rel="stylesheet" href="./css/shopping-list.css" />
-
   </head>
 
   <body class="index-page">
@@ -185,14 +184,13 @@
     </section>
     <!-- Main Content -->
     <main>
+      <!-- Progress bar -->
+      <div class="progress-bar-shopping">
+        <div class="step step1">1<span>購物結帳</span></div>
+        <div class="step step2 inactive">2<span>資料確認</span></div>
+        <div class="step step3 inactive">3<span>結帳完成</span></div>
+      </div>
       <section class="checkout-container">
-        <!-- Progress bar -->
-        <div class="progress-bar-shopping">
-          <div class="step step1">1<span>購物結帳</span></div>
-          <div class="step step2 inactive">2<span>資料確認</span></div>
-          <div class="step step3 inactive">3<span>結帳完成</span></div>
-        </div>
-
         <!-- Product List -->
         <div class="product-list">
           <div class="product-item">
@@ -247,9 +245,10 @@
             <div class="mount-title">總金額</div>
             <div class="total-counting">
               <div class="total-amount"><small>-100</small>$ 7,509</div>
-              <div class="total-nyt"><small>-10</small><span class="nyt">NYT</span>120</div>
+              <div class="total-nyt">
+                <small>-10</small><span class="nyt">NYT</span>120
+              </div>
             </div>
-
           </div>
 
           <!-- Buttons -->
