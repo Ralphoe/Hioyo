@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const start = (page - 1) * productsPerPage;
     const end = start + productsPerPage;
     const productsToRender = products.slice(start, end);
-    const imgPath = `${window.location.origin}/assets/img/sample_img.jpg`;
+    const imgPath = `/assets/img/sample_img.jpg`;
+    // ${window.location.origin}
 
     productsToRender.forEach((product) => {
       // Format the price to currency format
