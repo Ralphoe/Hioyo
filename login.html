@@ -41,7 +41,7 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/news.css" />
+    <link rel="stylesheet" href="./css/login.css" />
   </head>
 
   <body class="index-page">
@@ -189,20 +189,18 @@
           class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
         >
           <a href="index.html" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="./assets/img/hioyo.svg" alt="hioyo" />
-            <!-- <h1 class="sitename">AgriCulture</h1>  -->
           </a>
 
           <nav id="navmenu" class="navmenu">
             <ul>
               <li><a href="index.html">服務總攬</a></li>
               <li><a href="about.html">關於我們</a></li>
-              <li><a href="news.html" class="active">最新消息</a></li>
+              <li><a href="news.html">最新消息</a></li>
               <li><a href="product.html">產品服務</a></li>
               <li><a href="contact.html">聯絡我們</a></li>
               <li class="dropdown">
-                <a href="#"
+                <a href="#"  class="active"
                   ><span>會員專區</span>
                   <i class="bi bi-chevron-down toggle-dropdown"></i
                 ></a>
@@ -234,53 +232,39 @@
       </div>
     </header>
     <section class="banner-short banner-product">
-      <h2 class="banner-title">最新消息</h2>
+      <h2 class="banner-title">會員登入</h2>
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
-            <li class="breadcrumb-item active" aria-current="page">最新消息</li>
+            <li class="breadcrumb-item active" aria-current="page">會員登入</li>
           </ol>
         </nav>
       </div>
     </section>
     <!-- Main Content -->
     <main>
-      <section class="news-container">
-        <div class="sidebar-news">
-          <ul>
-            <li class="active" data-category="activity">活動訊息</li>
-            <li data-category="company">公司訊息</li>
-            <li data-category="media">媒體資訊</li>
-          </ul>
-        </div>
-
-        <div class="news-content">
-          <h2>活動訊息</h2>
-          <div class="news-table-container">
-            <div class="table-header">
-              <img src="./assets/img/table-header.png" alt="" />
-            </div>
-            <div id="loading" style="display: none;">載入中...</div>
-            <table>
-              <thead>
-                <tr class="tr-news-title">
-                  <th>標題</th>
-                  <th>發布日期</th>
-                </tr>
-              </thead>
-              <tbody id="news-table">
-                <!-- 動態新聞項目會顯示在這裡 -->
-              </tbody>
-            </table>
-            <div class="pagination-news">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section class="member-login">
+            <h2>會員登入</h2>
+            <form id="login-form">
+                <label for="username">手機/信箱/會員編號</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">密碼</label>
+                <input type="password" id="password" name="password" required>
+                
+                <div class="captcha-container">
+                    <label for="captcha">驗證碼</label>
+                    <input type="text" id="captcha" class="captcha" name="captcha" required>
+                    <img src="captcha.png" alt="驗證碼圖片">
+                </div>
+                
+                <button type="submit">登入</button>
+                <div class="form-options">
+                    <a href="#">忘記密碼?</a> | <a href="#">加入會員</a>
+                </div>
+            </form>
+        </section>
     </main>
 
     <footer id="footer" class="footer dark-background">
@@ -393,6 +377,6 @@
 
     <!-- Main JS File -->
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
-    <script src="./assets/js/news.js"></script>
+    <script src="./assets/js/login.js"></script>
   </body>
 </html>

@@ -1,24 +1,64 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sidebarItems = document.querySelectorAll('.sidebar-news ul li');
     const newsContentTitle = document.querySelector('.news-content h2');
-    const newsTable = document.querySelector('.news-table-container tbody');
-    const data = {
-        activity: [
-            { title: '植物硒純度達99%，榮獲市面上同類產品，躋身國際榮譽！', date: '2024/10/20', link: 'article1.html' },
-            { title: '新品上市！新品專享市民折扣特惠連結', date: '2024/10/10', link: 'article2.html' },
-            { title: '數人增加，最受歡迎的保健產品', date: '2024/09/06', link: 'article3.html' }
-        ],
-        company: [
-            { title: '公司擴大規模，服務提升', date: '2024/09/05', link: 'article4.html' },
-            { title: '企業社會責任及公益活動', date: '2024/08/15', link: 'article5.html' }
-        ],
-        media: [
-            { title: '媒體報導：專家推薦的保健飲品', date: '2024/07/22', link: 'article6.html' },
-            { title: '參與國際食品博覽會的亮點', date: '2024/06/30', link: 'article7.html' }
-        ]
+    const newsTable = document.getElementById('news-table');
+    const loadingIndicator = document.getElementById('loading');
+
+    // 發送API請求
+    var myHeaders = new Headers();
+    myHeaders.append("Accept", "application/json");
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
     };
 
-    // Sidebar click event
+    // 初次載入新聞資料
+    fetchNews('http://150.230.105.85/api/v1/news?per_page=10&page=1&sort=-id');
+
+    function fetchNews(apiUrl) {
+        loadingIndicator.style.display = 'block'; // 顯示載入中
+
+        fetch(apiUrl, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('網路回應出現問題，狀態碼：' + response.status);
+                }
+                return response.json(); // 解析為JSON格式
+            })
+            .then(data => {
+                if (data.success && data.data && data.data.data) {
+                    updateNewsTable(data.data.data);
+                } else {
+                    console.error('返回的數據格式不正確');
+                }
+                loadingIndicator.style.display = 'none'; // 隱藏載入中
+            })
+            .catch(error => {
+                console.log('發生錯誤:', error);
+                loadingIndicator.style.display = 'none'; // 隱藏載入中，即便有錯誤
+            });
+    }
+
+    // 更新表格內容的函數
+    function updateNewsTable(newsData) {
+        newsTable.innerHTML = ''; // 清空之前的內容
+
+        newsData.forEach(article => {
+            const tr = document.createElement('tr');
+            tr.className = 'news-item';
+            const date = new Date(article.created_at).toLocaleDateString(); // 將日期格式化為 YYYY/MM/DD
+            tr.innerHTML = `
+                <td><a href="#">${article.subject}</a></td>
+                <td>${date}</td>
+            `;
+            newsTable.appendChild(tr);
+        });
+    }
+
+    // 側邊欄選項點擊事件
     sidebarItems.forEach(item => {
         item.addEventListener('click', function () {
             sidebarItems.forEach(el => el.classList.remove('active'));
@@ -35,12 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             media: '媒體資訊'
         }[category];
 
-        newsTable.innerHTML = '';
-        data[category].forEach(article => {
-            const tr = document.createElement('tr');
-            tr.className = 'news-item';
-            tr.innerHTML = `<td><a href="${article.link}">${article.title}</a></td><td>${article.date}</td>`;
-            newsTable.appendChild(tr);
-        });
+        // 根據選中的分類請求相應的資料
+        fetchNews(`http://150.230.105.85/api/v1/news?filter[subject]=${category}&per_page=10&page=1&sort=-id`);
     }
 });

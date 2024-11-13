@@ -41,7 +41,7 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/news.css" />
+    <link rel="stylesheet" href="./css/member-info.css" />
   </head>
 
   <body class="index-page">
@@ -189,20 +189,18 @@
           class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
         >
           <a href="index.html" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="./assets/img/hioyo.svg" alt="hioyo" />
-            <!-- <h1 class="sitename">AgriCulture</h1>  -->
           </a>
 
           <nav id="navmenu" class="navmenu">
             <ul>
               <li><a href="index.html">服務總攬</a></li>
               <li><a href="about.html">關於我們</a></li>
-              <li><a href="news.html" class="active">最新消息</a></li>
+              <li><a href="news.html">最新消息</a></li>
               <li><a href="product.html">產品服務</a></li>
               <li><a href="contact.html">聯絡我們</a></li>
               <li class="dropdown">
-                <a href="#"
+                <a href="#" class="active"
                   ><span>會員專區</span>
                   <i class="bi bi-chevron-down toggle-dropdown"></i
                 ></a>
@@ -226,7 +224,6 @@
                   <li><a href="#">Dropdown 4</a></li>
                 </ul>
               </li>
-              <!-- <li><a href="contact.html">Contact</a></li> -->
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
@@ -234,54 +231,79 @@
       </div>
     </header>
     <section class="banner-short banner-product">
-      <h2 class="banner-title">最新消息</h2>
+      <h2 class="banner-title">會員專區</h2>
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
-            <li class="breadcrumb-item active" aria-current="page">最新消息</li>
+            <li class="breadcrumb-item active" aria-current="page">會員專區</li>
           </ol>
         </nav>
       </div>
     </section>
     <!-- Main Content -->
     <main>
-      <section class="news-container">
-        <div class="sidebar-news">
-          <ul>
-            <li class="active" data-category="activity">活動訊息</li>
-            <li data-category="company">公司訊息</li>
-            <li data-category="media">媒體資訊</li>
-          </ul>
+        <div class="container-member-info">
+            <aside class="sidebar-member">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active">會員中心</a></li>
+                    <li><a href="#">申請成為推薦顧問</a></li>
+                    <li><a href="#">修改密碼</a></li>
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">購物車</a></li>
+                    <li><a href="#">點數查詢</a></li>
+                    <li><a href="#">兌換券</a></li>
+                    <li><a href="#">登出</a></li>
+                </ul>
+            </aside>
+    
+            <section class="member-section">
+                <h1>會員專區</h1>
+                <div class="account-details">
+                    <h2>我的帳戶</h2>
+                    <form id="accountForm">
+                        <div class="form-group">
+                            <label>會員編號</label>
+                            <span id="memberNumber"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>會員姓名</label>
+                            <span id="memberName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>電子信箱</label>
+                            <span id="memberEmail"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>通訊地址</label>
+                            <span id="memberAddress"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>住宅電話</label>
+                            <span id="homeTel"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>公司電話</label>
+                            <span id="companyTel"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>行動電話</label>
+                            <span id="memberMobile"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>會員等級</label>
+                            <span id="memberLevel">金級會員</span>
+                        </div>
+                        <div class="form-group">
+                            <label>社群顧問</label>
+                            <span id="socialAdvisor">暫未申請</span>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
-
-        <div class="news-content">
-          <h2>活動訊息</h2>
-          <div class="news-table-container">
-            <div class="table-header">
-              <img src="./assets/img/table-header.png" alt="" />
-            </div>
-            <div id="loading" style="display: none;">載入中...</div>
-            <table>
-              <thead>
-                <tr class="tr-news-title">
-                  <th>標題</th>
-                  <th>發布日期</th>
-                </tr>
-              </thead>
-              <tbody id="news-table">
-                <!-- 動態新聞項目會顯示在這裡 -->
-              </tbody>
-            </table>
-            <div class="pagination-news">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
+    
 
     <footer id="footer" class="footer dark-background">
       <div class="footer-top">
@@ -393,6 +415,6 @@
 
     <!-- Main JS File -->
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
-    <script src="./assets/js/news.js"></script>
+    <script src="./assets/js/member-info.js"></script>
   </body>
 </html>

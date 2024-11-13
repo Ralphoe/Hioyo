@@ -1,0 +1,81 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+
+.member-login {
+    background: #fff;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .captcha {
+                width: 45%;
+            }
+
+            img {
+                margin-left: 1rem;
+                height: 40px;
+            }
+        }
+
+        button {
+            width: 100px;
+            text-align: center;
+            padding: 0.75rem;
+            background-color: #006400;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #004d00;
+            }
+        }
+
+        .form-options {
+            display: flex;
+            margin-top: 1rem;
+            text-align: center;
+
+            a {
+                color: #006400;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
