@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const sidebarItems = document.querySelectorAll('.sidebar-member ul li');
     const loadingIndicator = document.getElementById('loading');
-    const API_URL = 'http://150.230.105.85/api/v1/me';
+    const API_URL = 'https://dev-backend-host.hioyo.com/api/v1/me';
+    const token = localStorage.getItem('token');
 
     // API 請求配置
     const requestOptions = {
@@ -9,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 2f68dbbf-519d-4f01-9636-e2421b68f379`
+            'Authorization': `Bearer ${token}`
+            // 'Authorization': `Bearer 2f68dbbf-519d-4f01-9636-e2421b68f379`
         },
         credentials: 'same-origin',
         redirect: 'follow'

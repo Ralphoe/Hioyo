@@ -7,7 +7,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 
     if (username && password && captcha) {
         // 更新為實際API URL：
-        const apiUrl = "http://150.230.105.85/api/v1/login";
+        const apiUrl = "https://dev-backend-host.hioyo.com/api/v1/login";
 
         var myHeaders = new Headers();
         myHeaders.append("Accept", "application/json");

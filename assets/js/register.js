@@ -13,7 +13,7 @@ document.getElementById("register-form").addEventListener("submit", function(eve
       return;
     }
   
-    const apiUrl = "http://150.230.105.85/api/v1/register";
+    const apiUrl = "https://dev-backend-host.hioyo.com/api/v1/register";
   
     var myHeaders = new Headers();
     myHeaders.append("Accept", "application/json");
