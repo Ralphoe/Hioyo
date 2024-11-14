@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const API_URL = 'https://dev-backend-host.hioyo.com/api/v1/me';
     const token = localStorage.getItem('token');
 
+    if (!token) {
+        alert('請先登入');
+        window.location.href = '/login';
+        return;
+    }
+
     // API 請求配置
     const requestOptions = {
         method: 'GET',

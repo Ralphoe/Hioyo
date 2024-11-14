@@ -232,7 +232,7 @@
       </div>
     </header>
     <section class="banner-short banner-product">
-      <h2 class="banner-title">會員登入</h2>
+      <h2 class="banner-title">會員專區</h2>
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -254,14 +254,16 @@
                 <input type="password" id="password" name="password" required>
                 
                 <div class="captcha-container">
-                    <label for="captcha">驗證碼</label>
-                    <input type="text" id="captcha" class="captcha" name="captcha" required>
-                    <img src="captcha.png" alt="驗證碼圖片">
-                </div>
+                  <label for="captcha">驗證碼</label>
+                  <input type="text" id="captcha" class="captcha" name="captcha" required>
+                  <img id="captchaImg" src="" alt="驗證碼圖片">
+                  <!-- 隱藏的輸入框來保存驗證碼 key -->
+                  <input type="hidden" id="captcha-key" name="captcha-key">
+              </div>
                 
                 <button type="submit">登入</button>
                 <div class="form-options">
-                    <a href="#">忘記密碼?</a> | <a href="#">加入會員</a>
+                    <a href="/member-forget">忘記密碼</a><span>|</span><a href="/register.html">加入會員</a>
                 </div>
             </form>
         </section>

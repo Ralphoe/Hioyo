@@ -243,35 +243,50 @@
     </section>
     <!-- Main Content -->
     <main>
-        <div class="container-register">
-            <section class="member-register">
-              <h2>會員註冊</h2>
-              <form id="register-form">
-                <label for="username">推薦人編號</label>
-                <input type="text" id="username" name="username" required>
-        
-                <label for="password">密碼</label>
-                <input type="password" id="password" name="password" required>
-        
-                <label for="password-confirm">確認密碼</label>
-                <input type="password" id="password-confirm" name="password-confirm" required>
-        
-                <label for="mobile">電話</label>
-                <input type="tel" id="mobile" name="mobile" required>
-        
-                <label for="email">電子郵件</label>
-                <input type="email" id="email" name="email" required>
-        
-                <div class="captcha-container-register">
-                  <label for="captcha">驗證碼</label>
-                  <input type="text" id="captcha" name="captcha" required>
-                  <img src="captcha.png" alt="驗證碼圖片">
-                </div>
-        
-                <button type="submit">提交註冊</button>
-              </form>
-            </section>
-          </div>
+      <div class="container-register">
+        <section class="member-register">
+          <h2>會員註冊</h2>
+          <form id="register-form">
+            <label for="referral_by_no">推薦人編號</label>
+            <input
+              type="text"
+              id="referral_by_no"
+              name="referral_by_no"
+              required
+            />
+
+            <label for="name">姓名</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="password">密碼</label>
+            <input type="password" id="password" name="password" required autocomplete="new-password" />
+
+            <label for="password-confirm">確認密碼</label>
+            <input
+              type="password"
+              id="password-confirm"
+              name="password-confirm"
+              required
+            />
+
+            <label for="mobile">電話</label>
+            <input type="tel" id="mobile" name="mobile" required />
+
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" name="email" required />
+
+            <div class="captcha-container-register">
+              <label for="captcha">驗證碼</label>
+              <input type="text" id="captcha" name="captcha" required />
+              <img id="captchaImg" src="" alt="驗證碼圖片" />
+              <!-- 隱藏的輸入框來保存驗證碼 key -->
+              <input type="hidden" id="captcha-key" name="captcha-key" />
+            </div>
+
+            <button type="submit">提交註冊</button>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer id="footer" class="footer dark-background">
