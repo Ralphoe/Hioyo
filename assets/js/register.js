@@ -88,7 +88,7 @@ document.getElementById("register-form").addEventListener("submit", function(eve
 
           if (data.success) {
               alert("註冊成功: " + data.message);
-              window.location.href = "/login";
+              window.location.href = "/login.html";
           } else {
               console.error("註冊失敗:", data); // 打印詳細的錯誤訊息
               alert("註冊失敗: " + data.message);

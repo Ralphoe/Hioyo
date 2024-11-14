@@ -75,7 +75,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
                 // 儲存 access_token
                 localStorage.setItem('token', data.data.access_token);
                 // 可以重定向到會員區域
-                window.location.href = "/member-info";
+                window.location.href = "/member-info.html";
             } else {
                 console.error("登入失敗:", data); // 打印詳細的錯誤訊息
                 alert("登入失敗: " + data.message);

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!token) {
         alert('請先登入');
-        window.location.href = '/login';
+        window.location.href = '/login.html';
         return;
     }
 
