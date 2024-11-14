@@ -27,15 +27,26 @@ a {
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .member-register h2 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.member-register .register-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .member-register form {
   display: -webkit-box;
@@ -52,8 +63,8 @@ a {
 .member-register form input {
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
 }
 .member-register form .captcha-container-register {
   display: -webkit-box;
@@ -62,20 +73,50 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1rem;
+}
+.member-register form .captcha-container-register label {
+  margin-right: 1rem;
+}
+.member-register form .captcha-container-register input {
+  margin: 0;
 }
 .member-register form .captcha-container-register img {
   margin-left: 1rem;
   height: 40px;
 }
 .member-register form button {
-  padding: 0.75rem;
-  background-color: #006400;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background-color: #116530;
+  color: #ffffff;
+  white-space: nowrap;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .member-register form button:hover {
-  background-color: #004d00;
+  background-color: #7fb93b;
+  color: #000000;
 }/*# sourceMappingURL=register.css.map */

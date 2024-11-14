@@ -2,80 +2,87 @@
 @use "./reset";
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
 
-
 .member-login {
-    background: v.$surface-color;
-    max-width: 400px;
-    margin: 5% auto;
+  @include v.flex-center;
+  flex-direction: column;
+  background: v.$surface-color;
+  max-width: 450px;
+  margin: 5% auto;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .login-box {
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
-    border-radius: 8px;
+    margin-bottom: 2rem;
+    background: v.$surface-color;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 
-    h2 {
-        text-align: center;
-        margin-bottom: 1rem;
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.5rem;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-
-        label {
-            margin-bottom: 0.5rem;
-        }
-
-        input[type="text"],
-        input[type="password"],
-        input[type="email"] {
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .captcha-container {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-
-            .captcha {
-                width: 45%;
-            }
-
-            img {
-                margin-left: 1rem;
-                height: 40px;
-            }
-        }
-
-        button {
-            width: 100px;
-            text-align: center;
-            padding: 0.75rem;
-            background-color: #006400;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #004d00;
-            }
-        }
-
-        .form-options {
-            display: flex;
-            margin-top: 1rem;
-            text-align: center;
-
-            a {
-                color: #006400;
-                text-decoration: none;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid v.$medium-grey;
+      border-radius: 5px;
     }
+
+    .captcha-container {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      .captcha {
+        width: 60%;
+      }
+      img {
+        height: 40px;
+      }
+    }
+
+    button {
+      @include v.primary-button-a;
+      align-self: center;
+
+      &:hover {
+        background-color: v.$secondary-color;
+        color: v.$default-color;
+      }
+    }
+
+    .form-options {
+      @include v.flex-center;
+      margin-top: 1rem;
+      text-align: center;
+      gap: 1rem;
+
+      a {
+        color: v.$accent-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        color: v.$accent-color;
+        font-weight: bold;
+      }
+    }
+  }
 }
