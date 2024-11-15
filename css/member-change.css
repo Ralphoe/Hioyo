@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+.member-section .pwd-change-banner {
+  width: 100%;
+  height: 50px;
+}
+.member-section .pwd-change-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.member-section .change-password-form {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.member-section .change-password-form .locked-icon {
+  position: absolute;
+  left: 4rem;
+  top: 4rem;
+  width: 10%;
+}
+.member-section .change-password-form .locked-icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: transparent;
+}
+.member-section .change-password-form .form-group {
+  margin-bottom: 1.5rem;
+  width: 50%;
+  margin: 1rem auto;
+}
+.member-section .change-password-form .form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.member-section .change-password-form .form-group .input-wrapper {
+  position: relative;
+}
+.member-section .change-password-form .form-group .input-wrapper input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+.member-section .change-password-form .form-group .input-wrapper i {
+  color: #116530;
+}
+.member-section .change-password-form .form-group .input-wrapper .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+}
+.member-section .change-password-form .btn-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  background-color: #116530;
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+.member-section .change-password-form .btn-submit:hover {
+  background-color: #0a391b;
+}/*# sourceMappingURL=member-change.css.map */

@@ -42,6 +42,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/member-info.css" />
+    <link rel="stylesheet" href="./css/apply-advisor.css">
   </head>
 
   <body class="index-page">
@@ -244,67 +245,43 @@
     <!-- Main Content -->
     <main>
         <div class="container-member-info">
-          <aside class="sidebar-member">
-            <ul class="sidebar-menu">
-                <li><a href="/member-info.html" class="active">會員中心</a></li>
-                <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
-                <li><a href="/member-change.html">修改密碼</a></li>
-                <li><a href="/member-order.html">訂單查詢</a></li>
-                <li class="reward-menu"><a href="/">獎勵查詢</a>
-                    <ul class="reward-submenu">
-                        <li><a href="/member-rule.html">獎勵規則</a></li>
-                        <li><a href="/member-organize.html">組織節點</a></li>
-                        <!-- <li><a href="#">獎勵結算</a></li> -->
-                    </ul>
-                </li>
-                <li><a href="#">登出</a></li>
-            </ul>
-        </aside>
+            <aside class="sidebar-member">
+                <ul class="sidebar-menu">
+                    <li><a href="/member-info.html">會員中心</a></li>
+                    <li><a href="/apply-advisor.html"  class="active">申請成為社群顧問</a></li>
+                    <li><a href="/member-change.html">修改密碼</a></li>
+                    <li><a href="/member-order.html">訂單查詢</a></li>
+                    <li class="reward-menu"><a href="/">獎勵查詢</a>
+                        <ul class="reward-submenu">
+                            <li><a href="/member-rule.html">獎勵規則</a></li>
+                            <li><a href="/member-organize.html">組織節點</a></li>
+                            <!-- <li><a href="#">獎勵結算</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a href="#">登出</a></li>
+                </ul>
+            </aside>
     
             <section class="member-section">
                 <div class="member-title">
-                  <h2>我的帳戶</h2>
-                  <span class="member-rank"></span>
+                    <h2>申請成為儲備社群顧問</h2>
                 </div>
-                <div class="account-details">
-                    <form id="accountForm">
-                        <div class="form-group member-number-form">
-                            <label>會員編號</label>
-                            <span id="memberNumber"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員姓名</label>
-                            <span id="memberName"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>電子信箱</label>
-                            <span id="memberEmail"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>通訊地址</label>
-                            <span id="memberAddress"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>住宅電話</label>
-                            <span id="homeTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>公司電話</label>
-                            <span id="companyTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>行動電話</label>
-                            <span id="memberMobile"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員等級</label>
-                            <span id="memberLevel">金級會員</span>
-                        </div>
-                        <div class="form-group">
-                            <label>社群顧問</label>
-                            <span id="socialAdvisor">暫未申請</span>
-                        </div>
-                    </form>
+                <div class="application-banner">
+                    <img src="/assets/img/table-header.png" alt="會員版頭">
+                    <div class="apply-icon">
+                        <img src="/assets/img/icon/social-application.svg" alt="社群顧問圖標">
+                    </div>
+                </div>
+                <div class="consultant-application">
+                    <div class="application-form">
+                        <h3>申請成為儲備社群顧問</h3>
+                        <ul>
+                            <li>僅<span>金級會員</span>具申請資格</li>
+                            <li>需完成推薦三名銀級會員</li>
+                        </ul>
+                        <p>成為儲備社群顧問可享有更多會員專屬優惠，同時也將負責推廣產品及顧客交流，建議申請時確認聯絡資料無誤。</p>
+                        <button class="submit-application-btn">確認送出</button>
+                    </div>
                 </div>
             </section>
         </div>
@@ -423,5 +400,6 @@
      <script src="./assets/js/main.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/member-info.js"></script>
+    <script src="./assets/js/apply-advisor.js"></script>
   </body>
 </html>

@@ -1,0 +1,121 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.member-section {
+  flex: 1;
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+  .order-query-form {
+    padding: 2rem;
+    background: v.$surface-color;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    .orderQueryForm {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      width: 40%;
+      label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid v.$medium-grey;
+      }
+    }
+    .btn-submit {
+      @include v.primary-button-a;
+      align-self: center;
+      margin-top: auto;
+      margin-bottom: 24px;
+      &:hover {
+        background-color: darken(v.$accent-color, 10%);
+      }
+    }
+  }
+
+  .order-results {
+    .order-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      thead {
+        color: v.$default-color;
+      }
+      tbody {
+        tr:nth-child(odd) {
+          background-color: rgba($color: v.$third-color, $alpha: 0.5);
+        }
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.filter-order-section {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  background-color: v.$surface-color;
+  border-radius: 10px;
+
+  .filter-order-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter-tabs-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-right: 15px;
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      li.active {
+        font-weight: bold;
+        border-color: v.$accent-color;
+        color: v.$accent-color;
+      }
+    }
+
+    .search-bar {
+      position: relative;
+
+      input[type="text"] {
+        padding: 5px 30px 5px 10px;
+        border-radius: 5px;
+        border: 1px solid v.$medium-grey;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: v.$deep-grey;
+        cursor: pointer;
+      }
+    }
+  }
+}

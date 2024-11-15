@@ -1,0 +1,173 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+.member-section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.member-section h2 {
+  margin-bottom: 1.5rem;
+}
+.member-section .order-query-form {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+.member-section .order-query-form .orderQueryForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.member-section .order-query-form .form-group {
+  margin-bottom: 1.5rem;
+  width: 40%;
+}
+.member-section .order-query-form .form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.member-section .order-query-form .form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+.member-section .order-query-form .btn-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  background-color: #116530;
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+.member-section .order-query-form .btn-submit:hover {
+  background-color: #0a391b;
+}
+.member-section .order-results .order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+.member-section .order-results .order-table thead {
+  color: #000000;
+}
+.member-section .order-results .order-table tbody tr:nth-child(odd) {
+  background-color: rgba(184, 218, 193, 0.5);
+}
+.member-section .order-results .order-table th,
+.member-section .order-results .order-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.filter-order-section {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.filter-order-section .filter-order-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.filter-order-section .filter-order-tabs .filter-tabs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.filter-order-section .filter-order-tabs .filter-tabs-list li {
+  margin-right: 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.filter-order-section .filter-order-tabs .filter-tabs-list li.active {
+  font-weight: bold;
+  border-color: #116530;
+  color: #116530;
+}
+.filter-order-section .filter-order-tabs .search-bar {
+  position: relative;
+}
+.filter-order-section .filter-order-tabs .search-bar input[type=text] {
+  padding: 5px 30px 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+.filter-order-section .filter-order-tabs .search-bar .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #818080;
+  cursor: pointer;
+}/*# sourceMappingURL=member-order.css.map */

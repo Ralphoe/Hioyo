@@ -67,7 +67,7 @@ $nav-dropdown-hover-color: #116530;
 @mixin primary-button-a {
   @include flex-center;
   @include basic-font;
-  padding: 15px 25px;
+  padding: 0.8rem 1rem;
   border-radius: 5px;
   background-color: $accent-color;
   color: $surface-color;

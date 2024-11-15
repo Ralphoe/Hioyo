@@ -1,0 +1,69 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.member-section {
+  .pwd-change-banner {
+    width: 100%;
+    height: 50px;
+    img {
+      @include v.image-cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+  .change-password-form {
+    padding: 2rem;
+    background: v.$surface-color;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    .locked-icon {
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+        width: 10%;
+        img {
+            @include v.image-cover;
+            background-color: transparent;
+        }
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+      width: 50%;
+      margin: 1rem auto;
+      label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .input-wrapper {
+        position: relative;
+        input {
+          width: 100%;
+          padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+          border-radius: 5px;
+          border: 1px solid v.$medium-grey;
+        }
+        i {
+          color: v.$accent-color;
+        }
+        .toggle-password {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+        }
+      }
+    }
+    .btn-submit {
+      @include v.primary-button-a;
+      margin: 0 auto;
+      margin-top: 4rem;
+      &:hover {
+        background-color: darken(v.$accent-color, 10%);
+      }
+    }
+  }
+}

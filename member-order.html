@@ -42,6 +42,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/member-info.css" />
+    <link rel="stylesheet" href="./css/member-order.css">
   </head>
 
   <body class="index-page">
@@ -244,68 +245,74 @@
     <!-- Main Content -->
     <main>
         <div class="container-member-info">
-          <aside class="sidebar-member">
-            <ul class="sidebar-menu">
-                <li><a href="/member-info.html" class="active">會員中心</a></li>
-                <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
-                <li><a href="/member-change.html">修改密碼</a></li>
-                <li><a href="/member-order.html">訂單查詢</a></li>
-                <li class="reward-menu"><a href="/">獎勵查詢</a>
-                    <ul class="reward-submenu">
-                        <li><a href="/member-rule.html">獎勵規則</a></li>
-                        <li><a href="/member-organize.html">組織節點</a></li>
-                        <!-- <li><a href="#">獎勵結算</a></li> -->
-                    </ul>
-                </li>
-                <li><a href="#">登出</a></li>
-            </ul>
-        </aside>
+            <aside class="sidebar-member">
+                <ul class="sidebar-menu">
+                    <li><a href="/member-info.html">會員中心</a></li>
+                    <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
+                    <li><a href="/member-change.html">修改密碼</a></li>
+                    <li><a href="/member-order.html" class="active">訂單查詢</a></li>
+                    <li class="reward-menu"><a href="/">獎勵查詢</a>
+                        <ul class="reward-submenu">
+                            <li><a href="/member-rule.html">獎勵規則</a></li>
+                            <li><a href="/member-organize.html">組織節點</a></li>
+                            <!-- <li><a href="#">獎勵結算</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a href="#">登出</a></li>
+                </ul>
+            </aside>
     
             <section class="member-section">
                 <div class="member-title">
-                  <h2>我的帳戶</h2>
-                  <span class="member-rank"></span>
+                    <h2>訂單查詢</h2>
                 </div>
-                <div class="account-details">
-                    <form id="accountForm">
-                        <div class="form-group member-number-form">
-                            <label>會員編號</label>
-                            <span id="memberNumber"></span>
+                <div class="order-query-form">
+                    <form id="orderQueryForm" class="orderQueryForm">
+                        <div class="form-group">
+                            <label for="startDate">訂單起始日</label>
+                            <input type="date" id="startDate" required>
                         </div>
                         <div class="form-group">
-                            <label>會員姓名</label>
-                            <span id="memberName"></span>
+                            <label for="endDate">訂單結束日</label>
+                            <input type="date" id="endDate" required>
                         </div>
-                        <div class="form-group">
-                            <label>電子信箱</label>
-                            <span id="memberEmail"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>通訊地址</label>
-                            <span id="memberAddress"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>住宅電話</label>
-                            <span id="homeTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>公司電話</label>
-                            <span id="companyTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>行動電話</label>
-                            <span id="memberMobile"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員等級</label>
-                            <span id="memberLevel">金級會員</span>
-                        </div>
-                        <div class="form-group">
-                            <label>社群顧問</label>
-                            <span id="socialAdvisor">暫未申請</span>
-                        </div>
+                        <button type="submit" class="btn-submit">查詢</button>
                     </form>
+                    <div class="filter-order-section">
+                        <div class="filter-order-tabs">
+                            <ul class="filter-tabs-list">
+                                <li data-status="all">全部</li>
+                                <li data-status="待付款">待付款</li>
+                                <li data-status="待出貨">待出貨</li>
+                                <li data-status="已出貨">已出貨</li>
+                                <li data-status="已送達">已送達</li>
+                                <li data-status="不成立">不成立</li>
+                            </ul>
+                            <div class="search-bar">
+                                <input type="text" id="searchOrder" placeholder="請輸入訂單編號/訂貨代碼" />
+                                <i class="fas fa-search search-icon" id="searchButton"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-results" id="orderResults" style="display: none;">
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>訂單日期</th>
+                                    <th>訂單編號</th>
+                                    <th>訂購人姓名</th>
+                                    <th>狀態</th>
+                                    <th>付款方式</th>
+                                    <th>金額</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orderResultsBody">
+                                <!-- 訂單查詢結果將顯示在此處 -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                
             </section>
         </div>
     </main>
@@ -423,5 +430,6 @@
      <script src="./assets/js/main.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/member-info.js"></script>
+    <script src="./assets/js/member-order.js"></script>
   </body>
 </html>

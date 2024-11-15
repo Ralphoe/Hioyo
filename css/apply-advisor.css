@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除button標籤自帶樣式 */
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  /*"*"表全域選擇器，改變所有標籤*/
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*不累加邊框和內距，間距還是會累積*/
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /*a自帶有底線與點擊顏色*/
+}
+
+.member-section .application-banner {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+.member-section .application-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.member-section .application-banner .apply-icon {
+  width: 80px;
+  aspect-ratio: 1/1;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  bottom: -40px;
+}
+.member-section .application-banner .apply-icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.member-section .consultant-application {
+  padding: 4rem 12rem;
+  background: #ffffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.member-section .consultant-application .application-form h3 {
+  color: #333333;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.member-section .consultant-application .application-form p {
+  color: #818080;
+  font-size: 1rem;
+}
+.member-section .consultant-application .application-form ul {
+  color: #818080;
+  margin-bottom: 1rem;
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+}
+.member-section .consultant-application .application-form ul li {
+  margin-bottom: 0.5rem;
+}
+.member-section .consultant-application .application-form ul li span {
+  color: #116530;
+}
+.member-section .consultant-application .application-form .submit-application-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: regular;
+  line-height: 1.5;
+  color: #000000;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  background-color: #116530;
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: background-color 0.35s ease;
+  transition: background-color 0.35s ease;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+.member-section .consultant-application .application-form .submit-application-btn:hover {
+  background-color: #0a391b;
+}/*# sourceMappingURL=apply-advisor.css.map */

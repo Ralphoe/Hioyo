@@ -32,6 +32,27 @@
         }
       }
     }
+    .reward-submenu {
+      display:none;
+      li {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: v.$default-color;
+        border-bottom: 1px solid v.$regular-grey;
+        padding: 15px;
+        &:hover {
+          color: v.$accent-color;
+        }
+        &.active {
+          font-weight: bold;
+          color: v.$accent-color;
+          background-color: rgba($color: v.$third-color, $alpha: 0.3);
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
   }
   .member-section {
     flex: 1;

@@ -42,6 +42,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/member-info.css" />
+    <link rel="stylesheet" href="./css/member-change.css">
   </head>
 
   <body class="index-page">
@@ -244,66 +245,57 @@
     <!-- Main Content -->
     <main>
         <div class="container-member-info">
-          <aside class="sidebar-member">
-            <ul class="sidebar-menu">
-                <li><a href="/member-info.html" class="active">會員中心</a></li>
-                <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
-                <li><a href="/member-change.html">修改密碼</a></li>
-                <li><a href="/member-order.html">訂單查詢</a></li>
-                <li class="reward-menu"><a href="/">獎勵查詢</a>
-                    <ul class="reward-submenu">
-                        <li><a href="/member-rule.html">獎勵規則</a></li>
-                        <li><a href="/member-organize.html">組織節點</a></li>
-                        <!-- <li><a href="#">獎勵結算</a></li> -->
-                    </ul>
-                </li>
-                <li><a href="#">登出</a></li>
-            </ul>
-        </aside>
+            <aside class="sidebar-member">
+                <ul class="sidebar-menu">
+                    <li><a href="/member-info.html">會員中心</a></li>
+                    <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
+                    <li><a href="/member-change.html" class="active">修改密碼</a></li>
+                    <li><a href="/member-order.html">訂單查詢</a></li>
+                    <li class="reward-menu"><a href="/">獎勵查詢</a>
+                        <ul class="reward-submenu">
+                            <li><a href="/member-rule.html">獎勵規則</a></li>
+                            <li><a href="/member-organize.html">組織節點</a></li>
+                            <!-- <li><a href="#">獎勵結算</a></li> -->
+                        </ul>
+                    </li>
+                    <li><a href="#">登出</a></li>
+                </ul>
+            </aside>
     
             <section class="member-section">
                 <div class="member-title">
-                  <h2>我的帳戶</h2>
-                  <span class="member-rank"></span>
+                    <h2>修改密碼</h2>
                 </div>
-                <div class="account-details">
-                    <form id="accountForm">
-                        <div class="form-group member-number-form">
-                            <label>會員編號</label>
-                            <span id="memberNumber"></span>
+                <div class="pwd-change-banner">
+                    <img src="/assets/img/table-header.png" alt="會員版頭">
+                </div>
+                <div class="change-password-form">
+                    <div class="locked-icon">
+                        <img src="/assets/img/icon/password-locked.svg" alt="鎖頭圖標">
+                    </div>
+                    <form id="changePasswordForm">
+                        <div class="form-group">
+                            <label for="oldPassword">舊密碼</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="oldPassword" placeholder="請輸入舊密碼" required>
+                                <i class="fas fa-eye toggle-password" data-target="oldPassword"></i>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>會員姓名</label>
-                            <span id="memberName"></span>
+                            <label for="newPassword">新密碼</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="newPassword" placeholder="請輸入新密碼" required>
+                                <i class="fas fa-eye toggle-password" data-target="newPassword"></i>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>電子信箱</label>
-                            <span id="memberEmail"></span>
+                            <label for="confirmPassword">確認密碼</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="confirmPassword" placeholder="請再次輸入新密碼" required>
+                                <i class="fas fa-eye toggle-password" data-target="confirmPassword"></i>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>通訊地址</label>
-                            <span id="memberAddress"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>住宅電話</label>
-                            <span id="homeTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>公司電話</label>
-                            <span id="companyTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>行動電話</label>
-                            <span id="memberMobile"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員等級</label>
-                            <span id="memberLevel">金級會員</span>
-                        </div>
-                        <div class="form-group">
-                            <label>社群顧問</label>
-                            <span id="socialAdvisor">暫未申請</span>
-                        </div>
+                        <button type="submit" class="btn-submit">確認送出</button>
                     </form>
                 </div>
             </section>
@@ -423,5 +415,6 @@
      <script src="./assets/js/main.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/member-info.js"></script>
+    <script src="./assets/js/member-change.js"></script>
   </body>
 </html>
