@@ -3,24 +3,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
 
 .container-member-info {
+  display: flex;
+  width: 80%;
+  margin: 10% auto;
+  position: relative;
   .sidebar-member {
-    width: 250px;
-    background: #f1f1f1;
+    width: 30%;
     padding: 1rem;
+    margin-right: 5%;
     border-radius: 5px;
     .sidebar-menu {
       list-style: none;
       li {
-        margin-bottom: 1rem;
         a {
           text-decoration: none;
-          color: #333;
+          color: v.$default-color;
+          border-bottom: 1px solid v.$regular-grey;
+          padding: 15px;
           &:hover {
-            color: #006400;
+            color: v.$accent-color;
           }
           &.active {
             font-weight: bold;
-            color: #006400;
+            color: v.$accent-color;
+            background-color: rgba($color: v.$third-color, $alpha: 0.3);
+            border-bottom: 1px solid transparent;
           }
         }
       }
@@ -28,25 +35,47 @@
   }
   .member-section {
     flex: 1;
-    h1 {
-      text-align: center;
+    h2 {
       margin-bottom: 1.5rem;
     }
     .account-details {
-      border: 1px solid #ccc;
-      border-radius: 5px;
       padding: 2rem;
-      background: #f9f9f9;
+      background: v.$surface-color;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       .form-group {
-        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 5rem;
+        border-bottom: 1px solid v.$medium-grey;
+        &:last-child {
+          border-bottom: 1px solid transparent;
+        }
+        &:hover {
+          cursor: pointer;
+          background-color: rgba($color: v.$third-color, $alpha: 0.3);
+        }
+        &.member-number-form {
+          &:hover {
+            background-color: transparent;
+            pointer-events: none;
+          }
+        }
         label {
           font-weight: bold;
+          margin-right: 4rem;
         }
         span {
           display: block;
-          padding-top: 0.3rem;
         }
       }
     }
+  }
+
+  //請先登入錯誤訊息
+  .error-message {
+    position: absolute;
+    right: 0;
+    top: -0.8rem;
   }
 }

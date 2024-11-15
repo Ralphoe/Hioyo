@@ -23,51 +23,83 @@ a {
   /*a自帶有底線與點擊顏色*/
 }
 
+.container-member-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: 10% auto;
+  position: relative;
+}
 .container-member-info .sidebar-member {
-  width: 250px;
-  background: #f1f1f1;
+  width: 30%;
   padding: 1rem;
+  margin-right: 5%;
   border-radius: 5px;
 }
 .container-member-info .sidebar-member .sidebar-menu {
   list-style: none;
 }
-.container-member-info .sidebar-member .sidebar-menu li {
-  margin-bottom: 1rem;
-}
 .container-member-info .sidebar-member .sidebar-menu li a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
+  border-bottom: 1px solid #dfdddd;
+  padding: 15px;
 }
 .container-member-info .sidebar-member .sidebar-menu li a:hover {
-  color: #006400;
+  color: #116530;
 }
 .container-member-info .sidebar-member .sidebar-menu li a.active {
   font-weight: bold;
-  color: #006400;
+  color: #116530;
+  background-color: rgba(184, 218, 193, 0.3);
+  border-bottom: 1px solid transparent;
 }
 .container-member-info .member-section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
-.container-member-info .member-section h1 {
-  text-align: center;
+.container-member-info .member-section h2 {
   margin-bottom: 1.5rem;
 }
 .container-member-info .member-section .account-details {
-  border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 2rem;
-  background: #f9f9f9;
+  background: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .container-member-info .member-section .account-details .form-group {
-  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem 5rem;
+  border-bottom: 1px solid #cccccc;
+}
+.container-member-info .member-section .account-details .form-group:last-child {
+  border-bottom: 1px solid transparent;
+}
+.container-member-info .member-section .account-details .form-group:hover {
+  cursor: pointer;
+  background-color: rgba(184, 218, 193, 0.3);
+}
+.container-member-info .member-section .account-details .form-group.member-number-form:hover {
+  background-color: transparent;
+  pointer-events: none;
 }
 .container-member-info .member-section .account-details .form-group label {
   font-weight: bold;
+  margin-right: 4rem;
 }
 .container-member-info .member-section .account-details .form-group span {
   display: block;
-  padding-top: 0.3rem;
+}
+.container-member-info .error-message {
+  position: absolute;
+  right: 0;
+  top: -0.8rem;
 }/*# sourceMappingURL=member-info.css.map */

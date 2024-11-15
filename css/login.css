@@ -38,7 +38,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   background: #ffffff;
-  max-width: 450px;
+  max-width: 600px;
   margin: 5% auto;
   padding: 2rem;
 }
@@ -54,6 +54,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 400px;
   padding: 2rem;
   margin-bottom: 2rem;
   background: #ffffff;
