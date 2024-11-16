@@ -42,6 +42,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/member-info.css" />
+    <link rel="stylesheet" href="./css/member-rule.css" />
   </head>
 
   <body class="index-page">
@@ -243,73 +244,47 @@
     </section>
     <!-- Main Content -->
     <main>
-        <div class="container-member-info">
-          <aside class="sidebar-member">
-            <ul class="sidebar-menu">
-                <li><a href="/member-info.html" class="active">會員中心</a></li>
-                <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
-                <li><a href="/member-change.html">修改密碼</a></li>
-                <li><a href="/member-order.html">訂單查詢</a></li>
-                <li class="reward-menu"><a href="#">獎勵查詢</a>
-                    <ul class="reward-submenu">
-                        <li><a href="/member-rule.html">獎勵規則</a></li>
-                        <li><a href="/member-organize.html">組織節點</a></li>
-                        <!-- <li><a href="#">獎勵結算</a></li> -->
-                    </ul>
-                </li>
-                <li><a href="#">登出</a></li>
-            </ul>
+      <div class="container-member-info">
+        <aside class="sidebar-member">
+          <ul class="sidebar-menu">
+            <li><a href="/member-info.html">會員中心</a></li>
+            <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
+            <li><a href="/member-change.html">修改密碼</a></li>
+            <li><a href="/member-order.html">訂單查詢</a></li>
+            <li class="reward-menu">
+              <a href="#">獎勵查詢</a>
+              <ul class="reward-submenu">
+                <li><a href="/member-rule.html" class="active">獎勵規則</a></li>
+                <li><a href="/member-organize.html">組織節點</a></li>
+                <!-- <li><a href="#">獎勵結算</a></li> -->
+              </ul>
+            </li>
+            <li><a href="#">登出</a></li>
+          </ul>
         </aside>
-    
-            <section class="member-section">
-                <div class="member-title">
-                  <h2>我的帳戶</h2>
-                  <span class="member-rank"></span>
-                </div>
-                <div class="account-details">
-                    <form id="accountForm">
-                        <div class="form-group member-number-form">
-                            <label>會員編號</label>
-                            <span id="memberNumber"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員姓名</label>
-                            <span id="memberName"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>電子信箱</label>
-                            <span id="memberEmail"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>通訊地址</label>
-                            <span id="memberAddress"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>住宅電話</label>
-                            <span id="homeTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>公司電話</label>
-                            <span id="companyTel"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>行動電話</label>
-                            <span id="memberMobile"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>會員等級</label>
-                            <span id="memberLevel">金級會員</span>
-                        </div>
-                        <div class="form-group">
-                            <label>社群顧問</label>
-                            <span id="socialAdvisor">暫未申請</span>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
+
+        <section class="member-section">
+          <div class="member-title">
+            <h2>獎勵規則</h2>
+          </div>
+          <div class="rules-banner">
+            <img src="/assets/img/table-header.png" alt="會員版頭" />
+            <div class="apply-icon">
+              <img src="/assets/img/icon/award-cup.svg" alt="社群顧問圖標" />
+            </div>
+          </div>
+          <div class="rules-container">
+            <div class="rules-content">
+              <h3>獎勵規則說明</h3>
+              <p>
+                提供每個人新穎的創業機會，不論年紀，只要你敢夢敢想，在這裡可以獲得很多資源，夥伴們互相協助扶持，當自己的老闆，不用再看別人臉色，領著死板的薪水，一輩子翻不了身，「窮不死但也富不起來」，勉強維持生活，卻總是少了點什麼，想必會點進這裡的你，這種日子已經過膩了。提供會員最完善的課程、優渥的獎勵計畫，完整規劃屬於自己的經營方式，打造成就感，生活事業雙贏。成為會員讓夢想不只是空想，執行後才有意義。加入我們，享受改變帶來的美好滋味。分享感受我們提供完善的網路平台，讓你被更多人看見，實際分享產品使用心得或各種收穫，鼓勵大家踏出夢想的第一步。課程活動各類培訓課程，會員參與活動，默契培養，學習銷售技巧，個人形象建立、溝通方式，學習永不停滯。
+              </p>
+              <a href="/member-organize" class="go-organize">組織管理</a>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-    
 
     <footer id="footer" class="footer dark-background">
       <div class="footer-top">
@@ -420,8 +395,10 @@
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
     <!-- Main JS File -->
-     <script src="./assets/js/main.js"></script>
+    <script src="./shared/header.js" defer></script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/member-info.js"></script>
+    <script src="./assets/js/member-rule.js"></script>
   </body>
 </html>

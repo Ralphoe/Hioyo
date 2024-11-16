@@ -52,6 +52,9 @@
           border-bottom: 1px solid transparent;
         }
       }
+      &.expanded {
+        display: block;
+      }
     }
   }
   .member-section {

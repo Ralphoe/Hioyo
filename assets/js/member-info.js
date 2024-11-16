@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
-      // 'Authorization': `Bearer 2f68dbbf-519d-4f01-9636-e2421b68f379`
     },
     credentials: "same-origin",
     redirect: "follow",
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .finally(() => showLoadingIndicator(false)); // 請求結束後隱藏載入指示器
   }
 
-  // 添加重試機制的 fetch 函數
   function retryFetch(url, options, retries) {
     return fetch(url, options).catch((err) => {
       if (retries === 0) throw err;
@@ -45,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 處理 API 回應
   function handleResponse(response) {
     if (!response.ok) {
       if (response.status === 401) {
@@ -59,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return response.json();
   }
 
-  // 處理資料
   function handleData(result) {
     if (result.success && result.data) {
       updateMemberInfo(result.data);
@@ -68,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 處理錯誤
   function handleError(error) {
     console.error("發生錯誤:", error);
     let errorMessage = error.message.includes("CORS")
@@ -80,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
     clearMemberInfo();
   }
 
-  // 更新會員資訊
   function updateMemberInfo(data) {
     const fields = {
       memberNumber: "no",
@@ -98,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 清空會員資訊
   function clearMemberInfo() {
     [
       "memberNumber",
@@ -114,13 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 顯示或隱藏載入指示器
   function showLoadingIndicator(show) {
     if (loadingIndicator)
       loadingIndicator.style.display = show ? "block" : "none";
   }
 
-  // 顯示錯誤訊息
   function showErrorMessage(message) {
     const errorDiv = document.createElement("div");
     errorDiv.className = "error-message";
@@ -138,17 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // 側邊欄選項點擊事件
   sidebarItems.forEach((item) => {
     item.addEventListener("click", function (e) {
-      const href = this.querySelector("a").getAttribute("href");
+      const link = this.querySelector("a");
+      const href = link ? link.getAttribute("href") : null;
 
       // 記錄當前的 scroll 位置
       sessionStorage.setItem("scrollPosition", window.scrollY);
 
-      // 只有在 href 為 "#" 的情況下阻止默認行為
-      if (href === "#") {
-        e.preventDefault();
-        handleMenuClick(href);
+      // 展開或折疊子選單的邏輯
+      if (item.classList.contains("reward-menu")) {
+        e.preventDefault(); // 阻止默認行為
+        const submenu = item.querySelector(".reward-submenu");
+        submenu.classList.toggle("expanded");
       } else if (href) {
-        // 如果 href 不是 "#"，正常跳轉
+        // 如果 href 存在且不是子選單的話，正常跳轉
         window.location.href = href;
       }
 
@@ -156,16 +149,26 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebarItems.forEach((el) =>
         el.querySelector("a").classList.remove("active")
       );
-      this.querySelector("a").classList.add("active");
+      if (link) link.classList.add("active");
     });
   });
 
-  // 當頁面加載時，恢復 scroll 位置
-  document.addEventListener("DOMContentLoaded", function () {
-    const savedPosition = sessionStorage.getItem("scrollPosition");
-    if (savedPosition) {
-      window.scrollTo(0, parseInt(savedPosition, 10));
-      sessionStorage.removeItem("scrollPosition"); // 加載完畢後清除
+  // 當頁面加載時，恢復 scroll 位置和判斷是否需要展開子選單
+  const savedPosition = sessionStorage.getItem("scrollPosition");
+  if (savedPosition) {
+    window.scrollTo(0, parseInt(savedPosition, 10));
+    sessionStorage.removeItem("scrollPosition"); // 加載完畢後清除
+  }
+
+  // 檢查當前頁面是否應展開 reward-submenu
+  const currentPath = window.location.pathname;
+  if (
+    currentPath === "/member-rule.html" ||
+    currentPath === "/member-organize.html"
+  ) {
+    const rewardMenu = document.querySelector(".reward-menu .reward-submenu");
+    if (rewardMenu) {
+      rewardMenu.classList.add("expanded");
     }
-  });
+  }
 });

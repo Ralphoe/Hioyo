@@ -76,6 +76,9 @@ a {
   background-color: rgba(184, 218, 193, 0.3);
   border-bottom: 1px solid transparent;
 }
+.container-member-info .sidebar-member .reward-submenu.expanded {
+  display: block;
+}
 .container-member-info .member-section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
