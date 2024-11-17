@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const headerHTML = `
+  const headerHTML = `
       <header id="header" class="header d-flex align-items-center position-relative">
         <div class="header-upper">
           <div class="container-fluid container-xl d-flex align-items-center justify-content-end">
@@ -87,19 +87,33 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </header>
     `;
-  
-    // 將生成的 header 插入到頁面中的 body 的最上方
-    document.body.insertAdjacentHTML("afterbegin", headerHTML);
-  
-    // 添加 active 樣式到當前頁面相對應的導航鏈接
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('#navmenu a');
-  
-    navLinks.forEach((link) => {
-      const href = link.getAttribute('href');
-      if (href && href === currentPath) {
-        link.classList.add('active');
+
+  // 將生成的 header 插入到頁面中的 body 的最上方
+  document.body.insertAdjacentHTML("afterbegin", headerHTML);
+
+  // 添加 active 樣式到當前頁面相對應的導航鏈接
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll("#navmenu a");
+
+  // 判斷是否為會員相關頁面
+  const isMemberPage = currentPath.startsWith("/member-");
+  let memberActiveAdded = false;
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+
+    // 比對 href 是否與當前路徑相同
+    if (href && href === currentPath) {
+      link.classList.add("active");
+    }
+
+    // 如果是會員相關頁面，且尚未新增 active 樣式到會員專區
+    if (isMemberPage && !memberActiveAdded) {
+      const memberAreaLink = document.querySelector(".navmenu .dropdown > a");
+      if (memberAreaLink) {
+        memberAreaLink.classList.add("active");
+        memberActiveAdded = true; // 避免重複處理
       }
-    });
+    }
   });
-  
+});

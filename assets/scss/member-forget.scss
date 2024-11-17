@@ -1,0 +1,135 @@
+@use "./variables" as v;
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+.forgot-password {
+  @include v.flex-center;
+  flex-direction: column;
+  background: v.$surface-color;
+  max-width: 600px;
+  margin: 5% auto;
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .member-forget {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    margin-bottom: 2rem;
+
+    .form-container {
+      @include v.flex-center;
+      .forgot-password-form {
+        @include v.flex-center;
+        flex-direction: column;
+      }
+      .form-forget-box {
+        padding: 2rem;
+        background: v.$surface-color;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .form-header {
+        display: flex;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        .forget-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          span {
+            color: v.$dark-grey;
+            font-size: 0.8rem;
+            text-align: left;
+          }
+        }
+        img {
+          width: 50px;
+          height: auto;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          margin-bottom: 0.5rem;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+          border: 1px solid v.$medium-grey;
+          border-radius: 5px;
+        }
+      }
+
+      .captcha-container {
+        display: flex;
+        align-items: center;
+        img {
+          width: 100px;
+          height: auto;
+          border: 1px solid #ccc;
+          margin-right: 1rem;
+        }
+        input {
+            width: 50%;
+            margin: 0;
+            margin-right: 1rem;
+        }
+
+        #refreshCaptcha {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: v.$accent-color;
+          &:hover {
+            color: darken(v.$accent-color, 10%);
+          }
+        }
+      }
+
+      .form-actions {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin-top: 5%;
+
+        .btn-back,
+        .btn-submit {
+          @include v.primary-button-a;
+          align-self: center;
+        }
+
+        .btn-back {
+          background-color: v.$accent-color;
+          &:hover {
+            background-color: darken(v.$accent-color, 10%);
+          }
+        }
+
+        .btn-submit {
+          background-color: v.$accent-color;
+          color: v.$surface-color;
+          &:hover {
+            background-color: darken(v.$accent-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
