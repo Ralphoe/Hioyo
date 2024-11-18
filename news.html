@@ -73,7 +73,7 @@
             <div class="table-header">
               <img src="./assets/img/table-header.png" alt="" />
             </div>
-            <div id="loading" style="display: none;">載入中...</div>
+
             <table>
               <thead>
                 <tr class="tr-news-title">
@@ -81,7 +81,11 @@
                   <th>發布日期</th>
                 </tr>
               </thead>
+              <!-- <div id="loading" style="display: none">載入中...</div> -->
               <tbody id="news-table">
+                <tr id="loading" style="display: none">
+                  <td colspan="2" style="text-align: center">載入中...</td>
+                </tr>
                 <!-- 動態新聞項目會顯示在這裡 -->
               </tbody>
             </table>
@@ -94,7 +98,6 @@
         </div>
       </section>
     </main>
-
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
