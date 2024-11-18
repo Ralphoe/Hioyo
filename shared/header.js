@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // 動態插入 header
   const headerHTML = `
       <header id="header" class="header d-flex align-items-center position-relative">
         <div class="header-upper">
           <div class="container-fluid container-xl d-flex align-items-center justify-content-end">
-            <button class="login-btn">登入</button>
-            <button class="join-btn">加入我們</button>
+            <button onclick="window.location.href='/login.html';" class="login-btn">登入</button>
+            <button onclick="window.location.href='/register.html';" class="join-btn">加入我們</button>
             <button class="search-btn">
               <i class="fas fa-search"></i>
             </button>
@@ -91,8 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // 將生成的 header 插入到頁面中的 body 的最上方
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
-  // 添加 active 樣式到當前頁面相對應的導航鏈接
-  const currentPath = window.location.pathname;
+  // 去掉 currentPath 中的 #
+  const currentPath = window.location.pathname + window.location.search;
   const navLinks = document.querySelectorAll("#navmenu a");
 
   // 判斷是否為會員相關頁面
@@ -100,9 +101,20 @@ document.addEventListener("DOMContentLoaded", function () {
   let memberActiveAdded = false;
 
   navLinks.forEach((link) => {
-    const href = link.getAttribute("href");
+    // 獲取href
+    let href = link.getAttribute("href");
 
-    // 比對 href 是否與當前路徑相同
+    // 如果 href 包含 hash (#)，去掉 hash 部分
+    if (href && href.includes("#")) {
+      href = href.split("#")[0];
+    }
+    // 確保 href 和 currentPath 格式一致
+    if (href && !href.startsWith("/")) {
+      href = "/" + href; // 為 href 加上前導斜線
+    }
+
+    // console.log(href);
+    // console.log(currentPath);
     if (href && href === currentPath) {
       link.classList.add("active");
     }
@@ -116,4 +128,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  // 綁定購物車按鈕事件
+  const toggleCartButton = document.querySelector(".shopping-cart-btn");
+  const cartSidebar = document.getElementById("cartSidebar");
+  const closeCartBtn = document.getElementById("closeCartBtn");
+
+  if (toggleCartButton && cartSidebar && closeCartBtn) {
+    // 打開購物車側邊欄
+    toggleCartButton.addEventListener("click", function () {
+      cartSidebar.classList.add("cart-sidebar-open");
+    });
+
+    // 關閉購物車側邊欄
+    closeCartBtn.addEventListener("click", function () {
+      cartSidebar.classList.remove("cart-sidebar-open");
+    });
+
+    // 點擊側邊欄外部時關閉購物車側邊欄
+    document.addEventListener("click", function (event) {
+      if (
+        !cartSidebar.contains(event.target) &&
+        !toggleCartButton.contains(event.target)
+      ) {
+        cartSidebar.classList.remove("cart-sidebar-open");
+      }
+    });
+  }
 });

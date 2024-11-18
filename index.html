@@ -40,12 +40,12 @@
     />
 
     <!-- Main CSS File -->
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
-
   </head>
 
   <body class="index-page">
+    
     <header
       id="header"
       class="header d-flex align-items-center position-relative"
@@ -107,7 +107,7 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
-              
+
               <!-- Add more cart items here -->
             </div>
             <div class="cart-footer">
@@ -699,7 +699,9 @@
                 <li>改善心血管健康：植物硒有助於降低發炎，保護心血管系統。</li>
               </ul>
 
-              <div class="btn-box "><a href="#" class="btn-cta">聯繫我們</a></div>
+              <div class="btn-box">
+                <a href="#" class="btn-cta">聯繫我們</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1118,95 +1120,6 @@
       <!-- /Call To Action Section -->
     </main>
 
-    <footer id="footer" class="footer dark-background">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-              <a href="index.html" class="logo d-flex align-items-center">
-                <span class="sitename">享悠網</span>
-              </a>
-              <div class="footer-contact pt-3">
-                <p>天龐糧保科技有限公司</p>
-                <p><strong>電話:</strong> 02-2558-6666</p>
-                <p><strong>地址:</strong> 臺北市中山區長安東路2段6之1號4樓</p>
-                <p><strong>統一編號:</strong> 24346377</p>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>首頁</h4>
-              <div class="footer-links-box">
-                <ul>
-                  <li><a href="#">關於我們</a></li>
-                  <li><a href="#">最新消息</a></li>
-                  <li><a href="#">會員專區</a></li>
-                  <li><a href="#">產品服務</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">購物車</a></li>
-                  <li><a href="#">聯繫我們</a></li>
-                  <li><a href="#">服務條款</a></li>
-                  <li><a href="#">隱私權政策</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>關於我們</h4>
-              <ul>
-                <li><a href="#">品牌介紹</a></li>
-                <li><a href="#">經營理念</a></li>
-                <li><a href="#">線下服務據點</a></li>
-                <li><a href="#">未來市場區域</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>最新消息</h4>
-              <ul>
-                <li><a href="#">活動訊息</a></li>
-                <li><a href="#">公司資訊</a></li>
-                <li><a href="#">媒體資訊</a></li>
-                <li><a href="#">最新上架</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>產品服務</h4>
-              <ul>
-                <li><a href="#">天龐品牌</a></li>
-                <li><a href="#">台灣優硒</a></li>
-                <li><a href="#">宏匯瑞光</a></li>
-                <li><a href="#">港墘路</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright text-center">
-        <div
-          class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center"
-        >
-          <div
-            class="d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <div>
-              © Copyright <strong><span>台灣優硒</span></strong
-              >. All Rights Reserved
-            </div>
-          </div>
-
-          <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- Scroll Top -->
     <a
@@ -1225,9 +1138,13 @@
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
+    <!-- Shared Area -->
+    <script src="./shared/header.js" defer></script>
+    <script src="./shared/footer.js"></script>
+    <script src="./shared/placeholder.js"></script>
+    <script src="./shared/scroll-top.js"></script>
     <!-- Main JS File -->
-     <script src="./assets/js/shopping-cart-sidebar.js"></script>
+    <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

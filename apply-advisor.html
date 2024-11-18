@@ -42,195 +42,10 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/member-info.css" />
-    <link rel="stylesheet" href="./css/apply-advisor.css">
+    <link rel="stylesheet" href="./css/apply-advisor.css" />
   </head>
 
   <body class="index-page">
-    <header
-      id="header"
-      class="header d-flex align-items-center position-relative"
-    >
-      <div class="header-upper">
-        <div
-          class="container-fluid container-xl d-flex align-items-center justify-content-end"
-        >
-          <button class="login-btn">登入</button>
-          <button class="join-btn">加入我們</button>
-          <button class="search-btn">
-            <i class="fas fa-search"></i>
-          </button>
-          <button class="shopping-cart-btn toggle-cart-button">
-            <i class="fas fa-shopping-cart"></i>
-          </button>
-          <!-- Shopping Cart Sidebar -->
-          <div class="shopping-cart-sidebar" id="cartSidebar">
-            <div class="cart-header">
-              <h2>購物車(<span class="cart-current-mount">1</span>)</h2>
-              <button class="close-cart-btn" id="closeCartBtn">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-            <div class="cart-items">
-              <div class="cart-item-wrapper">
-                <img
-                  src="./assets/img/sample_img.jpg"
-                  alt="商品縮圖"
-                  class="item-thumbnail"
-                />
-                <div class="item-details">
-                  <h4>商品名稱</h4>
-                  <div class="counting-cart-item">
-                    <label for="quantity"></label>
-                    <input type="number" id="quantity" value="1" min="1" />
-                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
-                  </div>
-                </div>
-                <button class="trash-btn">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-              <div class="cart-item-wrapper">
-                <img
-                  src="./assets/img/sample_img.jpg"
-                  alt="商品縮圖"
-                  class="item-thumbnail"
-                />
-                <div class="item-details">
-                  <h4>商品名稱</h4>
-                  <div class="counting-cart-item">
-                    <label for="quantity"></label>
-                    <input type="number" id="quantity" value="1" min="1" />
-                    <div class="nyt-count"><span class="nyt">NYT</span>50</div>
-                  </div>
-                </div>
-                <button class="trash-btn">
-                  <i class="fas fa-trash"></i>
-                </button>
-                <!-- Shopping Cart Sidebar -->
-                <div class="shopping-cart-sidebar" id="cartSidebar">
-                  <div class="cart-header">
-                    <h2>購物車(<span class="cart-current-mount">1</span>)</h2>
-                    <button class="close-cart-btn" id="closeCartBtn">
-                      <i class="fas fa-times"></i>
-                    </button>
-                  </div>
-                  <div class="cart-items">
-                    <div class="cart-item-wrapper">
-                      <img
-                        src="./assets/img/sample_img.jpg"
-                        alt="商品縮圖"
-                        class="item-thumbnail"
-                      />
-                      <div class="item-details">
-                        <h4>商品名稱</h4>
-                        <div class="counting-cart-item">
-                          <label for="quantity"></label>
-                          <input
-                            type="number"
-                            id="quantity"
-                            value="1"
-                            min="1"
-                          />
-                          <div class="nyt-count">
-                            <span class="nyt">NYT</span>50
-                          </div>
-                        </div>
-                      </div>
-                      <button class="trash-btn">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </div>
-                    <div class="cart-item-wrapper">
-                      <img
-                        src="./assets/img/sample_img.jpg"
-                        alt="商品縮圖"
-                        class="item-thumbnail"
-                      />
-                      <div class="item-details">
-                        <h4>商品名稱</h4>
-                        <div class="counting-cart-item">
-                          <label for="quantity"></label>
-                          <input
-                            type="number"
-                            id="quantity"
-                            value="1"
-                            min="1"
-                          />
-                          <div class="nyt-count">
-                            <span class="nyt">NYT</span>50
-                          </div>
-                        </div>
-                      </div>
-                      <button class="trash-btn">
-                        <i class="fas fa-trash"></i>
-                      </button>
-                    </div>
-
-                    <!-- Add more cart items here -->
-                  </div>
-                  <div class="cart-footer">
-                    <div class="total-amount">HYT｜100</div>
-                    <button class="checkout-btn">結帳</button>
-                  </div>
-                </div>
-                <!-- /Shopping Cart Sidebar -->
-              </div>
-
-              <!-- Add more cart items here -->
-            </div>
-            <div class="cart-footer">
-              <div class="total-amount">HYT｜100</div>
-              <button class="checkout-btn">結帳</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header-lower">
-        <div
-          class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
-        >
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src="./assets/img/hioyo.svg" alt="hioyo" />
-          </a>
-
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="index.html">服務總攬</a></li>
-              <li><a href="about.html">關於我們</a></li>
-              <li><a href="news.html">最新消息</a></li>
-              <li><a href="product.html">產品服務</a></li>
-              <li><a href="contact.html">聯絡我們</a></li>
-              <li class="dropdown">
-                <a href="#" class="active"
-                  ><span>會員專區</span>
-                  <i class="bi bi-chevron-down toggle-dropdown"></i
-                ></a>
-                <ul>
-                  <li><a href="#">登入</a></li>
-                  <li class="dropdown">
-                    <a href="#"
-                      ><span>加入我們</span>
-                      <i class="bi bi-chevron-down toggle-dropdown"></i
-                    ></a>
-                    <ul>
-                      <li><a href="#">Deep Dropdown 1</a></li>
-                      <li><a href="#">Deep Dropdown 2</a></li>
-                      <li><a href="#">Deep Dropdown 3</a></li>
-                      <li><a href="#">Deep Dropdown 4</a></li>
-                      <li><a href="#">Deep Dropdown 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">購物車</a></li>
-                  <li><a href="#">Dropdown 3</a></li>
-                  <li><a href="#">Dropdown 4</a></li>
-                </ul>
-              </li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
-        </div>
-      </div>
-    </header>
     <section class="banner-short banner-product">
       <h2 class="banner-title">會員專區</h2>
       <div class="breadcrumb-container">
@@ -244,150 +59,56 @@
     </section>
     <!-- Main Content -->
     <main>
-        <div class="container-member-info">
-            <aside class="sidebar-member">
-                <ul class="sidebar-menu">
-                    <li><a href="/member-info.html">會員中心</a></li>
-                    <li><a href="/apply-advisor.html"  class="active">申請成為社群顧問</a></li>
-                    <li><a href="/member-change.html">修改密碼</a></li>
-                    <li><a href="/member-order.html">訂單查詢</a></li>
-                    <li class="reward-menu"><a href="/">獎勵查詢</a>
-                        <ul class="reward-submenu">
-                            <li><a href="/member-rule.html">獎勵規則</a></li>
-                            <li><a href="/member-organize.html">組織節點</a></li>
-                            <!-- <li><a href="#">獎勵結算</a></li> -->
-                        </ul>
-                    </li>
-                    <li><a href="#">登出</a></li>
-                </ul>
-            </aside>
-    
-            <section class="member-section">
-                <div class="member-title">
-                    <h2>申請成為儲備社群顧問</h2>
-                </div>
-                <div class="application-banner">
-                    <img src="/assets/img/table-header.png" alt="會員版頭">
-                    <div class="apply-icon">
-                        <img src="/assets/img/icon/social-application.svg" alt="社群顧問圖標">
-                    </div>
-                </div>
-                <div class="consultant-application">
-                    <div class="application-form">
-                        <h3>申請成為儲備社群顧問</h3>
-                        <ul>
-                            <li>僅<span>金級會員</span>具申請資格</li>
-                            <li>需完成推薦三名銀級會員</li>
-                        </ul>
-                        <p>成為儲備社群顧問可享有更多會員專屬優惠，同時也將負責推廣產品及顧客交流，建議申請時確認聯絡資料無誤。</p>
-                        <button class="submit-application-btn">確認送出</button>
-                    </div>
-                </div>
-            </section>
-        </div>
+      <div class="container-member-info">
+        <aside class="sidebar-member">
+          <ul class="sidebar-menu">
+            <li><a href="/member-info.html">會員中心</a></li>
+            <li>
+              <a href="/apply-advisor.html" class="active">申請成為社群顧問</a>
+            </li>
+            <li><a href="/member-change.html">修改密碼</a></li>
+            <li><a href="/member-order.html">訂單查詢</a></li>
+            <li class="reward-menu">
+              <a href="/">獎勵查詢</a>
+              <ul class="reward-submenu">
+                <li><a href="/member-rule.html">獎勵規則</a></li>
+                <li><a href="/member-organize.html">組織節點</a></li>
+                <!-- <li><a href="#">獎勵結算</a></li> -->
+              </ul>
+            </li>
+            <li><a href="#">登出</a></li>
+          </ul>
+        </aside>
+
+        <section class="member-section">
+          <div class="member-title">
+            <h2>申請成為儲備社群顧問</h2>
+          </div>
+          <div class="application-banner">
+            <img src="/assets/img/table-header.png" alt="會員版頭" />
+            <div class="apply-icon">
+              <img
+                src="/assets/img/icon/social-application.svg"
+                alt="社群顧問圖標"
+              />
+            </div>
+          </div>
+          <div class="consultant-application">
+            <div class="application-form">
+              <h3>申請成為儲備社群顧問</h3>
+              <ul>
+                <li>僅<span>金級會員</span>具申請資格</li>
+                <li>需完成推薦三名銀級會員</li>
+              </ul>
+              <p>
+                成為儲備社群顧問可享有更多會員專屬優惠，同時也將負責推廣產品及顧客交流，建議申請時確認聯絡資料無誤。
+              </p>
+              <button class="submit-application-btn">確認送出</button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
-    
-
-    <footer id="footer" class="footer dark-background">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-              <a href="index.html" class="logo d-flex align-items-center">
-                <span class="sitename">享悠網</span>
-              </a>
-              <div class="footer-contact pt-3">
-                <p>天龐糧保科技有限公司</p>
-                <p><strong>電話:</strong> 02-2558-6666</p>
-                <p><strong>地址:</strong> 臺北市中山區長安東路2段6之1號4樓</p>
-                <p><strong>統一編號:</strong> 24346377</p>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>首頁</h4>
-              <div class="footer-links-box">
-                <ul>
-                  <li><a href="#">關於我們</a></li>
-                  <li><a href="#">最新消息</a></li>
-                  <li><a href="#">會員專區</a></li>
-                  <li><a href="#">產品服務</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">購物車</a></li>
-                  <li><a href="#">聯繫我們</a></li>
-                  <li><a href="#">服務條款</a></li>
-                  <li><a href="#">隱私權政策</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>關於我們</h4>
-              <ul>
-                <li><a href="#">品牌介紹</a></li>
-                <li><a href="#">經營理念</a></li>
-                <li><a href="#">線下服務據點</a></li>
-                <li><a href="#">未來市場區域</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>最新消息</h4>
-              <ul>
-                <li><a href="#">活動訊息</a></li>
-                <li><a href="#">公司資訊</a></li>
-                <li><a href="#">媒體資訊</a></li>
-                <li><a href="#">最新上架</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-              <h4>產品服務</h4>
-              <ul>
-                <li><a href="#">天龐品牌</a></li>
-                <li><a href="#">台灣優硒</a></li>
-                <li><a href="#">宏匯瑞光</a></li>
-                <li><a href="#">港墘路</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="copyright text-center">
-        <div
-          class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center"
-        >
-          <div
-            class="d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <div>
-              © Copyright <strong><span>台灣優硒</span></strong
-              >. All Rights Reserved
-            </div>
-          </div>
-
-          <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -395,9 +116,13 @@
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
+    <!-- Shared Area -->
+    <script src="./shared/header.js" defer></script>
+    <script src="./shared/footer.js"></script>
+    <script src="./shared/placeholder.js"></script>
+    <script src="./shared/scroll-top.js"></script>
     <!-- Main JS File -->
-     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/shopping-cart-sidebar.js"></script>
     <script src="./assets/js/member-info.js"></script>
     <script src="./assets/js/apply-advisor.js"></script>
