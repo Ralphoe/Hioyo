@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const start = (page - 1) * productsPerPage;
     const end = start + productsPerPage;
     const productsToRender = products.slice(start, end);
-    const imgPath = `/assets/img/sample_img.jpg`;
+    const imgPath = `https://cdn.jsdelivr.net/gh/ralphoe/my-images@main/my-images/Artificial%20Intelligence/white-cat.webp`;
     // ${window.location.origin}
 
     productsToRender.forEach((product) => {
