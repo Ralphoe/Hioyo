@@ -57,30 +57,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li><a href="product.html">產品服務</a></li>
                 <li><a href="contact.html">聯絡我們</a></li>
                 <li class="dropdown">
-                  <a href="#">
-                    <span>會員專區</span>
-                    <i class="bi bi-chevron-down toggle-dropdown"></i>
-                  </a>
-                  <ul>
-                    <li><a href="#">登入</a></li>
-                    <li class="dropdown">
-                      <a href="#">
-                        <span>加入我們</span>
-                        <i class="bi bi-chevron-down toggle-dropdown"></i>
-                      </a>
-                      <ul>
-                        <li><a href="#">Deep Dropdown 1</a></li>
-                        <li><a href="#">Deep Dropdown 2</a></li>
-                        <li><a href="#">Deep Dropdown 3</a></li>
-                        <li><a href="#">Deep Dropdown 4</a></li>
-                        <li><a href="#">Deep Dropdown 5</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">購物車</a></li>
-                    <li><a href="#">Dropdown 3</a></li>
-                    <li><a href="#">Dropdown 4</a></li>
-                  </ul>
-                </li>
+                <a href="/member-info.html"
+                  ><span>會員專區</span>
+                  <i class="bi bi-chevron-down toggle-dropdown"></i
+                ></a>
+                <ul>
+                  <li><a href="/login.html">登入</a></li>
+                  <li><a href="/register.html">註冊</a></li>
+                  <li><a href="#">購物車</a></li>
+                  <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
+                  <li><a href="/member-change.html">修改密碼</a></li>
+                  <li><a href="/member-order.html">訂單查詢</a></li>
+                  <li class="dropdown">
+                    <a href="#"
+                      ><span>獎勵查詢</span>
+                      <i class="bi bi-chevron-down toggle-dropdown"></i
+                    ></a>
+                    <ul>
+                      <li><a href="/member-rule.html">獎勵規則</a></li>
+                      <li><a href="/member-organize.html">組織節點</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">登出 </a></li>
+                </ul>
+              </li>
               </ul>
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

@@ -49,7 +49,7 @@ h6,
 p,
 a,
 span {
-  color: v.$heading-color;
+  color: v.$default-color;
   font-family: v.$heading-font;
 }
 
@@ -137,7 +137,7 @@ span {
     }
 
     a {
-      color: v.$nav-color;
+      color: v.$default-color;
       padding: 18px 15px;
       font-size: 16px;
       font-family: v.$nav-font;
@@ -149,7 +149,7 @@ span {
       transition: 0.3s;
 
       &:focus {
-        color: v.$nav-color;
+        color: v.$default-color;
         padding: 18px 15px;
         font-size: 16px;
         font-family: v.$nav-font;
@@ -258,7 +258,7 @@ span {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: v.$nav-color;
+    color: v.$default-color;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -329,7 +329,7 @@ span {
       i:hover,
       &:focus i:hover {
         background-color: v.$accent-color;
-        color: v.$contrast-color;
+        color: v.$default-color;
       }
 
       &:hover {
@@ -348,7 +348,7 @@ span {
       i,
       &:focus i {
         background-color: v.$accent-color;
-        color: v.$contrast-color;
+        color: v.$default-color;
         transform: rotate(180deg);
       }
     }
@@ -408,7 +408,7 @@ span {
       # Global Footer
       --------------------------------------------------------------*/
 
-.footer {
+.footer-component.footer {
   color: v.$surface-color;
   background-color: v.$default-color;
   font-size: 14px;
@@ -439,12 +439,14 @@ span {
     }
 
     p {
+      color: v.$surface-color;
       font-size: 14px;
       font-family: v.$heading-font;
     }
   }
 
   h4 {
+    color: v.$surface-color;
     font-size: 16px;
     font-weight: 600;
     position: relative;
@@ -539,20 +541,20 @@ span {
     transition: 0.3s;
 
     &:hover {
-      color: v.$contrast-color;
+      color: v.$default-color;
       background: v.$accent-color;
       text-decoration: none;
     }
   }
 }
 
-//   banner
+// ===============Banner Short================start
 
 .banner-short {
   @include v.flex-center;
   flex-direction: column;
   width: 100%;
-  height: 200px;
+  height: 25vh;
   background-size: cover;
   background-position: center;
   margin-bottom: 5%;
@@ -584,7 +586,7 @@ span {
     justify-content: flex-start;
     width: 100%;
     height: 35%;
-    padding: 10px 30px;
+    padding: 1% 10%;
     .breadcrumb {
       display: flex;
       align-items: center;
@@ -616,6 +618,8 @@ span {
     }
   }
 }
+
+// ===============Banner Short================end
 
 // 浮動購物車視窗
 
@@ -812,13 +816,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
   i {
     font-size: 24px;
-    color: v.$contrast-color;
+    color: v.$default-color;
     line-height: 0;
   }
 
   &:hover {
     background-color: color-mix(in srgb, v.$accent-color, transparent 20%);
-    color: v.$contrast-color;
+    color: v.$default-color;
   }
 
   &.active {

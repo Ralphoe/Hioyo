@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const footerHTML = `
-      <footer id="footer" class="footer dark-background">
+      <footer id="footer" class="footer-component footer dark-background">
         <div class="footer-top">
           <div class="container">
             <div class="row gy-4">

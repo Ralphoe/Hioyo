@@ -7,6 +7,15 @@
   margin: 0 auto;
   padding: 50px 0;
   min-height: 100vh;
+
+  // ===確保 float 不會影響 .news-container 之外的區域========
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    // ===確保 float 不會影響 .news-container 之外的區域========
+
   .sidebar-news {
     float: left;
     width: 20%;

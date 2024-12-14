@@ -8,7 +8,7 @@
   .section-about {
     @include v.flex-center;
     justify-content: space-between;
-    margin: 50px 0;
+    margin: 5rem 0;
     flex-wrap: wrap;
 
     &:nth-child(even) {
@@ -17,17 +17,17 @@
   }
   .section-content {
     width: 45%;
-    padding: 20px;
+    padding: 1.5rem;
     h2 {
       @include v.basic-font;
-      font-size: 28px;
+      font-size: 1.5rem;
       color: v.$accent-color;
-      margin-bottom: 20px;
+      margin-bottom: 1.5rem;
     }
     p {
       @include v.basic-font;
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 1rem;
+      line-height: 1.5rem;
       color: v.$dark-grey;
     }
     ul {
@@ -35,14 +35,14 @@
       padding-left: 0;
       color: v.$accent-color;
       li {
-        margin: 10px 0;
+        margin: 1rem 0;
         display: flex;
         align-items: center;
         &::before {
           content: "\f00c";
           font-family: "Font Awesome 5 Free";
           font-weight: 900;
-          margin-right: 10px;
+          margin-right: 0.5rem;
         }
       }
     }
@@ -53,7 +53,7 @@
     
         .btn-cta {
           @include v.primary-button-a;
-          margin: 5% 0;
+          margin: 1rem 0;
         }
       }
   }
@@ -69,12 +69,13 @@
 
 @media (max-width: 768px) {
   .container-about {
-    margin: 5% auto;
+    margin: 1rem auto;
     .section-about {
       flex-direction: column;
       width: 100%;
       .section-content {
         width: 100%;
+        padding:1.5rem 0;
       }
       .section-image {
         width: 100%;

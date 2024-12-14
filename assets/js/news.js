@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // 初次載入新聞資料
-    fetchNews('http://150.230.105.85/api/v1/news?per_page=10&page=1&sort=-id');
+    fetchNews('https://apifoxmock.com/m1/5509778-5186031-default/api/v1/news2?per_page=10&page=1&sort=-id');
 
     function fetchNews(apiUrl) {
         loadingIndicator.style.display = 'block'; // 顯示載入中
@@ -78,4 +78,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // 根據選中的分類請求相應的資料
         fetchNews(`http://150.230.105.85/api/v1/news?filter[subject]=${category}&per_page=10&page=1&sort=-id`);
     }
+
 });

@@ -29,6 +29,11 @@ a {
   padding: 50px 0;
   min-height: 100vh;
 }
+.news-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .news-container .sidebar-news {
   float: left;
   width: 20%;
