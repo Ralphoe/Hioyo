@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
                   <i class="bi bi-chevron-down toggle-dropdown"></i
                 ></a>
                 <ul>
-                  <li><a href="/login.html">登入</a></li>
-                  <li><a href="/register.html">註冊</a></li>
+                  <li><a href="login.html">登入</a></li>
+                  <li><a href="register.html">註冊</a></li>
                   <li><a href="#">購物車</a></li>
-                  <li><a href="/apply-advisor.html">申請成為社群顧問</a></li>
-                  <li><a href="/member-change.html">修改密碼</a></li>
-                  <li><a href="/member-order.html">訂單查詢</a></li>
+                  <li><a href="apply-advisor.html">申請成為社群顧問</a></li>
+                  <li><a href="member-change.html">修改密碼</a></li>
+                  <li><a href="member-order.html">訂單查詢</a></li>
                   <li class="dropdown">
                     <a href="#"
                       ><span>獎勵查詢</span>
