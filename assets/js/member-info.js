@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!currentUser) {
     alert("請先登入");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
     return;
   }
 
@@ -24,6 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("logout-button")?.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
     alert("已登出");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   });
 });

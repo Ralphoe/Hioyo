@@ -55,6 +55,6 @@ function loadCaptcha() {
     localStorage.setItem("users", JSON.stringify(users));
   
     alert("註冊成功！");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   });
   

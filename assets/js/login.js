@@ -41,7 +41,7 @@ function loadCaptcha() {
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
       alert("登入成功！");
-      window.location.href = "/member-info.html";
+      window.location.href = "member-info.html";
     } else {
       alert("帳號或密碼錯誤");
     }
@@ -51,6 +51,6 @@ function loadCaptcha() {
   document.getElementById("logout-button")?.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
     alert("已登出");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   });
   
