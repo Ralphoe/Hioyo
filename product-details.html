@@ -51,10 +51,10 @@
       <div class="breadcrumb-container">
         <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="./index.html">首頁</a></li>
-            <li class="breadcrumb-item"><a href="./index.html">會員專區</a></li>
+            <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+            <li class="breadcrumb-item"><a href="member-info.html">會員專區</a></li>
             <li class="breadcrumb-item">
-              <a href="./product.html">產品服務</a>
+              <a href="product.html">產品服務</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">詳細資訊</li>
           </ol>
@@ -74,6 +74,11 @@
         </ul>
       </div>
       <section class="product-detail">
+        <div class="loading-overlay">
+          <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
         <div class="product-info-wrapper">
           <div class="product-images">
             <img src="" alt="商品圖片" class="main-image" />
@@ -113,6 +118,7 @@
         </div>
       </section>
     </main>
+
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

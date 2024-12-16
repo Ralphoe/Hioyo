@@ -36,6 +36,7 @@ a {
           flex-direction: column;
   padding: 20px;
   overflow: hidden;
+  position: relative;
 }
 .product-detail .product-info-wrapper {
   display: -webkit-box;

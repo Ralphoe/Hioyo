@@ -78,6 +78,7 @@ a {
   font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   float: left;
   width: 75%;
+  position: relative;
 }
 .news-container .news-content h2 {
   color: #116530;
