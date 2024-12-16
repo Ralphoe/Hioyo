@@ -1,120 +1,56 @@
 // 載入驗證碼
 function loadCaptcha() {
-    const captchaUrl = "https://dev-backend-host.hioyo.com/api/v1/captcha";
-    fetch(captchaUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load captcha: " + response.status);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Captcha data:", data);
-
-            if (data && data.success && data.data && data.data.img && data.data.key) {
-                // 更新驗證碼圖片和 key
-                document.getElementById("captchaImg").src = data.data.img; // 顯示 API 回應的驗證碼圖片
-                document.getElementById("captcha-key").value = data.data.key; // 存儲 key
-            } else {
-                console.error("Invalid captcha data structure:", data);
-                throw new Error("Invalid captcha data");
-            }
-        })
-        .catch(error => {
-            console.error("發生錯誤:", error);
-            alert("無法加載驗證碼，請刷新頁面再試");
-        });
-}
-
-// 初始化載入驗證碼
-loadCaptcha();
-
-// 表單提交事件處理
-document.getElementById("login-form").addEventListener("submit", function(event) {
+    const captchaImg = document.getElementById("captchaImg");
+    const captchaKey = document.getElementById("captcha-key");
+  
+    // 模擬驗證碼數據
+    const mockCaptchaBase64 =
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAoCAYAAADra60AAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZElEQVR4nO2bS0sDQRBEV9iCpBAqgUagWqBQqBSqBCoFKgUagWqBSqBCoFKgUqgeE2umvZl1lM1jLZ+d1FzXj4/MxPqilCEjTGkhRIRAZ7AB67nXe9EXdcwgDSVSB/S8B0VAAAgEAB1ktj+V0no5EVaD0gSIdcCnkO7g6Sw7AlJjtwGHQk1koUgDZAP3dZQSmB5TAHvDcMG1kJ0CGiX0Ygk4FbAlS0ddjHK4DkX3b0GIPQXWBBp6abIHeghdHmjj0gBw3WkQiGzEhpkf0/hJt7O4t87xgGSa+6QhZbmzE7YJ0FhpXc3MG15j1BFpXx2XhM4b1J0BEo/gNTDYi71K0O8AfjggUle1LC4C0nkExXh/FAj6e4I6WPcAPBiJgQ2rV5QnSh/ovYRkhWikIAVM5nAT2F0rIJZ+CVRWZ3AO0lSYZ7d4E9Ad9JDncaG5RGUvADYKI2wwi82kYIj2f3+AVJS/OUBI9a1qAJCl3BlhOnSB2rKCVmLgmwEdY1JR0wOcTtJ+jkgwLXdhg16dJ6AGAKBrdYXYgUMArAwAbLdPN4xLBHhkWSNk6eWm3dt2n9vb2/6zxP4q5NEnZc9EIpqDcoWjepF/UZFTDd1CFqijCKKb2uYIPgCoBhq0BpuuQP/RvNDYCBqlb68l/jj/X3zc7Z0XyHgD0MDCz3e9I15qBZolFf+jB3P0Z5XzEYEOoAKgSAmwM+1rId5LTAAAAAElFTkSuQmCC";
+    const mockKey = "mock-key";
+  
+    if (captchaImg && captchaKey) {
+      captchaImg.src = mockCaptchaBase64; // 設置 Base64 圖片
+      captchaKey.value = mockKey; // 模擬驗證碼 key
+    } else {
+      console.error("Captcha elements not found in DOM.");
+    }
+  }
+  
+  // 初始化驗證碼
+  document.addEventListener("DOMContentLoaded", loadCaptcha);
+  
+  // 表單提交事件處理
+  document.getElementById("login-form").addEventListener("submit", function (event) {
     event.preventDefault();
-    
-    // 獲取表單中的值
+  
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const captcha = document.getElementById("captcha").value;
-    const captchaKey = document.getElementById("captcha-key").value; // 取出驗證碼 key
-
-    // 檢查是否填寫了驗證碼和 captchaKey
-    if (!captcha || !captchaKey) {
-        alert("驗證碼未加載，請刷新頁面後重試");
-        return;
+    const captchaKey = document.getElementById("captcha-key").value;
+  
+    // 驗證驗證碼
+    if (captcha !== "1234" || captchaKey !== "mock-key") {
+      alert("驗證碼錯誤");
+      return;
     }
-
-    // 更新為實際 API URL
-    const apiUrl = "https://dev-backend-host.hioyo.com/api/v1/login";
-
-    var myHeaders = new Headers();
-    myHeaders.append("Accept", "application/json");
-
-    var urlencoded = new URLSearchParams();
-    urlencoded.append("identifier", username);
-    urlencoded.append("password", password);
-    urlencoded.append("captcha", captcha); // 添加 captcha 到請求中
-    urlencoded.append("key", captchaKey); // 添加 captcha key 到請求中
-
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: 'follow'
-    };
-
-    // 發送登入請求
-    fetch(apiUrl, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            console.log("登入回應:", data); // 調試用，查看回應數據
-
-            if (data.success) {
-                alert("登入成功");
-                // 儲存 access_token
-                localStorage.setItem('token', data.data.access_token);
-                // 可以重定向到會員區域
-                window.location.href = "/member-info.html";
-            } else {
-                console.error("登入失敗:", data); // 打印詳細的錯誤訊息
-                alert("登入失敗: " + data.message);
-            }
-        })
-        .catch(error => {
-            console.error("發生錯誤:", error);
-            alert("系統錯誤，請稍後再試。錯誤碼: " + error.message);
-        });
-});
-
-// 登出功能
-function logout() {
-    var requestOptions = {
-        method: 'POST',
-        headers: {
-            'Authorization': 'Bearer ' + localStorage.getItem('token'), // 獲取並使用儲存的 Bearer Token
-            'Accept': 'application/json'
-        },
-        redirect: 'follow'
-    };
-
-    fetch("/v1/logout", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                alert("登出成功");
-                // 清除 token 並重定向到登入頁面
-                localStorage.removeItem('token');
-                window.location.href = "/login";
-            } else {
-                alert("登出失敗: " + result.message);
-            }
-        })
-        .catch(error => {
-            console.error('發生錯誤:', error);
-            alert("系統錯誤，請稍後再試。錯誤碼: " + error.message);
-        });
-}
-
-// 綁定登出按鈕事件
-document.getElementById("logout-button")?.addEventListener("click", logout);
+  
+    // 驗證用戶
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find((user) => user.email === username && user.password === password);
+  
+    if (user) {
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      alert("登入成功！");
+      window.location.href = "/member-info.html";
+    } else {
+      alert("帳號或密碼錯誤");
+    }
+  });
+  
+  // 登出功能
+  document.getElementById("logout-button")?.addEventListener("click", function () {
+    localStorage.removeItem("currentUser");
+    alert("已登出");
+    window.location.href = "/login.html";
+  });
+  
