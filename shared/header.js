@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               <div class="cart-footer">
                 <div class="total-amount">HYT｜100</div>
-                <button class="checkout-btn">結帳</button>
+                <button class="checkout-btn" onclick="window.location.href='shopping-list.html'">結帳</button>
               </div>
             </div>
           </div>
