@@ -62,6 +62,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background-color: #808080;
 }
 .product-detail .product-info-wrapper .product-images .main-image {
   width: 100%;

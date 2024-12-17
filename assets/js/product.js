@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       productCard.classList.add("product-card");
       productCard.innerHTML = ` 
         <a href="./product-details.html" class="product-link">
-          <div class="product-image" style="background-color: ${product.color};">
+          <div class="product-image" style="background-color:  #808080;">
               <img src="${imgPath}" alt="商品圖片" class="placeholder-image">
           </div>
         </a>
