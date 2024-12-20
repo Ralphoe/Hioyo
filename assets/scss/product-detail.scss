@@ -21,14 +21,11 @@
       @include v.flex-center;
       flex-direction: column;
       flex: 1;
-      background-color:  #808080;
       .main-image {
-        width: 100%;
+        @include v.image-cover;
         aspect-ratio: 1/1;
-        // height: 300px;
         margin-bottom: 10px;
         border: 1px solid v.$medium-grey;
-        object-fit: cover;
       }
 
       .thumbnail-wrapper {
